@@ -92,32 +92,6 @@
                                 </span>
                             </button>
     
-                            <button class="nav-link" id="v-pills-address-tab" data-bs-toggle="pill"
-                                data-bs-target="#v-pills-address" type="button" role="tab" aria-controls="v-pills-address"
-                                aria-selected="false">
-                                <span>
-                                    <svg width="14" height="20" viewBox="0 0 14 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M11.864 15.9822C11.4632 12.6506 9.25877 11.1118 7.04363 11.0545C5.70166 11.0223 4.5422 11.5126 3.57598 12.4609C2.60976 13.4057 2.19465 14.5938 1.99067 16.0288C1.37873 15.7461 0.809733 15.5063 0.272945 15.2128C0.147695 15.1449 0.0582333 14.8944 0.0582333 14.7262C0.0439189 13.5631 -0.0849134 12.3822 0.0940158 11.2478C0.365988 9.54079 1.99067 8.23819 3.71555 8.05568C4.60661 7.96264 5.46547 7.9519 6.35296 8.1702C6.88617 8.3026 7.51243 8.19167 8.06711 8.05926C10.2357 7.52963 13.1559 8.64973 13.7571 10.9973C14.0577 12.1675 14.0577 13.3663 13.8751 14.5615C13.8107 14.9981 13.6068 15.3202 13.1737 15.4812C12.7336 15.6387 12.3042 15.8105 11.864 15.9822Z" />
-                                        <path
-                                            d="M10.6071 3.72194C10.5928 5.77962 8.96814 7.38999 6.93193 7.36494C4.8814 7.33989 3.24241 5.7009 3.26388 3.69331C3.28535 1.59984 4.90287 -0.0212607 6.94982 0.000210833C9.01824 0.0181038 10.6215 1.64994 10.6071 3.72194Z" />
-                                        <path
-                                            d="M10.9467 16.0178C10.9109 18.2795 9.07512 19.9972 6.74188 19.9507C4.58041 19.9077 2.77681 18.0719 2.80902 15.9498C2.8448 13.7454 4.69493 11.9776 6.9387 12.0062C9.17174 12.0384 10.9789 13.8492 10.9467 16.0178ZM6.84208 18.4834C7.27509 18.462 7.76893 18.4262 8.26278 18.419C8.62779 18.4154 8.74947 18.2222 8.74947 17.8966C8.74947 17.1808 8.75305 16.4687 8.74589 15.753C8.74589 15.6599 8.70652 15.5025 8.65642 15.4882C8.32719 15.4059 8.40234 15.1482 8.38087 14.9263C8.36298 14.7367 8.34151 14.547 8.30572 14.3645C8.15542 13.6309 7.64011 13.2122 6.91723 13.2229C6.22299 13.2337 5.64683 13.7418 5.52874 14.4432C5.4679 14.8154 5.65041 15.2735 5.17088 15.5096C5.14941 15.5204 5.14941 15.5919 5.14941 15.6349C5.14941 16.4508 5.1351 17.2667 5.16015 18.0826C5.16372 18.19 5.34981 18.3689 5.4679 18.3868C5.90449 18.4477 6.34108 18.4548 6.84208 18.4834Z" />
-                                        <path
-                                            d="M7.78818 15.3706C7.81323 14.8159 7.93491 14.2684 7.41601 13.9069C7.09036 13.6815 6.70745 13.6851 6.40327 13.9499C5.95953 14.3328 6.03826 14.8481 6.08836 15.3706C6.66451 15.3706 7.19414 15.3706 7.78818 15.3706ZM6.76113 17.643C6.8828 17.643 7.00448 17.643 7.11899 17.643C7.15836 17.3209 7.22635 17.0239 7.21561 16.7304C7.21204 16.6088 7.02953 16.4978 6.92933 16.3797C6.83986 16.4835 6.6824 16.5837 6.67883 16.6911C6.67167 16.9988 6.72892 17.3137 6.76113 17.643Z"
-                                            fill="white" />
-                                        <path
-                                            d="M7.78818 15.3706C7.19414 15.3706 6.66451 15.3706 6.08836 15.3706C6.03826 14.8445 5.95953 14.3328 6.40327 13.9499C6.71103 13.6851 7.09394 13.6815 7.41601 13.9069C7.93491 14.2684 7.81323 14.8159 7.78818 15.3706Z" />
-                                        <path
-                                            d="M6.76261 17.6421C6.7304 17.3129 6.67314 17.0016 6.6803 16.6902C6.68388 16.5865 6.84134 16.4827 6.9308 16.3789C7.031 16.4934 7.21351 16.6079 7.21709 16.7296C7.22782 17.0231 7.15983 17.3201 7.12046 17.6421C7.00595 17.6421 6.88786 17.6421 6.76261 17.6421Z" />
-                                    </svg>
-                                </span>
-                                <span class="text">
-                                    Address
-                                </span>
-                            </button>
-    
                             <button class="nav-link" id="v-pills-review-tab" data-bs-toggle="pill"
                                 data-bs-target="#v-pills-review" type="button" role="tab" aria-controls="v-pills-review"
                                 aria-selected="false">
@@ -302,26 +276,6 @@
                                                             </div>
                                                             <div class="info-details">
                                                                 <p>Sajjad</p>
-                                                                <p>demoemail@gmail.com</p>
-                                                                <p>023 434 54354</p>
-                                                                <p>Haydarabad, Rord 34</p>
-                                                                <p>3454</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="devider"></div>
-                                                    <div class="shop-info">
-                                                        <h5 class="heading">Shop Information</h5>
-                                                        <div class="info-list">
-                                                            <div class="info-title">
-                                                                <p>Name:</p>
-                                                                <p>Email:</p>
-                                                                <p>Phone:</p>
-                                                                <p>City:</p>
-                                                                <p>Zip:</p>
-                                                            </div>
-                                                            <div class="info-details">
-                                                                <p>ShopUs Super-Shop</p>
                                                                 <p>demoemail@gmail.com</p>
                                                                 <p>023 434 54354</p>
                                                                 <p>Haydarabad, Rord 34</p>
@@ -818,131 +772,6 @@
                                     <div class="wishlist-btn">
                                         <a href="#" class="clean-btn">Clean Wishlist</a>
                                         <a href="#" class="shop-btn">View Cards</a>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="tab-pane fade" id="v-pills-address" role="tabpanel"
-                                aria-labelledby="v-pills-address-tab" tabindex="0">
-                                <div class="profile-section address-section addresses ">
-                                    <div class="row gy-md-0 g-5">
-                                        <div class="col-md-6">
-                                            <div class="seller-info">
-                                                <h5 class="heading">Address-01</h5>
-                                                <div class="info-list">
-                                                    <div class="info-title">
-                                                        <p>Name:</p>
-                                                        <p>Email:</p>
-                                                        <p>Phone:</p>
-                                                        <p>City:</p>
-                                                        <p>Zip:</p>
-                                                    </div>
-                                                    <div class="info-details">
-                                                        <p>Sajjad</p>
-                                                        <p>demoemail@gmail.com</p>
-                                                        <p>023 434 54354</p>
-                                                        <p>Haydarabad, Rord 34</p>
-                                                        <p>3454</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="seller-info">
-                                                <h5 class="heading">Address-02</h5>
-                                                <div class="info-list">
-                                                    <div class="info-title">
-                                                        <p>Name:</p>
-                                                        <p>Email:</p>
-                                                        <p>Phone:</p>
-                                                        <p>City:</p>
-                                                        <p>Zip:</p>
-                                                    </div>
-                                                    <div class="info-details">
-                                                        <p>Sajjad</p>
-                                                        <p>demoemail@gmail.com</p>
-                                                        <p>023 434 54354</p>
-                                                        <p>Haydarabad, Rord 34</p>
-                                                        <p>3454</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <a href="#" class="shop-btn" onclick="modalAction('.submit')">Add New
-                                                Address</a>
-                                            <!-- modal -->
-                                            <div class="modal-wrapper submit">
-                                                <div onclick="modalAction('.submit')" class="anywhere-away"></div>
-    
-                                                <!-- change this -->
-                                                <div class="login-section account-section modal-main">
-                                                    <div class="review-form">
-                                                        <div class="review-content">
-                                                            <h5 class="comment-title">Add Your Address</h5>
-                                                            <div class="close-btn">
-                                                                <img src="./assets/images/homepage-one/close-btn.png"
-                                                                    onclick="modalAction('.submit')" alt="close-btn">
-                                                            </div>
-                                                        </div>
-                                                        <div class=" account-inner-form">
-                                                            <div class="review-form-name">
-                                                                <label for="firstname" class="form-label">First
-                                                                    Name*</label>
-                                                                <input type="text" id="firstname" class="form-control"
-                                                                    placeholder="First Name">
-                                                            </div>
-                                                            <div class="review-form-name">
-                                                                <label for="lastname" class="form-label">Last Name*</label>
-                                                                <input type="text" id="lastname" class="form-control"
-                                                                    placeholder="Last Name">
-                                                            </div>
-                                                        </div>
-                                                        <div class=" account-inner-form">
-                                                            <div class="review-form-name">
-                                                                <label for="useremail" class="form-label">Email*</label>
-                                                                <input type="email" id="useremail" class="form-control"
-                                                                    placeholder="user@gmail.com">
-                                                            </div>
-                                                            <div class="review-form-name">
-                                                                <label for="userphone" class="form-label">Phone*</label>
-                                                                <input type="tel" id="userphone" class="form-control"
-                                                                    placeholder="+880388**0899">
-                                                            </div>
-                                                        </div>
-                                                        <div class="review-form-name address-form">
-                                                            <label for="useraddress" class="form-label">Address*</label>
-                                                            <input type="text" id="useraddress" class="form-control"
-                                                                placeholder="Enter your Address">
-                                                        </div>
-                                                        <div class=" account-inner-form city-inner-form">
-                                                            <div class="review-form-name">
-                                                                <label for="usercity" class="form-label">Town /
-                                                                    City*</label>
-                                                                <select id="usercity" class="form-select">
-                                                                    <option>Choose...</option>
-                                                                    <option>Newyork</option>
-                                                                    <option>Dhaka</option>
-                                                                    <option selected>London</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="review-form-name">
-                                                                <label for="usernumber" class="form-label">Postcode /
-                                                                    ZIP*</label>
-                                                                <input type="number" id="usernumber" class="form-control"
-                                                                    placeholder="0000">
-                                                            </div>
-                                                        </div>
-                                                        <div class="login-btn text-center">
-                                                            <a href="#" onclick="modalAction('.submit')"
-                                                                class="shop-btn">Add Address</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- change this -->
-    
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
