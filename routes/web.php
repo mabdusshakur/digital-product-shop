@@ -8,3 +8,4 @@ Route::get('/wishlist', App\Livewire\User\WishListComponent::class);
 Route::get('/cart', App\Livewire\User\CartComponent::class);
 Route::get('/profile', App\Livewire\User\ProfileComponent::class);
 Route::get('/product-details', App\Livewire\User\ProductDetailsComponent::class);
+Route::get('/products', App\Livewire\User\ProductsComponent::class);
