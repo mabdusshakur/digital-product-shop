@@ -6,11 +6,11 @@
         <div class="arrival-section">
             <div class="row g-5">
 
-                
+
                 <div class="col-lg-3 col-sm-6">
                     <div class="product-wrapper" data-aos="fade-up">
                         <div class="product-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9-OSYXbL_LbdkXDfkID0FO--3YBf68oJmw&usqp=CAU"
+                            <img src=""
                                 alt="product-img">
                             <div class="product-cart-items">
                                 <a href="#" class="cart cart-item">
