@@ -7,3 +7,4 @@ Route::get('/contact-us', App\Livewire\User\ContactUsComponent::class);
 Route::get('/wishlist', App\Livewire\User\WishListComponent::class);
 Route::get('/cart', App\Livewire\User\CartComponent::class);
 Route::get('/profile', App\Livewire\User\ProfileComponent::class);
+Route::get('/product-details', App\Livewire\User\ProductDetailsComponent::class);
