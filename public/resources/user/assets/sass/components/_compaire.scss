@@ -1,0 +1,98 @@
+.product-compair {
+    .comment-title {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+    .paragraph{
+        margin-top: 1.5rem;
+    }
+
+    tbody{
+        border: 1px solid $theme-bg;
+    }
+    .cart-top {
+        background-color: $primary-color;
+
+        .cart-item {
+            width: calc(25%);
+            padding: 2rem;
+        }
+    }
+
+    .cart-grey-bg {
+        background: #f6f6f6;
+        
+    }
+    .vertical-cart{
+        vertical-align: top;
+    }
+
+    .cart-center {
+      border: 1px solid $theme-bg;
+      .wrapper-data{
+        @include flexItem($direction:column)
+      }
+        .search {
+            @include flexBetween();
+            border: 1px solid $theme-bg;
+            border-radius: .5rem;
+            padding: 1rem;
+            background-color: $primary-color;
+            width: 25rem;
+            margin-bottom: 1.8rem;
+            input {
+                border: none;
+                outline: none;
+                color: $theme-color;
+                flex: 1 1 0%;
+
+            }
+
+            span{
+                svg{
+                   width: 2rem;
+                   height: 2rem;
+                    object-fit: cover;
+                    fill: currentColor;
+                    fill: $theme-color;
+                }
+            }
+           
+        }
+        .wrapper{
+
+            .wrapper-img{
+                width: 16rem;
+                height: 16rem;
+                margin-bottom: 1rem;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            
+            .wrapper-details{
+                font-size: 1.8rem;
+                font-weight: 500;
+                text-align: center;
+            }
+            .price{
+                justify-content: center;
+            }
+        }
+        
+    }
+    .cart-bottom {
+        padding: 1rem;
+        border: none;
+        .cart-center{
+            border: none;
+        }
+
+
+        .stock{
+            color: green;
+            font-weight: 600;
+        }
+    }
+}

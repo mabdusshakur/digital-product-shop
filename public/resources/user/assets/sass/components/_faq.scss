@@ -1,0 +1,107 @@
+.faq {
+    .row>* {
+        --bs-gutter-x: 3rem;
+    }
+    .question-section {
+    
+        .review-form {
+            padding: 2rem;
+    
+           
+        }
+    
+    }
+}
+
+.faq-accordion {
+
+    .faq-item {
+        margin-top: 3rem;
+        border: none;
+        --bs-accordion-border-color: $theme-color;
+
+        .faq-button {
+            height: 6rem;
+            @include flexItem($justify: space-between);
+            transition: all .5s;
+
+            &::after {
+                display: none;
+            }
+
+            .faq-heading {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            &:focus {
+                border: none;
+                box-shadow: none;
+            }
+
+            .minus {
+                display: none;
+            }
+
+            &:not(.collapsed) {
+                background: $theme-color;
+                border-bottom: 1px solid #ffffff60;
+
+                .plus {
+                    display: none;
+                }
+
+                .minus {
+                    display: block;
+                }
+
+                .faq-heading {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .accordion-body {
+            padding: 3rem 2rem;
+
+            .paragraph {
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 2.2rem;
+            }
+
+        }
+
+        .accordion-collapse {
+            background-color: $theme-color;
+
+            .paragraph {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.question-section {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    .review-form {
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        padding: 2rem 4rem;
+
+        .comment-title {
+            margin-top: 2rem;
+        }
+
+        .review-form-name {
+            margin-bottom: 2rem;
+        }
+
+        .shop-btn {
+            margin-top: 2rem;
+        }
+    }
+
+}

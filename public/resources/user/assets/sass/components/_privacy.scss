@@ -1,0 +1,32 @@
+.privacy-section{
+    .intro-heading{
+        margin-bottom: 2rem;
+    }
+    .policy-details{
+        line-height: 3rem;
+        .policy-inner-text{
+            display: block;
+            margin-top: 3rem;
+        }
+    }
+    .policy{
+        margin-bottom: 3rem;
+        .policy-features{
+            margin-top: 3rem;
+
+            ul li{
+                list-style: unset;
+                margin-left: 2rem;
+                margin-top: 2rem;
+                &::marker{
+                    font-size: 2rem;
+                }
+            }
+        }
+        
+    }
+}
+.paragraph-inner-text{
+    display: block;
+    margin-top: 3rem;
+}

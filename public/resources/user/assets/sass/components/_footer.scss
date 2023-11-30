@@ -1,0 +1,104 @@
+.footer {
+    background: url("../assets/images/homepage-one/footer-bg.webp");
+    font-family: $spartan;
+
+}
+
+.footer-padding{
+    padding-bottom: 12rem !important;
+}
+
+.footer-service-section {
+    background-color: $theme-color;
+    padding: 2.8rem;
+    margin-top: -11rem;
+    border-radius: 4px;
+
+    .service-wrapper {
+        @include flexItem($gap: 2rem);
+
+        .service-info {
+            font-size: 1.6rem;
+            color: $primary-color;
+            margin-bottom: 0;
+        }
+
+        .service-details {
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+    }
+    @media #{$md} {
+        .gy-4{
+            --bs-gutter-y:2rem;
+        }
+        .service-wrapper{
+            justify-content: flex-start;
+        }
+    }
+    @media #{$mdx} {
+        .service-wrapper{
+            align-items: flex-start;
+        }
+    }
+}
+
+.footer-section {
+    padding-top: 6rem;
+
+    .logo {
+        margin-bottom: 6rem;
+    }
+
+    .footer-heading {
+        font-size: 2rem;
+        color: $primary-color;
+
+    }
+    .footer-title{
+        margin-bottom: 1.8rem;
+    }
+
+    .footer-link {
+        a {
+            color: #C8C8C8;
+            font-size: 1.5rem;
+            font-weight: 300;
+
+            &:hover {
+                color: $theme-color;
+                text-decoration: underline;
+            }
+        }
+        p{
+            color: #C8C8C8;
+        }
+
+        ul {
+            padding-left: 0;
+
+            li {
+                margin-bottom: 2rem;
+            }
+        }
+        .address{
+            @include flexItem($align:flex-start,$gap:1.5rem,$justify:flex-start);
+        }
+
+    }
+
+    .contact-link{
+        @include flexItem($align:flex-start,$direction:column,$gap:2rem);
+    }
+    @media #{$sm} {
+        .footer-link {
+            a {
+                font-size: 1.5rem !important;
+    
+
+            }
+            
+    
+        }  
+    }
+}

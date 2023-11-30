@@ -1,0 +1,194 @@
+// colors-------------
+$theme-color: #AE1C9A;
+$primary-color: #FFFFFF;
+$secondary-theme: #FFBB38;
+$heading: #232532;
+$paragraph: #797979;
+$theme-bg: rgba(174, 28, 154, .08);
+
+// font---------------
+$poppins: 'Poppins', sans-serif;
+$jost: 'Jost', sans-serif;
+$inter: 'Inter', sans-serif;
+$spartan: 'League Spartan', sans-serif;
+
+
+// flex-------------
+@mixin flexItem($direction: row, $align: center, $justify: center, $gap: 0px) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+@mixin flexBetween() {
+    @include flexItem($justify: space-between, )
+}
+
+// grid---------
+@mixin gridItem($grid: repeat(6, minmax(0, 1fr)), $gap: 3rem) {
+    display: grid;
+    grid-template-columns: $grid;
+    gap: $gap;
+}
+
+// mixins--------------------
+
+// (shop-buttons)
+@mixin shopBtn ($padding: 1.2rem 3.4rem, $margin: 4rem 0, $align: center, $border: 3rem, $display: inline-block, $btn-bg: $theme-color, $text: 1.4rem, $font: 500,
+    $position: relative, $bf-color: $primary-color) {
+    padding: $padding;
+    margin: $margin;
+    text-align: $align;
+    border-radius: $border;
+    display: $display;
+    background: $btn-bg;
+    font-size: $text;
+    font-weight: $font;
+    position: $position;
+    color: $bf-color;
+    font-family: $inter;
+    transition: all .3s;
+    overflow: hidden;
+
+    &::after {
+        content: " ";
+        width: 0%;
+        height: 100%;
+        background: $heading;
+        position: absolute;
+        transition: all 0.4s ease-in-out;
+        right: 0;
+        top: 0;
+        z-index: -3;
+    }
+
+    svg {
+        fill: $primary-color;
+        transition: all .5s;
+    }
+    span {
+        margin-left: 8px;
+        font-size: 1.5rem;
+        width: 100%;
+        z-index: 1;
+        transition: all 0.4s ease-in-out;
+       
+    }
+
+    // hover-effect
+    &:hover {
+        color: $primary-color;
+        background-color: $btn-bg;
+
+        &::after {
+            right: auto;
+            left: 0;
+            width: 100%;
+            
+        }
+
+        svg {
+            fill: currentColor;
+            fill: $primary-color;
+            transform: translate(5px);
+        }
+        span{
+            color: $primary-color;
+            
+           
+        }
+    }
+
+    
+}
+
+// (regular-buttons)
+@mixin buttons($bg: transparent) {
+    border: none;
+    outline: none;
+    background: $bg;
+}
+
+// (product-buttons)
+@mixin productBtn($pd: 1.2rem 1.6rem 1.2rem 2.5rem, $bg: #ae1c9a30, $color: $theme-color) {
+    padding: $pd;
+    border-top-left-radius: 3rem;
+    background: $bg;
+    color: $color;
+    font-size: 1.6rem;
+
+    &:hover {
+        background-color: $theme-color;
+        color: $primary-color;
+    }
+}
+
+// (wrappers)
+@mixin wrapper($hg: 44.5rem, $pd: 0 0 2rem 0, $br: 1.2rem) {
+    width: 100%;
+    height: $hg;
+    padding: $pd;
+    border-radius: $br;
+    background-color: $primary-color;
+    font-family: $jost;
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+// (section-title)
+@mixin view() {
+    font-family: $jost;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background-color: $heading;
+        top: 2.2rem;
+        left: 2px;
+        transition: all .2s;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &:hover {
+        &::before {
+            opacity: 1;
+            visibility: visible;
+            width: 7rem;
+        }
+    }
+}
+
+
+@keyframes btnAnimation {
+    0% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+// resposive-design
+
+$lg: 'only screen and (min-width: 1200px) and (max-width: 1600px)';
+$mdx: 'only screen and (min-width: 767px) and (max-width: 1200px)';
+$md: '(max-width:1023px)';
+$mdl: '(max-width:1200px)';
+$sm: '(max-width:767px)';
+$xsd: 'only screen and (min-width: 768px) and (max-width: 1023px)';
+$xs: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$exs: '(max-width: 576px)';

@@ -1,0 +1,692 @@
+.user-profile {
+    margin-top: 2rem;
+}
+
+.user-profile-section {
+    background: $primary-color;
+    padding: 4rem 3.6rem;
+    border-radius: 1rem;
+
+    .dashboard-heading {
+        @include flexBetween();
+        margin-bottom: 2rem;
+
+        .dashboard-title {
+            font-family: $inter;
+            font-size: 2.2rem;
+        }
+
+        // switch--
+        .dashboard-switch {
+            @include flexItem($gap: 1.5rem);
+
+            & .switch-icon {
+                width: 7.3rem;
+                height: 3.1rem;
+                border: 1px solid #c0c0c0;
+                border-radius: 4.6rem;
+                position: relative;
+                cursor: pointer;
+                transition: all 0.5s ease-in;
+
+
+                &::before {
+                    content: '';
+                    width: 2.3rem;
+                    height: 2.3rem;
+                    background: $heading;
+                    position: absolute;
+                    border-radius: 50%;
+                    top: 3px;
+                    left: 4px;
+                    transition: all 0.5s ease-in;
+                }
+
+            }
+
+            .switch-icon.active {
+                background: $theme-color;
+
+                &::before {
+                    left: calc(100% - 23px - 4px);
+                    background-color: $primary-color;
+                }
+            }
+
+        }
+    }
+
+    .text {
+        color: $paragraph;
+        font-size: 1.6rem;
+        transition: all .2s;
+
+    }
+
+    @media #{$md} {
+
+        padding: 3rem 2rem;
+
+        .dashboard-heading {
+
+            .dashboard-switch {
+                .text {
+                    display: none;
+                }
+
+                .switch-icon::before {
+                    width: 2, 2rem;
+                    height: 2.2rem;
+                    top: 2.5px;
+
+                }
+
+                .switch-icon.active::before {
+                    left: calc(100% - 23px + 5px);
+
+                }
+
+            }
+        }
+
+        .user-dashboard {
+            flex-direction: column;
+
+            .nav-item {
+                width: 100%;
+                border-right: none;
+                flex-direction: row;
+                align-items: center;
+                gap: 2rem;
+
+            }
+
+            .nav-content {
+
+                .profile-section {
+
+                    .info-section {
+                        flex-direction: column;
+                        gap: 3rem;
+                        padding: 3rem 0;
+
+                        .heading {
+                            font-size: 2rem;
+                        }
+
+                        .info-list {
+                            p {
+                                font-size: 1.2rem;
+                            }
+                        }
+
+                    }
+
+                    .devider {
+                        display: none;
+                    }
+                }
+
+                .support-ticket {
+                    .ticket-section {
+                        overflow-x: scroll;
+                    }
+                }
+
+                .seller-application-section {
+                    padding: 0;
+
+                    .row>* {
+                        --bs-gutter-x: 0rem;
+                    }
+
+                    .account-section {
+                        .review-form {
+                            padding: 0;
+
+                            .submit-btn {
+                                justify-content: center;
+
+                                .shop-btn {
+                                    margin: 2rem 0;
+                                    padding: 1.2rem 2rem;
+
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .payment-section {
+
+                    .paragraph {
+                        margin-top: .5rem;
+                    }
+
+                    .wrapper {
+                        flex-direction: column;
+                        .wrapper-item{
+                            flex-direction: column;
+                        }
+
+                        .shop-btn {
+                            margin-top: 2rem;
+
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .wrapper-btn {
+                        @include flexItem();
+
+                        .shop-btn {
+                            padding: 1rem 2rem;
+                        }
+                    }
+
+                }
+
+                .address-section {
+                    .seller-info {
+                        background-color: $theme-bg;
+                        padding: 2rem;
+        
+                        .info-list {
+                            margin-top: 1.5rem;
+                            p{
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+        
+                    .shop-btn {
+                        margin: 2rem 0;
+        
+                        &::after {
+                            display: none;
+                        }
+                    }
+        
+                }
+
+                .top-selling-section {
+
+                    .product-wrapper {
+                        flex-direction: column;
+                        height: auto;
+                        .product-img{
+                            height: 13rem;
+                            img{
+                                object-fit: contain;
+                            }
+                        }
+                    }
+        
+                }
+
+                .form-section {
+        
+                    .form-btn {
+        
+                        .shop-btn {
+                            padding: 1rem;
+                        
+                        }
+        
+                    }
+                }
+        
+
+            }
+            
+        }
+
+    }
+
+
+    @media #{$mdx} {
+
+        .dashboard-heading {
+
+            .dashboard-switch {
+
+                .switch-icon::before {
+                    width: 2.3rem;
+                    height: 2.3rem;
+                    top: 3px;
+
+                }
+
+                .switch-icon.active::before {
+                    left: calc(100% - 34px + 5px);
+
+                }
+
+            }
+        }
+
+        .nav-content {
+
+            .profile-section {
+
+                .info-section {
+                    flex-direction: row !important;
+
+                }
+            }
+
+        }
+
+    }
+
+    @media #{$mdx} {}
+}
+
+.user-dashboard {
+    @include flexItem($align: flex-start, $gap: 3rem, $justify: flex-start);
+
+    .nav-item {
+        width: 23.1rem;
+        border-right: 2px solid $theme-bg;
+        padding: 0 0 2rem 0;
+        @include flexItem($direction: column, $align: flex-start, $gap: 3rem);
+
+        .nav-link {
+            padding: 0;
+            @include flexItem($gap: 1.6rem);
+
+            a {
+                span {
+                    margin-right: 1.6rem;
+                }
+            }
+
+            svg {
+                fill: currentColor;
+                fill: $paragraph;
+                transition: all .2s;
+            }
+        }
+
+        .nav-link.active {
+            svg {
+                fill: $theme-color;
+                transform: scale(1.1);
+
+            }
+
+            .text {
+                transform: translateX(5px);
+                color: $theme-color;
+                font-weight: 600;
+            }
+
+            background-color: transparent;
+        }
+    }
+
+    .nav-content {
+        width: 100%;
+
+        .paragraph {
+            margin-bottom: 1rem;
+            color: $heading;
+        }
+
+        .heading {
+            font-size: 2.4rem;
+        }
+
+        // dashboard--
+        .profile-section {
+            margin-top: 3rem;
+
+            .product-wrapper {
+                @include flexItem($align: flex-start, $direction: column, $gap: 2rem);
+                height: auto;
+                padding: 2.6rem;
+                background-color: $theme-bg;
+                border: none;
+                box-shadow: none;
+
+                svg,
+                path {
+                    fill: currentColor;
+                    fill: $theme-color;
+                }
+
+                rect {
+                    fill: $primary-color;
+                }
+
+                .paragraph {
+                    font-size: 2rem;
+                    color: $heading;
+                }
+
+                .heading {
+                    font-size: 4rem;
+                }
+
+                &:hover {
+                    background: $theme-color;
+
+                    .paragraph,
+                    .heading {
+                        color: $primary-color;
+                    }
+
+
+                }
+
+            }
+
+            .info-section {
+                @include flexItem($justify: space-between);
+                padding: 4rem;
+                background: $theme-bg;
+                border-radius: .5rem;
+
+                .heading {
+                    margin-bottom: 2rem;
+                }
+
+            }
+
+            .info-list {
+                @include flexItem($justify: flex-start, $gap: 2rem);
+
+                p {
+                    font-size: 1.6rem;
+
+                }
+
+                .info-title,
+                .info-details {
+                    @include flexItem($direction: column, $align: flex-start, $gap: 2rem);
+                }
+
+                .info-details {
+                    p {
+                        color: $heading;
+                        font-weight: 500;
+                    }
+                }
+
+            }
+
+            .devider {
+                height: 16.4rem;
+                width: 1px;
+                background: $primary-color;
+            }
+        }
+
+        // personal-info
+        .seller-application-section {
+            padding: 0;
+
+            .row>* {
+                --bs-gutter-x: 3rem
+            }
+
+            .account-section {
+                .review-form {
+                    width: auto;
+                    height: auto;
+
+                    .submit-btn {
+                        @include flexItem($justify: flex-start, $gap: 2rem);
+
+                        .shop-btn {
+                            margin: 2rem 0;
+
+                            &::after {
+                                display: none;
+                            }
+                        }
+
+                        .cancel-btn {
+                            background: transparent;
+                            color: red;
+                        }
+                    }
+                }
+            }
+
+            .img-upload-section {
+                @include flexItem();
+
+                .upload-input {
+                    transform: translate(-5rem, 7rem);
+                }
+            }
+        }
+
+        // payment-mathod
+        .payment-section {
+            .verified {
+                color: green;
+                font-weight: 500
+            }
+
+            .paragraph {
+                margin-top: .5rem;
+            }
+
+            .wrapper {
+                @include flexBetween();
+
+                .wrapper-item {
+                    @include flexItem($justify: flex-start, $gap: 2rem)
+                }
+
+                .shop-btn {
+                    margin: 0;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+
+            hr {
+                margin: 3rem 0;
+            }
+
+            .shop-btn {
+                margin: 0;
+                border: 1px solid $theme-color;
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            .bank-btn {
+                margin-left: 2rem;
+                background-color: $primary-color;
+                color: $heading;
+                border: 1px solid $heading;
+            }
+
+        }
+
+        // wishlist---
+        .wishlist {
+            .cart-content {
+                gap: 1rem;
+                margin-bottom: 2rem;
+                align-items: flex-start;
+            }
+
+        }
+
+        // address
+        .addresses {
+            margin-top: 0;
+        }
+
+        .address-section {
+            .seller-info {
+                background-color: $theme-bg;
+                padding: 3rem;
+
+                .info-list {
+                    margin-top: 1.5rem;
+                }
+            }
+
+            .shop-btn {
+                margin: 2rem 0;
+
+                &::after {
+                    display: none;
+                }
+            }
+
+        }
+
+        // review
+
+        .top-selling-section {
+
+            .product-wrapper {
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+                border: none;
+
+                &:hover {
+                    border: none;
+                }
+            }
+
+            .product-cart-btn {
+                visibility: visible;
+                opacity: 1;
+                right: 0;
+            }
+        }
+
+        // change-password
+        .form-section {
+            .form-item {
+                margin-bottom: 1.6rem;
+
+                input {
+                    padding: 1.3rem;
+                    border-radius: 0;
+                }
+
+                .form-label {
+                    color: $paragraph;
+                    font-size: 1.5rem;
+                }
+
+                .form-control {
+                    box-shadow: none;
+                    border: 1px solid rgb(232, 232, 232);
+                    border-radius: .5rem;
+                }
+            }
+
+            .form-btn {
+                margin: 3rem 0;
+                @include flexItem($justify: flex-start, $gap: 1rem);
+
+                .shop-btn {
+                    margin: 0;
+                    font-weight: 600;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                .cancel-btn {
+                    background: transparent;
+                    color: $heading;
+                    border-radius: 0;
+                }
+            }
+        }
+
+        // support-ticket
+
+        .support-ticket {
+
+            .shop-btn {
+                margin: 0 0 2rem 0;
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            .table-row {
+
+                .table-wrapper {
+                    padding: 2rem 4rem;
+
+                    .comment-img,
+                    .delete-img {
+                        path {
+                            fill: currentColor;
+
+                        }
+                    }
+
+                    .comment-img {
+                        path {
+                            fill: #27AE60;
+                        }
+                    }
+
+                    .delete-img {
+                        path {
+                            fill: #EB5757;
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+        .modal-main {
+            border-radius: 1rem;
+            margin: 2rem;
+
+            .review-form {
+                width: auto;
+                height: auto;
+                margin-top: 0;
+
+                .review-content {
+                    @include flexBetween();
+
+                    .comment-title {
+                        font-size: 2.4rem;
+                        margin: 0;
+
+                    }
+
+                    .close-btn {
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+
+        .modal-wrapper.active {
+            display: flex;
+
+        }
+
+    }
+
+}

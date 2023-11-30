@@ -1,0 +1,341 @@
+.blog {
+    background: #FFFAFE;
+    padding: 6rem 0;
+
+    .heading {
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+.blog-bradcrum {
+
+    a {
+        font-size: 1.6rem;
+        color: $heading;
+        font-weight: 300;
+        font-family: $inter;
+
+    }
+
+    @media #{$sm} {
+        text-align: center;
+        margin-bottom: 3rem;
+
+        a {
+            font-size: 1.5rem;
+        }
+
+    }
+}
+
+.about {
+    padding: 8rem 0 5rem 0;
+    background: $primary-color;
+
+    @media #{$md} {
+        padding: 2rem 0 2rem 0;
+    }
+
+
+}
+
+.about-section {
+    .row>* {
+        --bs-gutter-x: 6rem;
+    }
+
+    .about-img {
+        position: relative;
+
+        .about-inner-img {
+            position: absolute;
+            top: 12.3rem;
+            z-index: 1;
+            right: 10rem;
+
+        }
+    }
+
+    .about-content {
+        .about-info {
+            padding: 2rem 0;
+        }
+
+        .about-list {
+            p {
+                color: $heading;
+            }
+
+            ul li {
+                margin-top: 1.5rem;
+                @include flexItem($justify: flex-start, $gap: 1.5rem);
+            }
+        }
+
+    }
+
+}
+
+.about-service {
+    background: #FFFAFE;
+
+
+    .about-service-section {
+        @include flexItem($justify: space-around);
+
+        @media #{$md} {
+            @include flexItem($direction: column, $gap: 3rem);
+
+
+        }
+    }
+
+    .about-wrapper {
+        @include flexItem($direction: column, $gap: 3rem);
+        width: 28.6rem;
+        text-align: center;
+
+    }
+
+    .seperator {
+        width: 1px;
+        height: 19.7rem;
+        background: #ae1c9a21;
+
+        @media #{$sm} {
+            display: none;
+        }
+    }
+
+    @media #{$md} {
+        .seperator {
+            display: none;
+        }
+
+        .about-service-section {
+            @include flexItem($direction: column, $gap: 3rem);
+        }
+    }
+
+    @media #{$mdx} {
+
+        .about-service-section {
+            @include flexItem($direction: row, $gap: 3rem);
+        }
+    }
+
+}
+
+.about-details {
+    font-family: $spartan;
+    font-size: 2.6rem;
+    line-height: 3rem;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    &:hover {
+        color: $theme-color;
+    }
+
+    @media #{$sm} {
+        font-size: 2.6rem;
+        line-height: 2.5rem;
+    }
+}
+
+.about-promotion {
+    height: 52.7rem;
+    z-index: 1;
+    position: relative;
+    @include flexItem();
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: $theme-color;
+        z-index: 10;
+        opacity: .6;
+    }
+
+    video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    .about-btn {
+        height: 10rem;
+        width: 10rem;
+        background: $primary-color;
+        z-index: 100;
+        border-radius: 50%;
+        @include flexItem();
+        transition: all .5s;
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            z-index: -100;
+            transition: all 5s;
+            animation: btnAnimation 2s linear 0s infinite;
+        }
+
+    }
+}
+
+.about-feedback {
+    background: #FFFAFE;
+
+    .swiper {
+        padding: 3rem 0;
+    }
+
+    .swiper-wrapper {
+        box-sizing: border-box;
+
+    }
+
+    .swiper-slide {
+        background: $primary-color;
+        padding: 3rem;
+        min-height: 27.5rem;
+        box-shadow: none;
+        border: 1px solid #f5f2f4;
+        margin-bottom: 2rem;
+    }
+
+
+
+    .swiper-pagination {
+        margin-top: 3rem;
+    }
+
+
+    @media #{$sm} {
+        .swiper-slide {
+            padding: 2rem;
+            height: auto;
+
+            .testimonial-details {
+                font-size: 1.6rem;
+
+                .testimonial-inner-text {
+                    display: inline;
+                }
+            }
+
+            .testimonial-info {
+
+                .testimonial-name {
+                    font-family: $spartan;
+                    font-size: 1.8rem;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+.testimonial-wrapper {
+    @include wrapper($hg: auto);
+    @include flexItem($direction: column, $justify: flex-start, $align: flex-start);
+    position: relative;
+    cursor: default;
+    width: 100%;
+
+    .blockquote {
+        position: absolute;
+        z-index: -1;
+        top: 2rem;
+        left: 2.5rem;
+    }
+
+    .testimonial-details {
+        font-size: 1.8rem;
+        color: $paragraph;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        .testimonial-inner-text {
+            display: block;
+        }
+    }
+
+    .ratings {
+        margin-top: 1rem;
+    }
+
+    .testimonial-info {
+        @include flexItem($justify: flex-start, $gap: 1rem);
+
+        .testimonial-name {
+            font-family: $spartan;
+            font-size: 2.2rem;
+        }
+
+        .title-inner {
+            color: $theme-color;
+        }
+    }
+
+    @media #{$md} {
+        .testimonial-inner-text {
+            display: inline;
+        }
+    }
+}
+
+.divider {
+    background: $theme-bg;
+    width: 100%;
+    height: 1px;
+    border-radius: 50%;
+    margin: 2rem 0;
+}
+
+.latest {
+    .section-title {
+        justify-content: center;
+
+        .about-details {
+            font-size: 3.6rem;
+        }
+    }
+
+    .latest-section {
+        .row>* {
+            --bs-gutter-x: 3.5rem;
+        }
+    }
+
+    @media #{$sm} {
+        .blogs-wrapper {
+
+            .about-details {
+                font-size: 2rem;
+
+            }
+
+            .shop-btn {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

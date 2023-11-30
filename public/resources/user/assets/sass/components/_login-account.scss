@@ -1,0 +1,125 @@
+.login {
+
+    background: url("../assets/images/homepage-one/login-bg.webp") no-repeat center / cover;
+
+
+}
+
+.login-section {
+    @include flexItem();
+
+    .review-form {
+        width: 51.2rem;
+        height: 63rem;
+        background-color: $primary-color;
+        padding: 4rem;
+        border-radius: .5rem;
+
+        .comment-title {
+            text-align: center;
+            margin-top: 5rem;
+        }
+
+        .review-inner-form {
+            display: block;
+            width: 100%;
+
+        }
+
+        .shop-btn {
+            width: 100%;
+            margin: 0 0 2rem 0;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        .shop-account {
+            color: $paragraph;
+            font-size: 1.3rem;
+
+            a {
+                font-size: 1.3rem;
+                margin-left: .5rem;
+                font-weight: 400;
+            }
+        }
+    }
+
+    @media #{$sm} {
+        .review-form{
+            padding: 2rem;
+            height: auto;
+        }
+    }
+}
+
+.checkbox {
+    @include flexBetween();
+
+    .forget-pass {
+        p {
+            color: $theme-color;
+        }
+    }
+}
+
+.checkbox-item {
+    @include flexItem($justify: flex-start, $gap: 1rem);
+
+    p {
+        margin-bottom: 0;
+        color: $paragraph;
+
+        .inner-text {
+            color: $heading;
+        }
+    }
+    .address{
+        font-size: 1.5rem;
+    }
+}
+
+// create-account
+
+
+.account-section {
+    
+    .review-form {
+        width: 57.2rem;
+        height: 79.1rem;
+    }
+
+    .account-inner-form {
+        @include flexItem($gap: 2rem);
+        margin-bottom: 2rem;
+
+        .review-form-name {
+            width: 100%;
+        }
+
+    }
+
+    .city-inner-form {
+        margin-bottom: 0;
+    }
+
+    .address-form {
+        margin: 2rem 0;
+    }
+
+    @media #{$sm} {
+
+        .review-form{
+            padding: 2rem;
+            height: auto;
+        }
+        .account-inner-form{
+            flex-direction: column;
+        } 
+        .checkbox-item{
+            margin: 1rem;
+        }
+    }
+}
