@@ -18,19 +18,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
-
     <!-- loader-->
     <link href="{{ asset('resources/admin/assets/css/pace.min.css') }}" rel="stylesheet" />
 
     <!--Theme Styles-->
-    <link href="{{ asset('resources/admin/assets/css/dark-theme.css') }}" rel="stylesheet" />
-    <link href="{{ asset('resources/admin/assets/css/light-theme.css') }}" rel="stylesheet" />
     <link href="{{ asset('resources/admin/assets/css/semi-dark.css') }}" rel="stylesheet" />
-    <link href="{{ asset('resources/admin/assets/css/header-colors.css') }}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @livewireStyles
-    <title>Admin Template</title>
 
+    <title>Admin Template</title>
 </head>
 
 <body>
