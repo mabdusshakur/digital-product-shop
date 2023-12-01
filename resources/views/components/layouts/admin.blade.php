@@ -9,8 +9,6 @@
     <!--plugins-->
     <link href="{{ asset('resources/admin/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
     <link href="{{ asset('resources/admin/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('resources/admin/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}"
-        rel="stylesheet" />
     <link href="{{ asset('resources/admin/assets/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
     <!-- Bootstrap CSS -->
     <link href="{{ asset('resources/admin/assets/css/bootstrap.min.css') }}" rel="stylesheet" />
@@ -71,21 +69,13 @@
     <script src="{{ asset('resources/admin/assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('resources/admin/assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
     <script src="{{ asset('resources/admin/assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>
-    <script src="{{ asset('resources/admin/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
     <script src="{{ asset('resources/admin/assets/js/pace.min.js') }}"></script>
-    <script src="{{ asset('resources/admin/assets/plugins/chartjs/js/Chart.min.js') }}"></script>
-    <script src="{{ asset('resources/admin/assets/plugins/chartjs/js/Chart.extension.js') }}"></script>
-    <script src="{{ asset('resources/admin/assets/plugins/apexcharts-bundle/js/apexcharts.min.js') }}"></script>
     <!-- Vector map JavaScript -->
     <script src="{{ asset('resources/admin/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
     <script src="{{ asset('resources/admin/assets/plugins/vectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
     <!--app-->
     <script src="{{ asset('resources/admin/assets/js/app.js') }}"></script>
     <script src="{{ asset('resources/admin/assets/js/index.js') }}"></script>
-    <script>
-        new PerfectScrollbar(".review-list")
-        new PerfectScrollbar(".chat-talk")
-    </script>
     @livewireScripts
 
 </body>
