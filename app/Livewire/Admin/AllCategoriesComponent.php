@@ -8,6 +8,6 @@ class AllCategoriesComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.all-categories-component');
+        return view('livewire.admin.all-categories-component')->layout('components.layouts.admin');
     }
 }

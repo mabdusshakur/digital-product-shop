@@ -8,6 +8,6 @@ class AllOrdersComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.all-orders-component');
+        return view('livewire.admin.all-orders-component')->layout('components.layouts.admin');
     }
 }

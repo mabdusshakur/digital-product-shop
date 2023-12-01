@@ -8,6 +8,6 @@ class UpdateCategoriesComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.update-categories-component');
+        return view('livewire.admin.update-categories-component')->layout('components.layouts.admin');
     }
 }

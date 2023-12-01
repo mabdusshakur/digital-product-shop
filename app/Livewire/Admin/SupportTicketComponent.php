@@ -8,6 +8,6 @@ class SupportTicketComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.support-ticket-component');
+        return view('livewire.admin.support-ticket-component')->layout('components.layouts.admin');
     }
 }

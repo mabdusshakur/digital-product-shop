@@ -8,6 +8,6 @@ class AddBrandsComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.add-brands-component');
+        return view('livewire.admin.add-brands-component')->layout('components.layouts.admin');
     }
 }

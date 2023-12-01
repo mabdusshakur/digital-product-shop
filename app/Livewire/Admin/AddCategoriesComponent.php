@@ -8,6 +8,6 @@ class AddCategoriesComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.add-categories-component');
+        return view('livewire.admin.add-categories-component')->layout('components.layouts.admin');
     }
 }

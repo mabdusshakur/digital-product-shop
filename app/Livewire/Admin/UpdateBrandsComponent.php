@@ -8,6 +8,6 @@ class UpdateBrandsComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.update-brands-component');
+        return view('livewire.admin.update-brands-component')->layout('components.layouts.admin');
     }
 }

@@ -8,6 +8,6 @@ class AllBrandsComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.all-brands-component');
+        return view('livewire.admin.all-brands-component')->layout('components.layouts.admin');
     }
 }

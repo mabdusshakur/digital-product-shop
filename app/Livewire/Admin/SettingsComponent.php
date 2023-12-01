@@ -8,6 +8,6 @@ class SettingsComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.settings-component');
+        return view('livewire.admin.settings-component')->layout('components.layouts.admin');
     }
 }
