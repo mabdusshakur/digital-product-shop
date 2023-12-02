@@ -11,15 +11,15 @@ Route::get('/product-details', App\Livewire\User\ProductDetailsComponent::class)
 Route::get('/products', App\Livewire\User\ProductsComponent::class);
 
 
-Route::get('/admin/dashboard', App\Livewire\Admin\HomeComponent::class);
+Route::get('/admin/dashboard', App\Livewire\Admin\HomeComponent::class)->name('admin.dashboard');
 
-Route::get('/admin/dashboard/products', App\Livewire\Admin\AllProductsComponent::class);
-Route::get('/admin/dashboard/products/add', App\Livewire\Admin\AddProductsComponent::class);
-Route::get('/admin/dashboard/products/update', App\Livewire\Admin\UpdateProductsComponent::class);
+Route::get('/admin/dashboard/products', App\Livewire\Admin\AllProductsComponent::class)->name('admin.products');
+Route::get('/admin/dashboard/products/add', App\Livewire\Admin\AddProductsComponent::class)->name('admin.add-products');
+Route::get('/admin/dashboard/products/update', App\Livewire\Admin\UpdateProductsComponent::class)->name('admin.update-products');
 
-Route::get('/admin/dashboard/categories', App\Livewire\Admin\AllCategoriesComponent::class);
-Route::get('/admin/dashboard/categories/add', App\Livewire\Admin\AddCategoriesComponent::class);
-Route::get('/admin/dashboard/categories/update', App\Livewire\Admin\UpdateCategoriesComponent::class);
+Route::get('/admin/dashboard/categories', App\Livewire\Admin\AllCategoriesComponent::class)->name('admin.categories');
+Route::get('/admin/dashboard/categories/add', App\Livewire\Admin\AddCategoriesComponent::class)->name('admin.add-categories');
+Route::get('/admin/dashboard/categories/update', App\Livewire\Admin\UpdateCategoriesComponent::class)->name('admin.update-categories');
 
 Route::get('/admin/dashboard/brands', App\Livewire\Admin\AllBrandsComponent::class);
 Route::get('/admin/dashboard/brands/add', App\Livewire\Admin\AddBrandsComponent::class);
