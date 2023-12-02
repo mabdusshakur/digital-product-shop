@@ -10,6 +10,9 @@ Route::get('/profile', App\Livewire\User\ProfileComponent::class);
 Route::get('/product-details', App\Livewire\User\ProductDetailsComponent::class);
 Route::get('/products', App\Livewire\User\ProductsComponent::class);
 
+Route::get('/login', App\Livewire\User\LoginComponent::class);
+Route::get('/register', App\Livewire\User\RegisterComponent::class);
+
 
 Route::get('/admin/dashboard', App\Livewire\Admin\HomeComponent::class)->name('admin.dashboard');
 
