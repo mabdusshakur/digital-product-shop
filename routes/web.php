@@ -1,20 +1,20 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', App\Livewire\User\HomeComponent::class);
+Route::get('/', App\Livewire\User\HomeComponent::class)->name('user.home');
 
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/wishlist', App\Livewire\User\WishListComponent::class);
-    Route::get('/cart', App\Livewire\User\CartComponent::class);
-    Route::get('/profile', App\Livewire\User\ProfileComponent::class);
-    Route::get('/product-details', App\Livewire\User\ProductDetailsComponent::class);
-    Route::get('/products', App\Livewire\User\ProductsComponent::class);
-    
+    Route::get('/wishlist', App\Livewire\User\WishListComponent::class)->name('user.wishlist');
+    Route::get('/cart', App\Livewire\User\CartComponent::class)->name('user.cart');
+    Route::get('/profile', App\Livewire\User\ProfileComponent::class)->name('user.profile');
+    Route::get('/product-details', App\Livewire\User\ProductDetailsComponent::class)->name('user.product-details');
+    Route::get('/products', App\Livewire\User\ProductsComponent::class)->name('user.products');
+
     Route::get('/logout', function () {
         Auth::logout();
         return redirect('/');
-    });
+    })->name('logout');
 });
 
 Route::get('/login', App\Livewire\User\LoginComponent::class)->name('login');
