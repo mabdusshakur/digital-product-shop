@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->integer('quantity');
             $table->float('price');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }
