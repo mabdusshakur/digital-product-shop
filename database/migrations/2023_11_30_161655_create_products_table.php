@@ -17,9 +17,8 @@ return new class extends Migration
             $table->longText('descripton');
             $table->string('slug');
             $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreignId('subscription_id')->references('id')->on('subscriptions')->onDelete('cascade');
             $table->integer('stock');
-            $table->float('regular_price');
-            $table->float('sale_price');
             $table->boolean('status')->default(true);
             $table->boolean('flash_sale')->default(false);
             $table->integer('view_count')->default(0);
