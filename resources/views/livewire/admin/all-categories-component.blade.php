@@ -1,43 +1,44 @@
 <div>
     <div class="card">
+        @include('livewire.admin.partials._alerts')
         <div class="card-body">
-
             <div class="table-responsive">
                 <table class="table align-middle table-striped">
                     <thead class="table-light">
                         <tr>
                             <th>Name</th>
-                            <th>Products</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="productlist">
-                                <a class="d-flex align-items-center gap-2" href="#">
-                                    <div class="product-box">
-                                        <img src="assets/images/products/01.png" alt="">
+                        @foreach ($categories as $category)
+                            <tr>
+                                <td class="productlist">
+                                    <a class="d-flex align-items-center gap-2" href="#">
+                                        <div class="product-box">
+                                            <img src="{{Storage::url($category->image)}}" alt="">
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 product-title">{{$category->name}}</h6>
+                                        </div>
+                                    </a>
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3 fs-6">
+                                        <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title=""
+                                            data-bs-original-title="View detail" aria-label="Views"><i
+                                                class="bi bi-eye-fill"></i></a>
+                                        <a href="javascript:;" wire:click="editeCategory({{$category->id}})" class="text-warning" data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
+                                            aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
+                                        <a href="javascript:;" wire:click="deleteCategory({{$category->id}})" class="text-danger" data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title="" data-bs-original-title="Delete"
+                                            aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
                                     </div>
-                                    <div>
-                                        <h6 class="mb-0 product-title">Men White Polo T-shirt</h6>
-                                    </div>
-                                </a>
-                            </td>
-                            <td><span>44</span></td>
-                            <td>
-                                <div class="d-flex align-items-center gap-3 fs-6">
-                                    <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="View detail"
-                                        aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                    <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
-                                        aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                    <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="Delete"
-                                        aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                </div>
-                            </td>
-                        </tr>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

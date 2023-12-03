@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/dashboard/products/update', App\Livewire\Admin\UpdateProductsComponent::class)->name('admin.update-products');
     Route::get('/admin/dashboard/categories', App\Livewire\Admin\AllCategoriesComponent::class)->name('admin.categories');
     Route::get('/admin/dashboard/categories/add', App\Livewire\Admin\AddCategoriesComponent::class)->name('admin.add-categories');
-    Route::get('/admin/dashboard/categories/update', App\Livewire\Admin\UpdateCategoriesComponent::class)->name('admin.update-categories');
+    Route::get('/admin/dashboard/categories/update/{id}', App\Livewire\Admin\UpdateCategoriesComponent::class)->name('admin.update-categories');
     Route::get('/admin/dashboard/brands', App\Livewire\Admin\AllBrandsComponent::class);
     Route::get('/admin/dashboard/brands/add', App\Livewire\Admin\AddBrandsComponent::class);
     Route::get('/admin/dashboard/brands/update', App\Livewire\Admin\UpdateBrandsComponent::class);

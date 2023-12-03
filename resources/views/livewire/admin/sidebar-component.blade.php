@@ -33,9 +33,9 @@
                     <div class="menu-title">Category & Brands</div>
                 </a>
                 <ul>
-                    <li> <a href=""><i class="bi bi-circle"></i>All Categories</a>
+                    <li> <a href="{{ route('admin.categories') }}"><i class="bi bi-circle"></i>All Categories</a>
                     </li>
-                    <li> <a href=""><i class="bi bi-circle"></i>Add Category</a>
+                    <li> <a href="{{ route('admin.add-categories') }}"><i class="bi bi-circle"></i>Add Category</a>
                     </li>
                 </ul>
                 <ul>

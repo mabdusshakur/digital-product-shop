@@ -9,7 +9,7 @@
     <!--plugins-->
     <link href="{{ asset('resources/admin/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
     <link href="{{ asset('resources/admin/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
-    <link href="{{ asset('resources/admin/assets/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/metismenu/dist/metisMenu.min.css">
     <!-- Bootstrap CSS -->
     <link href="{{ asset('resources/admin/assets/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('resources/admin/assets/css/bootstrap-extended.css') }}" rel="stylesheet" />
@@ -66,9 +66,9 @@
     <!-- Bootstrap bundle JS -->
     <script src="{{ asset('resources/admin/assets/js/bootstrap.bundle.min.js') }}"></script>
     <!--plugins-->
-    <script src="{{ asset('resources/admin/assets/js/jquery.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
     <script src="{{ asset('resources/admin/assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
-    <script src="{{ asset('resources/admin/assets/plugins/metismenu/js/metisMenu.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/metismenu"></script>
     <script src="{{ asset('resources/admin/assets/js/pace.min.js') }}"></script>
     <!-- Vector map JavaScript -->
     <script src="{{ asset('resources/admin/assets/plugins/vectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
