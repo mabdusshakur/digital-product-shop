@@ -19,9 +19,9 @@
                     <div class="menu-title">Products</div>
                 </a>
                 <ul>
-                    <li> <a href=""><i class="bi bi-circle"></i>All Products</a>
+                    <li> <a href="{{ route('admin.products') }}"><i class="bi bi-circle"></i>All Products</a>
                     </li>
-                    <li> <a href=""><i class="bi bi-circle"></i>Add Products</a>
+                    <li> <a href="{{ route('admin.add-products') }}"><i class="bi bi-circle"></i>Add Products</a>
                     </li>
                 </ul>
             </li>
