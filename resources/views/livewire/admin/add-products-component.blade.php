@@ -47,18 +47,11 @@
                    <div class="col-lg-4">
                     <label class="form-label">Discounted Price</label>
                     <input type="text" class="form-control" placeholder="Price">
-                  </div>
-                   <div class="col-lg-4">
-                    <label class="form-label">Subscription</label>
-                     <div class="input-group">
-                       <select class="form-select">
-                         <option>Select Subscription</option>
-                         <option>No Subscription</option>
-                         <option>1 Month</option>
-                         <option>2 Month</option>
-                       </select>
-                     </div>
                    </div>
+                   <div class="col-lg-4">
+                    <label class="form-label">Subscription Name</label>
+                    <input type="text" class="form-control" placeholder="Price">
+                  </div>
                  </div>
                </div>
                <div class="col-12">
