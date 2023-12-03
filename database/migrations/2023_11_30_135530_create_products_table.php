@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longText('descripton');
+            $table->longText('description');
             $table->string('slug');
             $table->foreignId('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreignId('subscription_id')->references('id')->on('subscriptions')->onDelete('cascade');
