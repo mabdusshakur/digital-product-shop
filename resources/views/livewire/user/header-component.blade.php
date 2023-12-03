@@ -4,9 +4,12 @@
             <div class="container">
                 <div class="header-top">
                     <div class="header-profile">
-                        <a href="user-profile.html"><span>Account</span></a>
-                        <a href="order.html"><span>Track Order</span></a>
-                        <a href="faq.html"><span>Support</span></a>
+                        @auth
+                        <a href=""><span>Account</span></a>
+                        <a href=""><span>Track Order</span></a>
+                        <a href="{{route('logout')}}"><span>Logout</span></a>
+                        @endauth
+                        <a href=""><span>Support</span></a>
                     </div>
                     <div class="header-contact d-none d-lg-block">
                         <a href="#">
