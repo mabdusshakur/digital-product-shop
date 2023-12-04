@@ -28,101 +28,69 @@
                     <thead class="table-light">
                         <tr>
                             <th>Name</th>
-                            <th>Regular Price</th>
-                            <th>Discount Price</th>
+                            <th>Name & Regular Price</th>
+                            <th>Name & Sale Price</th>
                             <th>Status</th>
                             <th>Stocks</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="productlist">
-                                <a class="d-flex align-items-center gap-2" href="#">
-                                    <div class="product-box">
-                                        <img src="assets/images/products/01.png" alt="">
+                        @foreach ($products as $product)
+                            <tr>
+                                <td class="productlist">
+                                    <a class="d-flex align-items-center gap-2" href="#">
+                                        <div class="product-box">
+                                            <img src="{{ Storage::url($product->image[0]->image) }}" alt="">
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-0 product-title">{{ $product->name }}</h6>
+                                        </div>
+                                    </a>
+                                </td>
+                                @php
+                                    $subscriptions = \App\Models\Subscription::where('id', $product->subscription_id)->get();
+                                @endphp
+                                <td>
+                                    @foreach ($subscriptions as $subscription)
+                                        <span>{{ $subscription->name }} : ${{ $subscription->regular_price }}</span><br>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($subscriptions as $subscription)
+                                        <span>{{ $subscription->name }} : ${{ $subscription->sale_price }}</span><br>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @if ($product->status == true)
+                                        <span class="badge rounded-pill bg-success">Active</span>
+                                    @else
+                                        <span class="badge rounded-pill bg-danger">Disabled</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($product->stock > 0)
+                                        <span>{{$product->stock}}</span>
+                                    @else
+                                        <span class="badge rounded-pill bg-warning">stock out</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <div class="d-flex align-items-center gap-3 fs-6">
+                                        <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title=""
+                                            data-bs-original-title="View detail" aria-label="Views"><i
+                                                class="bi bi-eye-fill"></i></a>
+                                        <a href="javascript:;" wire:click="editeProduct({{$category->id}})" class="text-warning" data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
+                                            aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
+                                        <a href="javascript:;" wire:click="deleteProduct({{$category->id}})" class="text-danger" data-bs-toggle="tooltip"
+                                            data-bs-placement="bottom" title="" data-bs-original-title="Delete"
+                                            aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
                                     </div>
-                                    <div>
-                                        <h6 class="mb-0 product-title">Men White Polo T-shirt</h6>
-                                    </div>
-                                </a>
-                            </td>
-                            <td><span>$18.00</span></td>
-                            <td><span>$10.00</span></td>
-                            <td><span class="badge rounded-pill bg-success">Active</span></td>
-                            <td><span>44</span></td>
-                            <td>
-                                <div class="d-flex align-items-center gap-3 fs-6">
-                                    <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="View detail"
-                                        aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                    <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
-                                        aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                    <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="Delete"
-                                        aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="productlist">
-                                <a class="d-flex align-items-center gap-2" href="#">
-                                    <div class="product-box">
-                                        <img src="assets/images/products/04.png" alt="">
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0 product-title">Yellow Winter Jacket for Men</h6>
-                                    </div>
-                                </a>
-                            </td>
-                            <td><span>$18.00</span></td>
-                            <td><span>No Discount Added</span></td>
-                            <td><span class="badge rounded-pill bg-dark">On Flash</span></td>
-                            <td><span>22</span></td>
-                            <td>
-                                <div class="d-flex align-items-center gap-3 fs-6">
-                                    <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="View detail"
-                                        aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                    <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
-                                        aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                    <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="Delete"
-                                        aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="productlist">
-                                <a class="d-flex align-items-center gap-2" href="#">
-                                    <div class="product-box">
-                                        <img src="assets/images/products/05.png" alt="">
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0 product-title">Men Sports Shoes Nike</h6>
-                                    </div>
-                                </a>
-                            </td>
-                            <td><span>$18.00</span></td>
-                            <td><span>No Discount Added</span></td>
-                            <td><span class="badge rounded-pill bg-warning">Out Of Stock</span></td>
-                            <td><span>0</span></td>
-                            <td>
-                                <div class="d-flex align-items-center gap-3 fs-6">
-                                    <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="View detail"
-                                        aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                    <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
-                                        aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                    <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
-                                        data-bs-placement="bottom" title="" data-bs-original-title="Delete"
-                                        aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                </div>
-                            </td>
-                        </tr>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
