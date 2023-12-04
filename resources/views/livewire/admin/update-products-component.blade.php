@@ -2,12 +2,13 @@
     <div class="row">
         <div class="col-lg-8 mx-auto">
             <div class="card">
+                @include('livewire.admin.partials._alerts')
                 <div class="card-header py-3 bg-transparent">
                     <h5 class="mb-0">Update Product</h5>
                 </div>
                 <div class="card-body">
                     <div class="border p-3 rounded">
-                        <form wire:submit.prevent="add_product" class="row g-3">
+                        <form wire:submit.prevent="update_product" class="row g-3">
                             <div class="col-12">
                                 <label class="form-label">Product Name</label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror"
@@ -26,9 +27,9 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label">Images</label>
-                                <input class="form-control  @error('image') is-invalid @enderror" type="file"
-                                    multiple="" wire:model="image">
-                                @error('image')
+                                <input class="form-control  @error('new_image') is-invalid @enderror" type="file"
+                                    multiple="" wire:model="new_image">
+                                @error('new_image')
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
                             </div>
@@ -69,8 +70,10 @@
                                     <div class="row">
                                         @foreach ($images as $image)
                                             <div class="col-md-2 mt-2">
+                                                <a href="javascript:;" wire:click="deletImage({{$image->id}})"><i class="fa-regular fa-circle-xmark"></i></a>
                                                 <img src="{{ Storage::url($image->image) }}" class="img-thumbnail"
                                                     width="160rem" height="160rem">
+                                                
                                             </div>
                                         @endforeach
                                     </div>
