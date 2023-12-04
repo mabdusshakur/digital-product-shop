@@ -2,7 +2,6 @@
     <div class="row">
         <div class="col-lg-8 mx-auto">
             <div class="card">
-                @include('livewire.admin.partials._alerts')
                 <div class="card-header py-3 bg-transparent">
                     <h5 class="mb-0">Update Product</h5>
                 </div>
@@ -70,10 +69,11 @@
                                     <div class="row">
                                         @foreach ($images as $image)
                                             <div class="col-md-2 mt-2">
-                                                <a href="javascript:;" wire:click="deletImage({{$image->id}})"><i class="fa-regular fa-circle-xmark"></i></a>
+                                                <a href="javascript:;" wire:click="deletImage({{ $image->id }})"><i
+                                                        class="fa-regular fa-circle-xmark"></i></a>
                                                 <img src="{{ Storage::url($image->image) }}" class="img-thumbnail"
                                                     width="160rem" height="160rem">
-                                                
+
                                             </div>
                                         @endforeach
                                     </div>
@@ -92,6 +92,90 @@
                                 <button class="btn btn-primary px-4">Submit Item</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                @include('livewire.admin.partials._alerts')
+                <div class="card-header py-3 bg-transparent">
+                    <h5 class="mb-0">Subscription</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table align-middle table-striped">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Name & Regular Price</th>
+                                <th>Name & Sale Price</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($subscriptions as $subscription)
+                                <tr>
+                                    <td>
+                                        <span>{{ $subscription->name }} : ${{ $subscription->regular_price }}</span><br>
+                                    </td>
+                                    <td>
+                                        <span>{{ $subscription->name }} : ${{ $subscription->sale_price }}</span><br>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center gap-3 fs-6">
+                                            <a href="javascript:;" wire:click="deleteSubscription({{$subscription->id}})" class="text-danger"
+                                                data-bs-toggle="tooltip" data-bs-placement="bottom" title=""
+                                                data-bs-original-title="Delete" aria-label="Delete"><i
+                                                    class="bi bi-trash-fill"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card-body">
+                    <div class="border p-3 rounded">
+                        <div class="col-12">
+                            <div class="row g-3">
+                                <form wire:submit.prevent="add_subscription" class="row g-3">
+                                    <div class="col-lg-4">
+                                        <label class="form-label">Regular Price</label>
+                                        <input type="text"
+                                            class="form-control  @error('regular_price') is-invalid @enderror"
+                                            placeholder="Regular Price" wire:model="regular_price">
+                                        @error('regular_price')
+                                            <span class="invalid-feedback"> {{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label class="form-label">Sale Price</label>
+                                        <input type="text"
+                                            class="form-control  @error('sale_price') is-invalid @enderror"
+                                            placeholder="Sale Price" wire:model="sale_price">
+                                        @error('sale_price')
+                                            <span class="invalid-feedback"> {{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label class="form-label">Subscription Name</label>
+                                        <input type="text"
+                                            class="form-control  @error('subscription_name') is-invalid @enderror"
+                                            placeholder="Subscription Name" wire:model="subscription_name">
+                                        @error('subscription_name')
+                                            <span class="invalid-feedback"> {{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary px-4">Submit Subscription</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

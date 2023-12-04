@@ -7,6 +7,7 @@ use App\Models\Product;
 use Livewire\Component;
 use App\Models\Category;
 use Illuminate\Support\Str;
+use App\Models\Subscription;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Carbon;
 
@@ -30,6 +31,15 @@ class UpdateProductsComponent extends Component
         unlink('storage/'.$image->image);
         if ($image->delete()) {
             session()->flash('success', 'Image has been deleted successfully!');
+        } else {
+            session()->flash('error', 'Something went wrong!');
+        }
+    }
+    public function deleteSubscription($id)
+    {
+        $subscription = Subscription::find($id);
+        if ($subscription->delete()) {
+            session()->flash('success', 'Subscription has been deleted successfully!');
         } else {
             session()->flash('error', 'Something went wrong!');
         }
@@ -67,6 +77,25 @@ class UpdateProductsComponent extends Component
         }
     }
 
+    public function add_subscription()
+    {
+        $this->validate([
+            'subscription_name' => 'required',
+            'regular_price' => 'required|numeric',
+            'sale_price' => 'required|numeric',
+        ]);
+        $subscription = new Subscription();
+        $subscription->name = $this->subscription_name;
+        $subscription->regular_price = $this->regular_price;
+        $subscription->sale_price = $this->sale_price;
+        $subscription->product_id = $this->product->id;
+        $subscription->save();
+        $this->subscription_name = '';
+        $this->regular_price = '';
+        $this->sale_price = '';
+        session()->flash('success', 'Subscription has been added successfully!');
+    }
+
     public function render()
     {
         $this->name = $this->product->name;
@@ -82,6 +111,7 @@ class UpdateProductsComponent extends Component
         }
 
         $images = $this->product->image;
-        return view('livewire.admin.update-products-component', ['images' => $images])->layout('components.layouts.admin');
+        $subscription = $this->product->subscription;
+        return view('livewire.admin.update-products-component', ['images' => $images, 'subscriptions' => $subscription])->layout('components.layouts.admin');
     }
 }
