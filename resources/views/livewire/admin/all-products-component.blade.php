@@ -1,5 +1,6 @@
 <div>
     <div class="card">
+        @include('livewire.admin.partials._alerts')
         <div class="card-header py-3">
             <div class="row align-items-center m-0">
                 <div class="col-md-3 col-12 me-auto mb-md-0 mb-3">
@@ -81,10 +82,10 @@
                                             data-bs-placement="bottom" title=""
                                             data-bs-original-title="View detail" aria-label="Views"><i
                                                 class="bi bi-eye-fill"></i></a>
-                                        <a href="javascript:;" wire:click="editeProduct({{$category->id}})" class="text-warning" data-bs-toggle="tooltip"
+                                        <a href="javascript:;" wire:click="editeProduct({{$product->id}})" class="text-warning" data-bs-toggle="tooltip"
                                             data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
                                             aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                        <a href="javascript:;" wire:click="deleteProduct({{$category->id}})" class="text-danger" data-bs-toggle="tooltip"
+                                        <a href="javascript:;" wire:click="deleteProduct({{$product->id}})" class="text-danger" data-bs-toggle="tooltip"
                                             data-bs-placement="bottom" title="" data-bs-original-title="Delete"
                                             aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
                                     </div>
