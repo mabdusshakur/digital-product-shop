@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->float('regular_price');
             $table->float('sale_price')->nullable();
+            $table->foreignId('product_id')->references('id')->on('products')->onDelete('cascade');
             $table->timestamps();
         });
     }

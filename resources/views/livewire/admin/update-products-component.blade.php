@@ -26,7 +26,7 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label">Images</label>
-                                <input class="form-control  @error('image') is-invalid @enderror" type="file"
+                                <input class="form-control  @error('image') is-invalid @enderror" type="file" multiple=""
                                     wire:model="image">
                                 @error('image')
                                     <span class="invalid-feedback"> {{ $message }}</span>
@@ -97,9 +97,9 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="flash_sale_cb"
+                                    <input class="form-check-input" type="checkbox" id="flash_sale"
                                         wire:model="flash_sale">
-                                    <label class="form-check-label" for="flash_sale_cb">
+                                    <label class="form-check-label" for="flash_sale">
                                         Flash Sale ?
                                     </label>
                                 </div>

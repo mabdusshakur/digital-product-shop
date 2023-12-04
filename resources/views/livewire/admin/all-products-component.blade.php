@@ -42,25 +42,27 @@
                                 <td class="productlist">
                                     <a class="d-flex align-items-center gap-2" href="#">
                                         <div class="product-box">
-                                            <img src="{{ Storage::url($product->image[0]->image) }}" alt="">
+                                            @foreach ($product->image as $image)
+                                                @if ($loop->first)
+                                                    <img src="{{ Storage::url($image->image) }}"
+                                                        alt="{{ $product->name }}">
+                                                @endif
+                                            @endforeach
                                         </div>
                                         <div>
                                             <h6 class="mb-0 product-title">{{ $product->name }}</h6>
                                         </div>
                                     </a>
                                 </td>
-                                @php
-                                    $subscriptions = \App\Models\Subscription::where('id', $product->subscription_id)->get();
-                                @endphp
                                 <td>
-                                    @foreach ($subscriptions as $subscription)
+                                    @foreach ($product->subscription as $subscription)
                                         <span>{{ $subscription->name }} : ${{ $subscription->regular_price }}</span><br>
                                     @endforeach
                                 </td>
                                 <td>
-                                    @foreach ($subscriptions as $subscription)
-                                        <span>{{ $subscription->name }} : ${{ $subscription->sale_price }}</span><br>
-                                    @endforeach
+                                    @foreach ($product->subscription as $subscription)
+                                    <span>{{ $subscription->name }} : ${{ $subscription->sale_price }}</span><br>
+                                @endforeach
                                 </td>
                                 <td>
                                     @if ($product->status == true)
@@ -71,7 +73,7 @@
                                 </td>
                                 <td>
                                     @if ($product->stock > 0)
-                                        <span>{{$product->stock}}</span>
+                                        <span>{{ $product->stock }}</span>
                                     @else
                                         <span class="badge rounded-pill bg-warning">stock out</span>
                                     @endif
@@ -82,12 +84,14 @@
                                             data-bs-placement="bottom" title=""
                                             data-bs-original-title="View detail" aria-label="Views"><i
                                                 class="bi bi-eye-fill"></i></a>
-                                        <a href="javascript:;" wire:click="editeProduct({{$product->id}})" class="text-warning" data-bs-toggle="tooltip"
-                                            data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
-                                            aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                        <a href="javascript:;" wire:click="deleteProduct({{$product->id}})" class="text-danger" data-bs-toggle="tooltip"
-                                            data-bs-placement="bottom" title="" data-bs-original-title="Delete"
-                                            aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
+                                        <a href="javascript:;" wire:click="editeProduct({{ $product->id }})"
+                                            class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                            title="" data-bs-original-title="Edit info" aria-label="Edit"><i
+                                                class="bi bi-pencil-fill"></i></a>
+                                        <a href="javascript:;" wire:click="deleteProduct({{ $product->id }})"
+                                            class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                            title="" data-bs-original-title="Delete" aria-label="Delete"><i
+                                                class="bi bi-trash-fill"></i></a>
                                     </div>
                                 </td>
                             </tr>
