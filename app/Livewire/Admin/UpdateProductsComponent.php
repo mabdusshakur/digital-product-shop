@@ -11,7 +11,7 @@ class UpdateProductsComponent extends Component
 {
     use WithFileUploads;
 
-    public $name, $description, $categories, $category_id, $regular_price, $sale_price, $subscription_name, $stock, $status, $flash_sale, $image;
+    public $name, $description, $categories, $category_id, $regular_price, $sale_price, $subscription_name, $stock, $status, $flash_sale, $images;
     public $last_submited_product_id;
     public function mount($id)
     {
@@ -23,6 +23,7 @@ class UpdateProductsComponent extends Component
         $this->stock = $product->stock;
         $this->status = $product->status;
         $this->flash_sale = $product->flash_sale;
+        $this->images = $product->image;
         if ($this->flash_sale == null) {
             $this->flash_sale = false;
         } else if ($this->flash_sale == true) {

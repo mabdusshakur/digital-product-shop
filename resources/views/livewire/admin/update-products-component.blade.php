@@ -26,8 +26,8 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label">Images</label>
-                                <input class="form-control  @error('image') is-invalid @enderror" type="file" multiple=""
-                                    wire:model="image">
+                                <input class="form-control  @error('image') is-invalid @enderror" type="file"
+                                    multiple="" wire:model="image">
                                 @error('image')
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
@@ -64,34 +64,15 @@
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="col-12">
-                                <div class="row g-3">
-                                    <div class="col-lg-4">
-                                        <label class="form-label">Regular Price</label>
-                                        <input type="text"
-                                            class="form-control  @error('regular_price') is-invalid @enderror"
-                                            placeholder="Regular Price" wire:model="regular_price">
-                                        @error('regular_price')
-                                            <span class="invalid-feedback"> {{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <label class="form-label">Sale Price</label>
-                                        <input type="text"
-                                            class="form-control  @error('sale_price') is-invalid @enderror"
-                                            placeholder="Sale Price" wire:model="sale_price">
-                                        @error('sale_price')
-                                            <span class="invalid-feedback"> {{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <label class="form-label">Subscription Name</label>
-                                        <input type="text"
-                                            class="form-control  @error('subscription_name') is-invalid @enderror"
-                                            placeholder="Subscription Name" wire:model="subscription_name">
-                                        @error('subscription_name')
-                                            <span class="invalid-feedback"> {{ $message }}</span>
-                                        @enderror
+                            <div class="card-body">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        @foreach ($images as $image)
+                                            <div class="col-md-2 mt-2">
+                                                <img src="{{ Storage::url($image->image) }}" class="img-thumbnail"
+                                                    width="160rem" height="160rem">
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
