@@ -27,6 +27,7 @@ class UpdateProductsComponent extends Component
     public function deletImage($id)
     {
         $image = Image::find($id);
+        unlink('storage/'.$image->image);
         if ($image->delete()) {
             session()->flash('success', 'Image has been deleted successfully!');
         } else {
