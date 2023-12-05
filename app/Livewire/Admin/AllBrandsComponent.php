@@ -9,8 +9,8 @@ class AllBrandsComponent extends Component
 {
     public function deleteBrand($id)
     {
-        $category = Brand::find($id);
-        if ($category->delete()) {
+        $brand = Brand::find($id);
+        if ($brand->delete()) {
             session()->flash('success', 'Brand has been deleted successfully!');
         } else {
             session()->flash('error', 'Something went wrong!');
