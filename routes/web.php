@@ -30,9 +30,9 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/dashboard/categories', App\Livewire\Admin\AllCategoriesComponent::class)->name('admin.categories');
     Route::get('/admin/dashboard/categories/add', App\Livewire\Admin\AddCategoriesComponent::class)->name('admin.add-categories');
     Route::get('/admin/dashboard/categories/update/{id}', App\Livewire\Admin\UpdateCategoriesComponent::class)->name('admin.update-categories');
-    Route::get('/admin/dashboard/brands', App\Livewire\Admin\AllBrandsComponent::class);
-    Route::get('/admin/dashboard/brands/add', App\Livewire\Admin\AddBrandsComponent::class);
-    Route::get('/admin/dashboard/brands/update', App\Livewire\Admin\UpdateBrandsComponent::class);
+    Route::get('/admin/dashboard/brands', App\Livewire\Admin\AllBrandsComponent::class)->name('admin.brands');
+    Route::get('/admin/dashboard/brands/add', App\Livewire\Admin\AddBrandsComponent::class)->name('admin.add-brands');
+    Route::get('/admin/dashboard/brands/update/{id}', App\Livewire\Admin\UpdateBrandsComponent::class)->name('admin.update-brands');
     Route::get('/admin/dashboard/settings', App\Livewire\Admin\SettingsComponent::class);
     Route::get('/admin/dashboard/orders', App\Livewire\Admin\AllOrdersComponent::class);
     Route::get('/admin/dashboard/support-ticket', App\Livewire\Admin\SupportTicketComponent::class);
