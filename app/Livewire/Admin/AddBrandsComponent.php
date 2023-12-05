@@ -31,13 +31,13 @@ class AddBrandsComponent extends Component
             }
         }
 
-        $category = new Brand();
-        $category->name = $this->name;
-        $category->slug = Str::slug($this->name);
+        $brand = new Brand();
+        $brand->name = $this->name;
+        $brand->slug = Str::slug($this->name);
         $imageName = time().'.'.$this->logo->getClientOriginalExtension();
         $imageLocation = $this->logo->storeAs('brands', $imageName, 'public');
-        $category->image = $imageLocation;
-        if ($category->save()) {
+        $brand->image = $imageLocation;
+        if ($brand->save()) {
             session()->flash('success', 'Brand has been created successfully!');
         } else {
             session()->flash('error', 'Something went wrong!');

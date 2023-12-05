@@ -12,7 +12,7 @@
                             <div class="col-12">
                                 <label class="form-label">Brand Name</label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                    placeholder="Category Name" wire:model="name">
+                                    placeholder="Brand Name" wire:model="name">
                                 @error('name')
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
