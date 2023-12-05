@@ -39,9 +39,9 @@
                     </li>
                 </ul>
                 <ul>
-                    <li> <a href=""><i class="bi bi-circle"></i>All Brands</a>
+                    <li> <a href="{{ route('admin.brands') }}"><i class="bi bi-circle"></i>All Brands</a>
                     </li>
-                    <li> <a href=""><i class="bi bi-circle"></i>Add Brands</a>
+                    <li> <a href="{{ route('admin.add-brands') }}"><i class="bi bi-circle"></i>Add Brands</a>
                     </li>
                 </ul>
             </li>

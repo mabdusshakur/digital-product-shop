@@ -29,7 +29,7 @@
                                             data-bs-placement="bottom" title=""
                                             data-bs-original-title="View detail" aria-label="Views"><i
                                                 class="bi bi-eye-fill"></i></a>
-                                        <a href="javascript:;" wire:click="deleteBrand({{$brand->id}})" class="text-warning" data-bs-toggle="tooltip"
+                                        <a href="javascript:;" wire:click="editeBrand({{$brand->id}})" class="text-warning" data-bs-toggle="tooltip"
                                             data-bs-placement="bottom" title="" data-bs-original-title="Edit info"
                                             aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
                                         <a href="javascript:;" wire:click="deleteBrand({{$brand->id}})" class="text-danger" data-bs-toggle="tooltip"

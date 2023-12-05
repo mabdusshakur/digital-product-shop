@@ -36,7 +36,7 @@ class AddBrandsComponent extends Component
         $brand->slug = Str::slug($this->name);
         $imageName = time().'.'.$this->logo->getClientOriginalExtension();
         $imageLocation = $this->logo->storeAs('brands', $imageName, 'public');
-        $brand->image = $imageLocation;
+        $brand->logo = $imageLocation;
         if ($brand->save()) {
             session()->flash('success', 'Brand has been created successfully!');
         } else {
