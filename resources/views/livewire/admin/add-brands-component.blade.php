@@ -8,7 +8,7 @@
                 </div>
                 <div class="card-body">
                     <div class="border p-3 rounded">
-                        <form wire:submit.prevent="add_category" class="row g-3">
+                        <form wire:submit.prevent="add_brand" class="row g-3">
                             <div class="col-12">
                                 <label class="form-label">Brand Name</label>
                                 <input type="text" class="form-control @error('name') is-invalid @enderror"

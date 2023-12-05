@@ -13,7 +13,7 @@ class AddBrandsComponent extends Component
 
     public $name, $logo;
 
-    public function add_category()
+    public function add_brand()
     {
         $validatedData = $this->validate([
             'name' => 'required',
