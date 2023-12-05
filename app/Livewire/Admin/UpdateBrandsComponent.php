@@ -21,7 +21,7 @@ class UpdateBrandsComponent extends Component
         $this->oldImage = $brand->image;
         $this->brand_id = $brand->id;
     }
-    public function update_brands()
+    public function update_brand()
     {
         $validatedData = $this->validate([
             'name' => 'required',
