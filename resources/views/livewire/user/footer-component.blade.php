@@ -177,7 +177,7 @@
                                     </div>
                                     <div class="details">
                                         <h4 class="footer-heading">Phone:</h4>
-                                        <p>+000000000000</p>
+                                        <p>{{$phone_number}}</p>
                                     </div>
                                 </div>
                             </div>
