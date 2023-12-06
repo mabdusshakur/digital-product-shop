@@ -29,14 +29,22 @@ class SettingsComponent extends Component
         $setting = Setting::find(1);
         if ($setting) {
             $setting->phone_number = $this->phone_number;
-            $setting->save();
+            if($setting->save()){
+                session()->flash('success', 'Settings has been updated successfully!');
+            } else {
+                session()->flash('error', 'Something went wrong!');
+            }
         } 
 
         // create if setting does not exist
         else {
             $setting = new Setting();
             $setting->phone_number = $this->phone_number;
-            $setting->save();
+            if($setting->save()){
+                session()->flash('success', 'Settings has been created successfully!');
+            } else {
+                session()->flash('error', 'Something went wrong!');
+            }
         }
     }
     public function render()
