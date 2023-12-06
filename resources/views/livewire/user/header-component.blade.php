@@ -4,12 +4,15 @@
             <div class="container">
                 <div class="header-top">
                     <div class="header-profile">
+                        
                         @auth
                         <a href=""><span>Account</span></a>
                         <a href=""><span>Track Order</span></a>
-                        <a href="{{route('logout')}}"><span>Logout</span></a>
-                        @endauth
                         <a href=""><span>Support</span></a>
+                        <a href="{{route('logout')}}"><span>Logout</span></a>
+                        @else
+                        <a href="{{ route('login') }}"><span>Login</span></a>
+                        @endauth
                     </div>
                     <div class="header-contact d-none d-lg-block">
                         <a href="#">
