@@ -7,7 +7,6 @@
                         
                         @auth
                         <a href=""><span>Account</span></a>
-                        <a href=""><span>Track Order</span></a>
                         <a href=""><span>Support</span></a>
                         <a href="{{route('logout')}}"><span>Logout</span></a>
                         @else
