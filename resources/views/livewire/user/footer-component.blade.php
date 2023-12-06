@@ -115,7 +115,6 @@
                             </h4>
                             <div class="footer-link useful-link">
                                 <ul>
-                                    <li><a href="order.html">Track Order</a></li>
                                     <li><a href="cart.html">Delivery & Returns</a></li>
                                     <li><a href="privacy.html">Privacy Policy</a></li>
                                 </ul>
