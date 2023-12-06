@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin;
 
+use App\Models\Setting;
 use Livewire\Component;
 
 class SettingsComponent extends Component
@@ -22,6 +23,20 @@ class SettingsComponent extends Component
             foreach ($errors as $key => $value) {
                 $this->addError($key, $value);
             }
+        }
+
+        // update if setting exists
+        $setting = Setting::find(1);
+        if ($setting) {
+            $setting->phone_number = $this->phone_number;
+            $setting->save();
+        } 
+
+        // create if setting does not exist
+        else {
+            $setting = new Setting();
+            $setting->phone_number = $this->phone_number;
+            $setting->save();
         }
     }
     public function render()
