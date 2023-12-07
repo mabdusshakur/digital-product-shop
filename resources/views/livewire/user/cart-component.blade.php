@@ -39,13 +39,13 @@
                                             <img src="{{ Storage::url($cartItem->product->image[0]->image) }}" alt="{{ $cartItem->product->name }}">
                                         </div>
                                         <div class="wrapper-content">
-                                            <h5 class="heading">{{ $cartItem->product->name }} - {{ $cartItem->product->subscription[0]->name }}</h5>
+                                            <h5 class="heading">{{ $cartItem->product->name }} - {{ $cartItem->subscription->name }}</h5>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="table-wrapper">
                                     <div class="table-wrapper-center">
-                                        <h5 class="heading">${{ $cartItem->product->subscription[0]->regular_price }}</h5>
+                                        <h5 class="heading">${{ $cartItem->subscription->regular_price }}</h5>
                                     </div>
                                 </td>
                                 <td class="table-wrapper">
@@ -63,7 +63,7 @@
                                 </td>
                                 <td class="table-wrapper wrapper-total">
                                     <div class="table-wrapper-center">
-                                        <h5 class="heading">${{$cartItem->quantity * $cartItem->product->subscription[0]->regular_price }}</h5>
+                                        <h5 class="heading">${{$cartItem->quantity * $cartItem->subscription->regular_price }}</h5>
                                     </div>
                                 </td>
                                 <td class="table-wrapper">

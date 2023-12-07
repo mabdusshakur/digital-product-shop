@@ -13,4 +13,7 @@ class Cart extends Model
     public function product(){
         return $this->belongsTo(Product::class);
     }
+    public function subscription(){
+        return $this->belongsTo(Subscription::class);
+    }
 }
