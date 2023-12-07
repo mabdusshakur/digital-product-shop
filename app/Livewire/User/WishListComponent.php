@@ -2,12 +2,14 @@
 
 namespace App\Livewire\User;
 
+use App\Models\Wishlist;
 use Livewire\Component;
 
 class WishListComponent extends Component
 {
     public function render()
     {
-        return view('livewire.user.wish-list-component');
+        $wishlists = Wishlist::where('user_id', auth()->user()->id)->get();
+        return view('livewire.user.wish-list-component', ['wishlists' => $wishlists]);
     }
 }
