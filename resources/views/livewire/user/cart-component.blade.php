@@ -39,13 +39,13 @@
                                             <img src="{{ Storage::url($cartItem->product->image[0]->image) }}" alt="{{ $cartItem->product->name }}">
                                         </div>
                                         <div class="wrapper-content">
-                                            <h5 class="heading">Classic Oxford Shirt</h5>
+                                            <h5 class="heading">{{ $cartItem->product->name }} - {{ $cartItem->product->subscription[0]->name }}</h5>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="table-wrapper">
                                     <div class="table-wrapper-center">
-                                        <h5 class="heading">$10.00</h5>
+                                        <h5 class="heading">${{ $cartItem->product->subscription[0]->regular_price }}</h5>
                                     </div>
                                 </td>
                                 <td class="table-wrapper">
@@ -54,7 +54,7 @@
                                             <span class="minus">
                                                 -
                                             </span>
-                                            <span class="number">1</span>
+                                            <span class="number">{{ $cartItem->quantity }}</span>
                                             <span class="plus">
                                                 +
                                             </span>
@@ -63,7 +63,7 @@
                                 </td>
                                 <td class="table-wrapper wrapper-total">
                                     <div class="table-wrapper-center">
-                                        <h5 class="heading">$60.00</h5>
+                                        <h5 class="heading">${{$cartItem->quantity * $cartItem->product->subscription[0]->regular_price }}</h5>
                                     </div>
                                 </td>
                                 <td class="table-wrapper">
