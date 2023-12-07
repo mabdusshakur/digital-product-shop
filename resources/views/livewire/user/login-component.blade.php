@@ -30,7 +30,7 @@
                         </div>
                         <div class="login-btn text-center">
                             <button type="submit" class="shop-btn">Login</button>
-                                <span class="shop-account">New User ?<a href="">Register</a></span>
+                                <span class="shop-account">New User ?<a href="{{ route('register') }}">Register</a></span>
                         </div>
                     </div>
                 </form>

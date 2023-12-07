@@ -61,7 +61,7 @@
                         </div>
                         <div class="login-btn text-center">
                             <button type="submit" class="shop-btn">Create an Account</button>
-                            <span class="shop-account">Already have an account ?<a href="">Log In</a></span>
+                            <span class="shop-account">Already have an account ?<a href="{{ route('login') }}">Log In</a></span>
                         </div>
                     </div>
                 </form>
