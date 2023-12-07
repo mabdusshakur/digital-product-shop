@@ -9,11 +9,10 @@
 
 
                 @foreach ($products->sortByDesc('sold_count')->take(10) as $product)
-
                     <div class="col-lg-4 col-md-6">
                         <div class="product-wrapper" data-aos="fade-right">
                             <div class="product-img">
-                                <img src="{{Storage::url($product->image[0]->image)}}" alt="product-img">
+                                <img src="{{ Storage::url($product->image[0]->image) }}" alt="product-img">
                                 <div class="product-cart-items">
                                     <a href="#" class="cart cart-item">
                                         <span>
@@ -88,8 +87,12 @@
                                     <a href="product-info.html" class="product-details">{{ $product->name }}
                                     </a>
                                     <div class="price">
-                                        <span class="price-cut">$19.99</span>
-                                        <span class="new-price">$13.99</span>
+                                        @php
+                                            $lowestRegularPrice = $product->subscription->min('regular_price');
+                                            $lowestSalePrice = $product->subscription->min('sale_price');
+                                        @endphp
+                                        <span class="price-cut">${{ $lowestRegularPrice }}</span>
+                                        <span class="new-price">${{ $lowestSalePrice }}</span>
                                     </div>
                                 </div>
                             </div>
