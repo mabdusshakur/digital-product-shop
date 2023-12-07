@@ -5,9 +5,6 @@
         </div>
         <div class="top-selling-section">
             <div class="row g-5">
-
-
-
                 @foreach ($products->sortByDesc('sold_count')->take(10) as $product)
                     <div class="col-lg-4 col-md-6">
                         <div class="product-wrapper" data-aos="fade-right">
