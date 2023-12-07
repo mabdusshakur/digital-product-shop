@@ -39,7 +39,12 @@
                                     <div class="product-description">
                                         <a href="product-info.html" class="product-details">{{ $product->name }}</a>
                                         <div class="price">
-
+                                            @php
+                                                $lowestRegularPrice = $product->subscription->min('regular_price');
+                                                $lowestSalePrice = $product->subscription->min('sale_price');
+                                            @endphp
+                                            <span class="price-cut">${{ $lowestRegularPrice }}</span>
+                                            <span class="new-price">${{ $lowestSalePrice }}</span>
                                         </div>
                                     </div>
                                 </div>
