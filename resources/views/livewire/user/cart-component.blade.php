@@ -1,45 +1,46 @@
 <div>
-        <!--------------- cart-section---------------->
-        <section class="product-cart product footer-padding">
-            <div class="container">
-                <div class="cart-section">
-                    <table>
-                        <tbody>
-                            <tr class="table-row table-top-row">
-                                <td class="table-wrapper wrapper-product">
-                                    <h5 class="table-heading">PRODUCT</h5>
-                                </td>
-                                <td class="table-wrapper">
-                                    <div class="table-wrapper-center">
-                                        <h5 class="table-heading">PRICE</h5>
-                                    </div>
-                                </td>
-                                <td class="table-wrapper">
-                                    <div class="table-wrapper-center">
-                                        <h5 class="table-heading">QUANTITY</h5>
-                                    </div>
-                                </td>
-                                <td class="table-wrapper wrapper-total">
-                                    <div class="table-wrapper-center">
-                                        <h5 class="table-heading">TOTAL</h5>
-                                    </div>
-                                </td>
-                                <td class="table-wrapper">
-                                    <div class="table-wrapper-center">
-                                        <h5 class="table-heading">ACTION</h5>
-                                    </div>
-                                </td>
-                            </tr>
-                            
-                            @foreach ($cartItems as $cartItem)
+    <section class="product-cart product footer-padding">
+        <div class="container">
+            <div class="cart-section">
+                <table>
+                    <tbody>
+                        <tr class="table-row table-top-row">
+                            <td class="table-wrapper wrapper-product">
+                                <h5 class="table-heading">PRODUCT</h5>
+                            </td>
+                            <td class="table-wrapper">
+                                <div class="table-wrapper-center">
+                                    <h5 class="table-heading">PRICE</h5>
+                                </div>
+                            </td>
+                            <td class="table-wrapper">
+                                <div class="table-wrapper-center">
+                                    <h5 class="table-heading">QUANTITY</h5>
+                                </div>
+                            </td>
+                            <td class="table-wrapper wrapper-total">
+                                <div class="table-wrapper-center">
+                                    <h5 class="table-heading">TOTAL</h5>
+                                </div>
+                            </td>
+                            <td class="table-wrapper">
+                                <div class="table-wrapper-center">
+                                    <h5 class="table-heading">ACTION</h5>
+                                </div>
+                            </td>
+                        </tr>
+
+                        @foreach ($cartItems as $cartItem)
                             <tr class="table-row ticket-row">
                                 <td class="table-wrapper wrapper-product">
                                     <div class="wrapper">
                                         <div class="wrapper-img">
-                                            <img src="{{ Storage::url($cartItem->product->image[0]->image) }}" alt="{{ $cartItem->product->name }}">
+                                            <img src="{{ Storage::url($cartItem->product->image[0]->image) }}"
+                                                alt="{{ $cartItem->product->name }}">
                                         </div>
                                         <div class="wrapper-content">
-                                            <h5 class="heading">{{ $cartItem->product->name }} - {{ $cartItem->subscription->name }}</h5>
+                                            <h5 class="heading">{{ $cartItem->product->name }} -
+                                                {{ $cartItem->subscription->name }}</h5>
                                         </div>
                                     </div>
                                 </td>
@@ -63,7 +64,8 @@
                                 </td>
                                 <td class="table-wrapper wrapper-total">
                                     <div class="table-wrapper-center">
-                                        <h5 class="heading">${{$cartItem->quantity * $cartItem->subscription->regular_price }}</h5>
+                                        <h5 class="heading">
+                                            ${{ $cartItem->quantity * $cartItem->subscription->regular_price }}</h5>
                                     </div>
                                 </td>
                                 <td class="table-wrapper">
@@ -79,17 +81,16 @@
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach
-                            
-                        </tbody>
-                    </table>
-                </div>
-                <div class="wishlist-btn cart-btn">
-                    <a href="empty-cart.html" class="clean-btn">Clear Cart</a>
-                    <a href="#" class="shop-btn update-btn">Update Cart</a>
-                    <a href="checkout.html" class="shop-btn">Proceed to Checkout</a>
-                </div>
+                        @endforeach
+
+                    </tbody>
+                </table>
             </div>
-        </section>
-        <!--------------- cart-section-end---------------->
+            <div class="wishlist-btn cart-btn">
+                <a href="empty-cart.html" class="clean-btn">Clear Cart</a>
+                <a href="#" class="shop-btn update-btn">Update Cart</a>
+                <a href="checkout.html" class="shop-btn">Proceed to Checkout</a>
+            </div>
+        </div>
+    </section>
 </div>
