@@ -5,13 +5,15 @@
         </div>
         <div class="brand-section">
             
-            <div class="product-wrapper">
-                <div class="wrapper-img">
-                    <a href="product-sidebar.html">
-                        <img src="./assets/images/homepage-one/brand-img-1.webp" alt="img">
-                    </a>
+            @foreach ($brands as $brand)
+                <div class="product-wrapper">
+                    <div class="wrapper-img">
+                        <a href="product-sidebar.html">
+                            <img src="{{Storage::url($brand->logo)}}" alt="img">
+                        </a>
+                    </div>
                 </div>
-            </div>
+            @endforeach
 
         </div>
     </div>
