@@ -3,7 +3,6 @@
 namespace App\Livewire\User;
 
 use App\Models\Setting;
-use Illuminate\Support\Optional;
 use Livewire\Component;
 
 class FooterComponent extends Component
