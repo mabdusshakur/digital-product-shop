@@ -1,5 +1,4 @@
 <div>
-    <!--------------- wishlist-section---------------->
     <section class="cart product wishlist footer-padding" data-aos="fade-up">
         <div class="container">
             <div class="cart-section wishlist-section">
@@ -54,5 +53,4 @@
             </div>
         </div>
     </section>
-    <!--------------- wishlist-end---------------->
 </div>
