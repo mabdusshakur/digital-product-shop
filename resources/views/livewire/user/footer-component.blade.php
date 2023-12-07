@@ -152,7 +152,7 @@
                                     </div>
                                     <div class="details">
                                         <h4 class="footer-heading">Address:</h4>
-                                        <p>4517 Washington Ave. Manchester, Kentucky 39495</p>
+                                        <p>{{$address}}</p>
                                     </div>
                                 </div>
                                 <div class="phone address">

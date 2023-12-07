@@ -18,6 +18,22 @@
                                 @enderror
                             </div>
                             <div class="col-12">
+                                <label class="form-label">Address</label>
+                                <input type="text" class="form-control @error('address') is-invalid @enderror"
+                                    placeholder="Manchester, Kentucky 39495" wire:model="address">
+                                @error('address')
+                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Website Name</label>
+                                <input type="text" class="form-control @error('web_name') is-invalid @enderror"
+                                    placeholder="DigitalStore" wire:model="web_name">
+                                @error('web_name')
+                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
                                 <button class="btn btn-primary px-4">Save Setting</button>
                             </div>
                         </form>
