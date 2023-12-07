@@ -69,7 +69,6 @@
                                         <rect x="8" y="7.45703" width="9.25346" height="2.05632"
                                             transform="rotate(135 8 7.45703)" fill="white" />
                                     </svg>
-
                                 </span>
                             </a>
                         </div>
