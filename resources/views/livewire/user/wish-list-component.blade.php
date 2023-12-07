@@ -22,11 +22,7 @@
                                     <td class="table-wrapper wrapper-product">
                                         <div class="wrapper">
                                             <div class="wrapper-img">
-                                                @foreach ($wishlist->product->image as $image)
-                                                    @if ($loop->first)
-                                                        <img src="{{ Storage::url($image->image) }}" alt="{{ $wishlist->product->name }}">
-                                                    @endif
-                                                @endforeach
+                                                <img src="{{ Storage::url($wishlist->product->image[0]->image) }}" alt="{{ $wishlist->product->name }}">
                                             </div>
                                             <div class="wrapper-content">
                                                 <h5 class="heading">{{ $wishlist->product->name }}</h5>
