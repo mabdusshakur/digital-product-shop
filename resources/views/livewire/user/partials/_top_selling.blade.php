@@ -81,7 +81,7 @@
                                     </span>
                                 </div>
                                 <div class="product-description">
-                                    <a href="product-info.html" class="product-details">{{ $product->name }}
+                                    <a href="javascript:;" wire:click="productDetails({{ $product->id }},'{{$product->slug}}','{{$product->category_id}}')" class="product-details">{{ $product->name }}
                                     </a>
                                     <div class="price">
                                         @if ($product->subscription->count() > 1)
