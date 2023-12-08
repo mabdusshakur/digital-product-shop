@@ -10,7 +10,7 @@
                         <div class="col-xl-2 col-md-4">
                             <div class="product-wrapper" data-aos="fade-up">
                                 <div class="product-img">
-                                    <img src="./assets/images/homepage-one/product-img/product-img-9.webp"
+                                    <img src="{{ Storage::url($product->image[0]->image) }}"
                                         alt="product-img">
                                 </div>
                                 <div class="product-info">
