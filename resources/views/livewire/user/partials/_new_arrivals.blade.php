@@ -9,7 +9,7 @@
                     <div class="col-lg-3 col-sm-6">
                         <div class="product-wrapper" data-aos="fade-up">
                             <div class="product-img">
-                                <img src="" alt="product-img">
+                                <img src="{{ Storage::url($product->image[0]->image) }}" alt="product-img">
                                 <div class="product-cart-items">
                                     <a href="#" class="cart cart-item">
                                         <span>
