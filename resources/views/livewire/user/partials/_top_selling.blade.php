@@ -99,9 +99,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-cart-btn">
-                                <a href="cart.html" class="product-btn">Add To Cart</a>
-                            </div>
                         </div>
                     </div>
                 @endforeach
