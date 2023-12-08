@@ -62,7 +62,7 @@
                                 <span>Availabillity : </span>
                                 <span class="inner-text">
                                     @if ($product->stock > 0)
-                                         {{ $product->stock }} Products Available
+                                        {{ $product->stock }} Products Available
                                     @else
                                         <span class="text-danger">Out Of Stock</span>
                                     @endif
@@ -97,13 +97,24 @@
                                     </div>
                                     <div class="wishlist">
                                         <span>
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M17 1C14.9 1 13.1 2.1 12 3.7C10.9 2.1 9.1 1 7 1C3.7 1 1 3.7 1 7C1 13 12 22 12 22C12 22 23 13 23 7C23 3.7 20.3 1 17 1Z"
-                                                    stroke="#797979" stroke-width="2" stroke-miterlimit="10"
-                                                    stroke-linecap="square" />
-                                            </svg>
+                                            @if (Auth::user() && Auth::user()->wishlist->contains($product->id))
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M17 1C14.9 1 13.1 2.1 12 3.7C10.9 2.1 9.1 1 7 1C3.7 1 1 3.7 1 7C1 13 12 22 12 22C12 22 23 13 23 7C23 3.7 20.3 1 17 1Z"
+                                                        stroke="#797979" stroke-width="2" stroke-miterlimit="10"
+                                                        stroke-linecap="square" />
+                                                </svg>
+                                            @else
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M17 1C14.9 1 13.1 2.1 12 3.7C10.9 2.1 9.1 1 7 1C3.7 1 1 3.7 1 7C1 13 12 22 12 22C12 22 23 13 23 7C23 3.7 20.3 1 17 1Z"
+                                                        stroke-linecap="square" fill="red" />
+                                                </svg>
+                                            @endif
+
+
                                         </span>
                                     </div>
                                 </div>
@@ -121,7 +132,8 @@
                             </div>
                             <hr>
                             <div class="product-details">
-                                <p class="category">Category : <span class="inner-text">{{ $category->name }}</span></p>
+                                <p class="category">Category : <span class="inner-text">{{ $category->name }}</span>
+                                </p>
                             </div>
                             <hr>
                             <div class="product-share">
