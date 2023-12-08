@@ -1,6 +1,7 @@
 <div>
     <section class="product product-info">
         <div class="container">
+            @include('livewire.user.partials._alerts')
             <div class="blog-bradcrum">
                 <span><a href="{{ route('user.home') }}">Home</a></span>
                 <span class="devider">/</span>
@@ -85,39 +86,16 @@
                                 </select>
                             </div>
                             <div class="product-quantity">
-                                <div class="quantity-wrapper">
-                                    <div class="quantity">
-                                        <span class="minus">
-                                            -
-                                        </span>
-                                        <span class="number">1</span>
-                                        <span class="plus">
-                                            +
-                                        </span>
-                                    </div>
-                                    <div class="wishlist">
-                                        <span>
-                                            @if (Auth::user() && Auth::user()->wishlist->contains($product->id))
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M17 1C14.9 1 13.1 2.1 12 3.7C10.9 2.1 9.1 1 7 1C3.7 1 1 3.7 1 7C1 13 12 22 12 22C12 22 23 13 23 7C23 3.7 20.3 1 17 1Z"
-                                                        stroke="#797979" stroke-width="2" stroke-miterlimit="10"
-                                                        stroke-linecap="square" />
-                                                </svg>
-                                            @else
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M17 1C14.9 1 13.1 2.1 12 3.7C10.9 2.1 9.1 1 7 1C3.7 1 1 3.7 1 7C1 13 12 22 12 22C12 22 23 13 23 7C23 3.7 20.3 1 17 1Z"
-                                                        stroke-linecap="square" fill="red" />
-                                                </svg>
-                                            @endif
+                                @if (Auth::user()->wishlist()->whereProductId($this->product->id)->exists())
+                                    <button class="btn btn-white" disabled>
+                                        <i class="fa-solid fa-heart fa-2xl" style="color: red"></i>
+                                    </button>
+                                @else
+                                    <button class="btn btn-white" wire:click="addToWishList">
+                                        <i class="fa-regular fa-heart fa-2xl"></i>
+                                    </button>
+                                @endif
 
-
-                                        </span>
-                                    </div>
-                                </div>
                                 <a href="#" class="shop-btn">
                                     <span>
                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
