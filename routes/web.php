@@ -19,8 +19,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('/login', App\Livewire\User\LoginComponent::class)->name('login');
 Route::get('/register', App\Livewire\User\RegisterComponent::class)->name('register');
-Route::get('/about-us', App\Livewire\User\AboutUsComponent::class);
-Route::get('/contact-us', App\Livewire\User\ContactUsComponent::class);
+Route::get('/about-us', App\Livewire\User\AboutUsComponent::class)->name('about-us');
+Route::get('/contact-us', App\Livewire\User\ContactUsComponent::class)->name('contact-us');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/dashboard', App\Livewire\Admin\HomeComponent::class)->name('admin.dashboard');
