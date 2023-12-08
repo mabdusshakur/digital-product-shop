@@ -11,7 +11,7 @@
                             <div class="product-img">
                                 <img src="{{ Storage::url($product->image[0]->image) }}" alt="product-img">
                                 <div class="product-cart-items">
-                                    @if (Auth::user()->wishlist()->whereProductId($product->id)->first())
+                                    @if (Auth::user() && Auth::user()->wishlist()->whereProductId($product->id)->first())
                                         <i class="fa-solid fa-heart fa-2xl" style="color: red"
                                             title="Available in your wishlist"></i>
                                     @else
