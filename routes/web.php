@@ -8,7 +8,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/wishlist', App\Livewire\User\WishListComponent::class)->name('user.wishlist');
     Route::get('/cart', App\Livewire\User\CartComponent::class)->name('user.cart');
     Route::get('/profile', App\Livewire\User\ProfileComponent::class)->name('user.profile');
-    Route::get('/product-details', App\Livewire\User\ProductDetailsComponent::class)->name('user.product-details');
+    Route::get('/product-details/{id}/{slug?}/{category_id?}', App\Livewire\User\ProductDetailsComponent::class)->name('user.product-details');
     Route::get('/products', App\Livewire\User\ProductsComponent::class)->name('user.products');
 
     Route::get('/logout', function () {
