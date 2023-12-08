@@ -2,57 +2,37 @@
     <section class="product product-info">
         <div class="container">
             <div class="blog-bradcrum">
-                <span><a href="index.html">Home</a></span>
+                <span><a href="{{ route('user.home') }}">Home</a></span>
                 <span class="devider">/</span>
-                <span><a href="product-sidebar.html">Shop</a></span>
-                <span class="devider">/</span>
-                <span><a href="#">Product Details</a></span>
+                <span><a>Product Details</a></span>
             </div>
             <div class="product-info-section">
                 <div class="row ">
                     <div class="col-md-6">
                         <div class="product-info-img" data-aos="fade-right">
                             <div class="swiper product-top">
-                                <div class="product-discount-content">
-                                    <h4>-50%</h4>
-                                </div>
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide slider-top-img">
-                                        <img src="" alt="img">
-                                    </div>
-                                    <div class="swiper-slide slider-top-img">
-                                        <img src="./assets/images/homepage-one/product-img/product-slider-img-1.webp"
-                                            alt="img">
-                                    </div>
-                                    <div class="swiper-slide slider-top-img">
-                                        <img src="./assets/images/homepage-one/product-img/product-slider-img-2.webp"
-                                            alt="img">
-                                    </div>
+                                    @foreach ($product->image as $image)
+                                        <div class="swiper-slide slider-top-img">
+                                            <img src="{{ Storage::url($image->image) }}" alt="img">
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="swiper product-bottom">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide slider-bottom-img">
-                                        <img src="" alt="img">
-                                    </div>
-                                    <div class="swiper-slide slider-bottom-img">
-                                        <img src="./assets/images/homepage-one/product-img/product-img-17.png"
-                                            alt="img">
-                                    </div>
-                                    <div class="swiper-slide slider-bottom-img">
-                                        <img src="./assets/images/homepage-one/product-img/product-slider-img-2.webp"
-                                            alt="img">
-                                    </div>
-
+                                    @foreach ($product->image as $image)
+                                        <div class="swiper-slide slider-bottom-img">
+                                            <img src="{{ Storage::url($image->image) }}" alt="img">
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="product-info-content" data-aos="fade-left">
-                            <span class="wrapper-subtitle">Subscription</span>
-                            <h5>Netflix Subscription
-                            </h5>
+                            <h5>{{ $product->name }}</h5>
                             <div class="ratings">
                                 <span>
                                     <svg width="75" height="15" viewBox="0 0 75 15" fill="none"
@@ -76,24 +56,32 @@
                                 </span>
                                 <span class="text">6 Reviews</span>
                             </div>
-                            <div class="price">
-                                <span class="price-cut">$9.99</span>
-                                <span class="new-price">$6.99</span>
-                            </div>
-                            <p class="content-paragraph">It is a long established fact that a reader will be distracted
-                                by <span class="inner-text">the readable there content of a page.</span></p>
+                            <p class="content-paragraph">{{ Str::limit($product->description, 60) }}</p>
                             <hr>
                             <div class="product-availability">
                                 <span>Availabillity : </span>
-                                <span class="inner-text">132 Products Available</span>
+                                <span class="inner-text">
+                                    @if ($product->stock > 0)
+                                         {{ $product->stock }} Products Available
+                                    @else
+                                        <span class="text-danger">Out Of Stock</span>
+                                    @endif
+                                </span>
                             </div>
                             <div class="product-size">
                                 <P class="size-title">Package</P>
                                 <select class="form-select form-select-lg mb-3" aria-label="Default select example">
                                     <option selected>Select Your Package</option>
-                                    <option value="1">1 Month</option>
-                                    <option value="2">6 Month</option>
-                                    <option value="3">1 Year</option>
+                                    @foreach ($product->subscription as $subscription)
+                                        <option value="{{ $subscription->id }}">
+                                            {{ $subscription->name }}
+                                            @if ($subscription->sale_price)
+                                                <span> - Price : {{ $subscription->sale_price }}</span>
+                                            @else
+                                                <span> - Price : {{ $subscription->regular_price }}</span>
+                                            @endif
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="product-quantity">
@@ -133,8 +121,7 @@
                             </div>
                             <hr>
                             <div class="product-details">
-                                <p class="category">Category : <span class="inner-text">Subscription</span></p>
-                                <p class="tags">Tags : <span class="inner-text">Netflix</span></p>
+                                <p class="category">Category : <span class="inner-text">{{ $category->name }}</span></p>
                             </div>
                             <hr>
                             <div class="product-share">
@@ -201,33 +188,8 @@
                         <div class="product-intro-section">
                             <h5 class="intro-heading">Introduction</h5>
                             <p class="product-details">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type specimen book. It has
-                                survived not only five centuries but also the on leap into electronic typesetting,
-                                remaining essentially unchanged. It wasn’t popularised in the 1960s with the release of
-                                Letraset sheets containing Lorem Ipsum passages, andei more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum to make a
-                                type specimen book.
+                                {{ $product->description }}
                             </p>
-                        </div>
-                        <div class="product-feature">
-                            <h5 class="intro-heading">Features :</h5>
-                            <ul>
-                                <li>
-                                    <p>slim body with metal cover</p>
-                                </li>
-                                <li>
-                                    <p>latest Intel Core i5-1135G7 processor (4 cores / 8 threads)</p>
-                                </li>
-                                <li>
-                                    <p>8GB DDR4 RAM and fast 512GB PCIe SSD</p>
-                                </li>
-                                <li>
-                                    <p>NVIDIA GeForce MX350 2GB GDDR5 graphics card backlit keyboard, touchpad with
-                                        gesture support</p>
-                                </li>
-                            </ul>
                         </div>
                     </div>
 
