@@ -16,6 +16,11 @@ class HomeComponent extends Component
         $this->products = Product::all();
         $this->brands = Brand::all();
     }
+    public function productDetails($id, $slug, $category_id)
+    {
+        return redirect()->route('user.product-details', ['id' => $id, 'slug' => $slug, 'category_id' => $category_id]);
+    }
+
     public function render()
     {
         return view('livewire.user.home-component');
