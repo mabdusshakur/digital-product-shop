@@ -11,7 +11,7 @@
                             <div class="product-img">
                                 <img src="{{ Storage::url($product->image[0]->image) }}" alt="product-img">
                                 <div class="product-cart-items">
-                                    <a href="wishlist.html" class="favourite cart-item">
+                                    <a href="javascript:;" wire:click="addToWishList({{$product->id}})" class="favourite cart-item">
                                         <span>
                                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
