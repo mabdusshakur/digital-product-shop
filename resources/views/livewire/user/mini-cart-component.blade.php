@@ -8,7 +8,7 @@
                 <div class="wrapper">
                     <div class="wrapper-item">
                         <div class="wrapper-img">
-                            <img src="" alt="img">
+                            <img src="{{Storage::url($cartItem->product->image[0]->image)}}" alt="img">
                         </div>
                         <div class="wrapper-content">
                             <h5 class="wrapper-title">{{ $cartItem->product->name }} -
