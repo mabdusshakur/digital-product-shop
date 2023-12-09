@@ -11,7 +11,11 @@ class MiniCartComponent extends Component
     public $subtotal;
     public function render()
     {
-        $cartItems = Cart::where('user_id', Auth::user()->id)->get();
+        if (Auth::check()) {
+            $cartItems = Cart::where('user_id', Auth::user()->id)->get();
+        } else {
+            $cartItems = [];
+        }
         return view('livewire.user.mini-cart-component', ['cartItems' => $cartItems]);
     }
 }
