@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('web_name')->nullable();
             $table->string('logo')->nullable();
             $table->string('favicon')->nullable();
+            $table->string('email')->nullable();
+            $table->string('iframe_map_link')->nullable();
             $table->timestamps();
         });
     }
