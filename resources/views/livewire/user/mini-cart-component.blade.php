@@ -37,7 +37,7 @@
                 <h5 class="wrapper-title">${{ $subtotal }}</h5>
             </div>
             <div class="cart-btn">
-                <a href="cart.html" class="shop-btn view-btn">View Cart</a>
+                <a href="{{route('user.cart')}}" class="shop-btn view-btn">View Cart</a>
                 <a href="checkout.html" class="shop-btn checkout-btn">Checkout Now</a>
             </div>
         </div>
