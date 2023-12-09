@@ -15,7 +15,7 @@
                                 {{ $about->description }}
                             </p>
 
-                            <a href="contact-us.html" class="shop-btn">
+                            <a href="{{route('contact-us')}}" class="shop-btn">
                                 Contact us
                                 <span>
                                     <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
