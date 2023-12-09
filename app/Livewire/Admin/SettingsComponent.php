@@ -8,6 +8,17 @@ use Livewire\Component;
 class SettingsComponent extends Component
 {
     public $phone_number, $address, $web_name, $email, $iframe_map_link;
+    public function mount()
+    {
+        $setting = Setting::find(1);
+        if ($setting) {
+            $this->phone_number = $setting->phone_number;
+            $this->address = $setting->address;
+            $this->web_name = $setting->web_name;
+            $this->email = $setting->email;
+            $this->iframe_map_link = $setting->iframe_map_link;
+        }
+    }
     public function save_settings()
     {
         $validatedData = $this->validate([
