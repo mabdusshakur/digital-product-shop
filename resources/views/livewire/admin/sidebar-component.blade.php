@@ -53,8 +53,8 @@
                     <div class="menu-title">Settings</div>
                 </a>
                 <ul>
-                    <li> <a href="{{ route('admin.settings') }}"><i class="bi bi-circle"></i>General Setting</a>
-                    </li>
+                    <li> <a href="{{ route('admin.settings') }}"><i class="bi bi-circle"></i>General Setting</a></li>
+                    <li> <a href="{{ route('admin.settings.about') }}"><i class="bi bi-circle"></i>About Setting</a></li>
                 </ul>
             </li>
 
