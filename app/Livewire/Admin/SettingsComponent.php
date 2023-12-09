@@ -7,13 +7,15 @@ use Livewire\Component;
 
 class SettingsComponent extends Component
 {
-    public $phone_number, $address, $web_name;
+    public $phone_number, $address, $web_name, $email, $iframe_map_link;
     public function save_settings()
     {
         $validatedData = $this->validate([
             'phone_number' => 'required|numeric',
             'address' => 'required|string',
             'web_name' => 'required|string',
+            'email' => 'required|email',
+            'iframe_map_link' => 'required|string',
         ]);
 
         if (!$validatedData) {
@@ -33,6 +35,8 @@ class SettingsComponent extends Component
             $setting->phone_number = $this->phone_number;
             $setting->address = $this->address;
             $setting->web_name = $this->web_name;
+            $setting->email = $this->email;
+            $setting->iframe_map_link = $this->iframe_map_link;
             if($setting->save()){
                 session()->flash('success', 'Settings has been updated successfully!');
             } else {
@@ -46,6 +50,8 @@ class SettingsComponent extends Component
             $setting->phone_number = $this->phone_number;
             $setting->address = $this->address;
             $setting->web_name = $this->web_name;
+            $setting->email = $this->email;
+            $setting->iframe_map_link = $this->iframe_map_link;
             if($setting->save()){
                 session()->flash('success', 'Settings has been created successfully!');
             } else {
