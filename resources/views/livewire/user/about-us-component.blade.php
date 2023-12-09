@@ -3,7 +3,7 @@
         <div class="container">
             <div class="about-section">
                 <div class="row align-items-center gy-5">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 mb-4">
                         <div class="about-img" data-aos="fade-right">
                             <img src="{{Storage::url($about->image)}}" alt="img">
                         </div>
