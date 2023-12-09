@@ -1,6 +1,7 @@
 <div>
     <section class="contact product footer-padding">
         <div class="container">
+            @include('livewire.user.partials._alerts')
             <div class="contact-section">
                 <div class="row">
                     <div class="col-lg-6">
@@ -33,7 +34,7 @@
                                                 </div>
                                                 <div class="wrapper-content">
                                                     <h5 class="wrapper-heading">Phone</h5>
-                                                    <p class="paragraph">{{$setting->phone_number}}</p>
+                                                    <p class="paragraph">{{ $setting->phone_number }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -63,7 +64,7 @@
                                                 </div>
                                                 <div class="wrapper-content">
                                                     <h5 class="wrapper-heading">Email</h5>
-                                                    <p class="paragraph">{{$setting->email}}</p>
+                                                    <p class="paragraph">{{ $setting->email }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -85,13 +86,12 @@
                                                     </div>
                                                     <div class="address-content">
                                                         <h5 class="wrapper-heading">Address</h5>
-                                                        <p class="paragraph">{{$setting->address}}</p>
+                                                        <p class="paragraph">{{ $setting->address }}</p>
                                                     </div>
                                                 </div>
                                                 <div class="contact-map">
-                                                    <iframe
-                                                        src="{{$setting->iframe_map_link}}"
-                                                        width="524" height="206" allowfullscreen="" loading="lazy"
+                                                    <iframe src="{{ $setting->iframe_map_link }}" width="524"
+                                                        height="206" allowfullscreen="" loading="lazy"
                                                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                                                 </div>
                                             </div>
@@ -105,29 +105,48 @@
                         <div class="question-section login-section ">
                             <div class="review-form">
                                 <h5 class="comment-title">Get In Touch</h5>
-                                <div class=" account-inner-form">
-                                    <div class="review-form-name">
-                                        <label for="fname" class="form-label">Name*</label>
-                                        <input type="text" id="fname" class="form-control" placeholder="Name">
+                                <form wire:submit.prevent="contact">
+                                    <div class=" account-inner-form">
+                                        <div class="review-form-name">
+                                            <label for="fname" class="form-label">Name*</label>
+                                            <input type="text"
+                                                class="form-control @error('sender_name') is-invalid @enderror"
+                                                placeholder="Your Name" wire:model="sender_name">
+                                            @error('sender_name')
+                                                <span class="invalid-feedback"> {{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="review-form-name">
+                                            <label for="email" class="form-label">Email*</label>
+                                            <input type="text"
+                                                class="form-control @error('sender_email') is-invalid @enderror"
+                                                placeholder="Your Email" wire:model="sender_email">
+                                            @error('sender_email')
+                                                <span class="invalid-feedback"> {{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="review-form-name">
+                                            <label for="subject" class="form-label">Subject*</label>
+                                            <input type="text"
+                                                class="form-control @error('subject') is-invalid @enderror"
+                                                placeholder="Subject" wire:model="subject">
+                                            @error('subject')
+                                                <span class="invalid-feedback"> {{ $message }}</span>
+                                            @enderror
+                                        </div>
                                     </div>
-                                    <div class="review-form-name">
-                                        <label for="email" class="form-label">Email*</label>
-                                        <input type="email" id="email" class="form-control"
-                                            placeholder="user@gmail.com">
+                                    <div class="review-textarea">
+                                        <label for="floatingTextarea">Massage*</label>
+                                        <textarea class="form-control @error('message') is-invalid @enderror" placeholder="Write Massage..........."
+                                            id="floatingTextarea" rows="3" wire:model="message"></textarea>
+                                        @error('message')
+                                            <span class="invalid-feedback"> {{ $message }}</span>
+                                        @enderror
                                     </div>
-                                    <div class="review-form-name">
-                                        <label for="subject" class="form-label">Subject*</label>
-                                        <input type="text" id="subject" class="form-control"
-                                            placeholder="Subject">
+                                    <div class="login-btn">
+                                        <button type="submit" class="shop-btn">Send Now</button>
                                     </div>
-                                </div>
-                                <div class="review-textarea">
-                                    <label for="floatingTextarea">Massage*</label>
-                                    <textarea class="form-control" placeholder="Write Massage..........." id="floatingTextarea" rows="3"></textarea>
-                                </div>
-                                <div class="login-btn">
-                                    <a href="#" class="shop-btn">Send Now</a>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
