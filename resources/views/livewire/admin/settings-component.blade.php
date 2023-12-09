@@ -34,6 +34,22 @@
                                 @enderror
                             </div>
                             <div class="col-12">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                    placeholder="example@email.com" wire:model="email">
+                                @error('email')
+                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Map Iframe Link</label>
+                                <input type="text" class="form-control @error('iframe_map_link') is-invalid @enderror"
+                                    placeholder="https://www.google.com/maps/embed?pb=!.............." wire:model="iframe_map_link">
+                                @error('iframe_map_link')
+                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
                                 <button class="btn btn-primary px-4">Save Setting</button>
                             </div>
                         </form>
