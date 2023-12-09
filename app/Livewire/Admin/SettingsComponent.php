@@ -10,7 +10,7 @@ class SettingsComponent extends Component
     public $phone_number, $address, $web_name, $email, $iframe_map_link;
     public function mount()
     {
-        $setting = Setting::find(1);
+        $setting = Setting::get()->first();
         if ($setting) {
             $this->phone_number = $setting->phone_number;
             $this->address = $setting->address;
@@ -41,7 +41,7 @@ class SettingsComponent extends Component
         }
 
         // update if setting exists
-        $setting = Setting::find(1);
+        $setting = Setting::get()->first();
         if ($setting) {
             $setting->phone_number = $this->phone_number;
             $setting->address = $this->address;
