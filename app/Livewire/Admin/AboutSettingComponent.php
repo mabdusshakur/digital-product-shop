@@ -8,6 +8,6 @@ class AboutSettingComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.about-setting-component');
+        return view('livewire.admin.about-setting-component')->layout('components.layouts.admin');
     }
 }
