@@ -1,6 +1,7 @@
 <div>
     <section class="product-cart product footer-padding">
         <div class="container">
+            @include('livewire.user.partials._alerts')
             <div class="cart-section">
                 <table>
                     <tbody>
@@ -87,8 +88,7 @@
                 </table>
             </div>
             <div class="wishlist-btn cart-btn">
-                <a href="empty-cart.html" class="clean-btn">Clear Cart</a>
-                <a href="#" class="shop-btn update-btn">Update Cart</a>
+                <a href="javascript:;" wire:click="clearCart" class="clean-btn">Clear Cart</a>
                 <a href="{{route('user.checkout')}}" class="shop-btn">Proceed to Checkout</a>
             </div>
         </div>
