@@ -39,7 +39,8 @@
                                 <div class="order-summery">
                                     <div class="subtotal product-total">
                                         <h5 class="wrapper-heading">PRODUCT</h5>
-                                        <h5 class="wrapper-heading">TOTAL</h5>
+                                        <h5 class="wrapper-heading">Unit Price</h5>
+                                        <h5 class="wrapper-heading">Total Price</h5>
                                     </div>
                                     <hr>
                                     <div class="subtotal product-total">
@@ -48,11 +49,20 @@
                                             @foreach ($cartItems as $item)
                                                 <li>
                                                     <div class="product-info">
-                                                        <h5 class="wrapper-heading">{{$item->product->name}} X{{$item->quantity}}</h5>
-                                                        <p class="paragraph">{{Str::limit($item->product->description, 30)}}</p>
+                                                        <h5 class="wrapper-heading">{{ $item->product->name }}
+                                                            X{{ $item->quantity }}</h5>
+                                                        <p class="paragraph">
+                                                            {{ Str::limit($item->product->description, 30) }}</p>
                                                     </div>
                                                     <div class="price">
-                                                        <h5 class="wrapper-heading">${{$item->subscription->sale_price ?? $item->subscription->regular_price}}</h5>
+                                                        <h5 class="wrapper-heading">
+                                                            ${{ $item->subscription->sale_price ?? $item->subscription->regular_price }}
+                                                        </h5>
+                                                    </div>
+                                                    <div class="price">
+                                                        <h5 class="wrapper-heading">
+                                                            ${{ ($item->subscription->sale_price ?? $item->subscription->regular_price) * $item->quantity }}
+                                                        </h5>
                                                     </div>
                                                 </li>
                                             @endforeach
@@ -62,7 +72,7 @@
                                     <hr>
                                     <div class="subtotal total">
                                         <h5 class="wrapper-heading">TOTAL</h5>
-                                        <h5 class="wrapper-heading price">${{$total_price}}</h5>
+                                        <h5 class="wrapper-heading price">${{ $total_price }}</h5>
                                     </div>
                                     <div class="subtotal payment-type">
                                         <h5 class="wrapper-heading">Payment Type</h5>
