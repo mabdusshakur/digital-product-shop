@@ -28,26 +28,32 @@ class ProductDetailsComponent extends Component
             'user_id' => auth()->user()->id,
             'product_id' => $this->product->id
         ]);
-        if($Wishlist){
+        if ($Wishlist) {
             return redirect()->route('user.wishlist')->with('success', 'Item added in wishlist successfully.');
         }
     }
     public function addToCart()
     {
-        if(!auth()->check()){
+        if (!auth()->check()) {
             return redirect()->route('login');
         }
-        $cart = Cart::create([
-            'user_id' => auth()->user()->id,
-            'product_id' => $this->product->id,
-            'subscription_id' => $this->subscription_id,
-            'quantity' => $this->quantity
-        ]);
-        if($cart){
-           session()->flash('success', 'Item added in cart successfully.');
-        }
-        else{
-            session()->flash('error', 'Something went wrong!');
+        $cart = Cart::where('user_id', auth()->user()->id)->where('subscription_id', $this->subscription_id)->first();
+        if ($cart) {
+            $cart->quantity += $this->quantity;
+            $cart->save();
+            session()->flash('success', 'Item added in cart successfully.');
+        } else {
+            $cart = Cart::create([
+                'user_id' => auth()->user()->id,
+                'product_id' => $this->product->id,
+                'subscription_id' => $this->subscription_id,
+                'quantity' => $this->quantity
+            ]);
+            if ($cart) {
+                session()->flash('success', 'Item added in cart successfully.');
+            } else {
+                session()->flash('error', 'Something went wrong!');
+            }
         }
     }
     public function render()
