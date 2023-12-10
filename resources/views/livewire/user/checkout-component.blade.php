@@ -76,30 +76,38 @@
                                     </div>
                                     <div class="subtotal payment-type">
                                         <h5 class="wrapper-heading">Payment Type</h5>
-                                        <div class="payment-type-inner">
-                                            @foreach ($paymentMethods as $key => $paymentMethod)
+                                        <div class="payment-type-inner p-4">
+
+                                            @foreach ($paymentMethods as $method)
                                                 <div class="payment-type-item">
-                                                    <input type="radio" id="{{ $key }}" name="payment"
-                                                        wire:model="payment_method" value="{{ $key }}">
-                                                    <label for="{{ $key }}"
-                                                        class="form-label">{{ $paymentMethod }}</label>
+                                                    <input type="radio" id="{{ $method->name }}" name="payment"
+                                                        wire:model="payment_method" value="{{ $method->name }}">
+                                                    <label for="{{ $method->name }}" class="form-label"
+                                                        style="font-size: 1.4rem;">{{ $method->name }} : 
+                                                        <span class="text-success">{{ $method->number }}</span> : 
+                                                        <span class="text-danger">   ->{{ $method->note }}</span></label>
                                                 </div>
                                             @endforeach
-                                            <div>
-                                                <label for="payment_number" class="form-label">Your Account
+
+                                            {{-- @foreach ($paymentMethods as $key => $paymentMethod)
+                                              
+                                            @endforeach --}}
+                                            <div class="m-3">
+                                                <label for="payment_number" class="form-label" style="font-size: 1.4rem;">Your Account
                                                     {{ $payment_method }} Number*</label>
                                                 <input type="tel" id="payment_number"
                                                     class="form-control @error('payment_number') is-invalid @enderror"
-                                                    placeholder="+000000000000" wire:model="payment_number">
+                                                    placeholder="+000000000000" wire:model="payment_number" style="width: 20rem; height: 3rem; font-size: 1.2rem;">
                                                 @error('payment_number')
                                                     <span class="invalid-feedback"> {{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            <div>
-                                                <label for="payment_transaction_id" class="form-label">Transaction ID*</label>
+                                            <div class="m-3">
+                                                <label for="payment_transaction_id" class="form-label" style="font-size: 1.4rem;">Transaction
+                                                    ID*</label>
                                                 <input type="text" id="payment_transaction_id"
                                                     class="form-control @error('payment_transaction_id') is-invalid @enderror"
-                                                    placeholder="F9UHDS645FFSD" wire:model="payment_transaction_id">
+                                                    placeholder="F9UHDS645FFSD" wire:model="payment_transaction_id" style="width: 20rem; height: 3rem; font-size: 1.2rem;">
                                                 @error('payment_transaction_id')
                                                     <span class="invalid-feedback"> {{ $message }}</span>
                                                 @enderror

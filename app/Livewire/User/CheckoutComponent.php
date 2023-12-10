@@ -4,8 +4,9 @@ namespace App\Livewire\User;
 
 use App\Models\Cart;
 use App\Models\Order;
-use App\Models\OrderItem;
 use Livewire\Component;
+use App\Models\OrderItem;
+use App\Models\PaymentSetting;
 
 class CheckoutComponent extends Component
 {
@@ -14,13 +15,9 @@ class CheckoutComponent extends Component
     public $cartItems;
     public $total_price;
 
-    public $payment_method = 'bkash';
-    public $payment_number, $payment_transaction_id;
-    public $paymentMethods = [
-        'bkash' => 'Bkash',
-        'rocket' => 'Rocket',
-        'nagad' => 'Nagad',
-    ];
+    public $payment_method, $payment_number, $payment_transaction_id;
+
+    public $paymentMethods;
 
     public function mount()
     {
@@ -32,6 +29,7 @@ class CheckoutComponent extends Component
         $this->total_price = $this->cartItems->sum(function ($item) {
             return ($item->subscription->sale_price ?? $item->subscription->regular_price) * $item->quantity;
         });
+        $this->paymentMethods = PaymentSetting::all();
     }
 
     public function placeOrder()
@@ -60,6 +58,9 @@ class CheckoutComponent extends Component
             'user_id' => $this->user->id,
             'total_price' => $this->total_price,
             'status' => 'ordered',
+            'payment_method' => $this->payment_method,
+            'payment_number' => $this->payment_number,
+            'payment_transaction_id' => $this->payment_transaction_id,
         ]);
 
         if ($order) {
