@@ -55,6 +55,7 @@
                 <ul>
                     <li> <a href="{{ route('admin.settings') }}"><i class="bi bi-circle"></i>General Setting</a></li>
                     <li> <a href="{{ route('admin.settings.about') }}"><i class="bi bi-circle"></i>About Setting</a></li>
+                    <li> <a href="{{ route('admin.settings.payment') }}"><i class="bi bi-circle"></i>Payment Setting</a></li>
                 </ul>
             </li>
 

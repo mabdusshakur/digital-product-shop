@@ -8,6 +8,6 @@ class PaymentSettingComponent extends Component
 {
     public function render()
     {
-        return view('livewire.admin.payment-setting-component');
+        return view('livewire.admin.payment-setting-component')->layout('components.layouts.admin');
     }
 }
