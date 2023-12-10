@@ -76,14 +76,14 @@
                                     </div>
                                     <div class="subtotal payment-type">
                                         <h5 class="wrapper-heading">Payment Type</h5>
-                                        <div class="payment-type-inner p-4">
+                                        <div class="payment-type-inner pb-1">
 
                                             @foreach ($paymentMethods as $method)
                                                 <div class="payment-type-item">
                                                     <input type="radio" id="{{ $method->name }}" name="payment"
                                                         wire:model="payment_method" value="{{ $method->name }}">
                                                     <label for="{{ $method->name }}" class="form-label"
-                                                        style="font-size: 1.4rem;">{{ $method->name }} : 
+                                                        style="font-size: 1.26rem;">{{ $method->name }} : 
                                                         <span class="text-success">{{ $method->number }}</span> : 
                                                         <span class="text-danger">   ->{{ $method->note }}</span></label>
                                                 </div>
