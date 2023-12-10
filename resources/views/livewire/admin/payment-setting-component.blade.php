@@ -64,14 +64,14 @@
                                         </td>
                                         <td class="productlist">
                                             <h6 class="mb-0 product-title">{{$payment->note}}</h6>
-                                        </td>
+                                        </td>   
                                         <td>
                                             <div class="d-flex align-items-center gap-3 fs-6">
                                                 <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
                                                     data-bs-placement="bottom" title=""
                                                     data-bs-original-title="View detail" aria-label="Views"><i
                                                         class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" wire:click="editePaymentMethod()"
+                                                <a href="javascript:;" wire:click="editePaymentMethod({{$payment->id}})"
                                                     class="text-warning" data-bs-toggle="tooltip"
                                                     data-bs-placement="bottom" title=""
                                                     data-bs-original-title="Edit info" aria-label="Edit"><i
