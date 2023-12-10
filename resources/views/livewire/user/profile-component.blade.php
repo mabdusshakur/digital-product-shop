@@ -205,7 +205,7 @@
                                                     </div>
                                                     <div class="wrapper-content">
                                                         <p class="paragraph">New Orders</p>
-                                                        <h3 class="heading">656</h3>
+                                                        <h3 class="heading">{{ $user->orders()->whereIn('status', ['processing', 'pending'])->count() }}</h3>
                                                     </div>
                                                 </div>
                                             </div>
@@ -225,7 +225,7 @@
                                                     </div>
                                                     <div class="wrapper-content">
                                                         <p class="paragraph">Delivery Completed</p>
-                                                        <h3 class="heading">99783</h3>
+                                                        <h3 class="heading">{{ $user->orders()->whereIn('status', ['completed'])->count() }}</h3>
                                                     </div>
                                                 </div>
                                             </div>
