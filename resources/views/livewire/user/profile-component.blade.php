@@ -362,36 +362,38 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr class="table-row ticket-row">
-                                        <td class="table-wrapper wrapper-product">
-                                            <div class="wrapper">
-                                                <div class="wrapper-img">
-                                                    <img src="./assets/images/homepage-one/product-img/product-img-1.webp"
-                                                        alt="img">
+                                    @foreach ($user->orders as $order)
+                                        <tr class="table-row ticket-row">
+                                            <td class="table-wrapper wrapper-product">
+                                                <div class="wrapper">
+                                                    <div class="wrapper-img">
+                                                        <img src="./assets/images/homepage-one/product-img/product-img-1.webp"
+                                                            alt="img">
+                                                    </div>
+                                                    <div class="wrapper-content">
+                                                        <h5 class="heading">{{$order->product->name}}</h5>
+                                                    </div>
                                                 </div>
-                                                <div class="wrapper-content">
-                                                    <h5 class="heading">Classic Design Skart</h5>
+                                            </td>
+                                            <td class="table-wrapper">
+                                                <div class="table-wrapper-center">
+                                                    <h5 class="heading">$20.00</h5>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="table-wrapper">
-                                            <div class="table-wrapper-center">
-                                                <h5 class="heading">$20.00</h5>
-                                            </div>
-                                        </td>
-                                        <td class="table-wrapper">
-                                            <div class="table-wrapper-center">
-                                                <div class="quantity">
-                                                    <span class="number">1</span>
+                                            </td>
+                                            <td class="table-wrapper">
+                                                <div class="table-wrapper-center">
+                                                    <div class="quantity">
+                                                        <span class="number">1</span>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="table-wrapper wrapper-total">
-                                            <div class="table-wrapper-center">
-                                                <h5 class="heading">$40.00</h5>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td class="table-wrapper wrapper-total">
+                                                <div class="table-wrapper-center">
+                                                    <h5 class="heading">$40.00</h5>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
