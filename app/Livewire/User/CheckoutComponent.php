@@ -21,9 +21,9 @@ class CheckoutComponent extends Component
         $this->email = $this->user->email;
         $this->phone_number = $this->user->phone_number;
         $this->cartItems = Cart::where('user_id', $this->user->id)->get();
-        
+
         $this->total_price = $this->cartItems->sum(function($item){
-            return $item->subscription->sale_price ?? $item->subscription->regular_price;
+            return ($item->subscription->sale_price ?? $item->subscription->regular_price) * $item->quantity;;
         });
     }
 
