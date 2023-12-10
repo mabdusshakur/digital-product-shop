@@ -89,7 +89,7 @@
             <div class="wishlist-btn cart-btn">
                 <a href="empty-cart.html" class="clean-btn">Clear Cart</a>
                 <a href="#" class="shop-btn update-btn">Update Cart</a>
-                <a href="checkout.html" class="shop-btn">Proceed to Checkout</a>
+                <a href="{{route('user.checkout')}}" class="shop-btn">Proceed to Checkout</a>
             </div>
         </div>
     </section>
