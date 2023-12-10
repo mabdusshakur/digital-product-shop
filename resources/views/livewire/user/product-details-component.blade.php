@@ -71,7 +71,7 @@
                             </div>
                             <div class="product-size">
                                 <P class="size-title">Package</P>
-                                <select class="form-select form-select-lg mb-3" aria-label="Default select example">
+                                <select class="form-select form-select-lg mb-3" aria-label="Default select example" wire:model="subscription_id">
                                     <option selected>Select Your Package</option>
                                     @foreach ($product->subscription as $subscription)
                                         <option value="{{ $subscription->id }}">
@@ -96,7 +96,7 @@
                                     </button>
                                 @endif
 
-                                <a href="#" class="shop-btn">
+                                <a href="javascript:;" class="shop-btn" wire:click="addToCart">
                                     <span>
                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">

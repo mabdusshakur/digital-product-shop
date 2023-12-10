@@ -46,7 +46,7 @@
                                 </td>
                                 <td class="table-wrapper">
                                     <div class="table-wrapper-center">
-                                        <h5 class="heading">${{ $cartItem->subscription->regular_price }}</h5>
+                                        <h5 class="heading">${{ $cartItem->subscription->sale_price ?? $cartItem->subscription->regular_price }}</h5>
                                     </div>
                                 </td>
                                 <td class="table-wrapper">
@@ -65,7 +65,7 @@
                                 <td class="table-wrapper wrapper-total">
                                     <div class="table-wrapper-center">
                                         <h5 class="heading">
-                                            ${{ $cartItem->quantity * $cartItem->subscription->regular_price }}</h5>
+                                            ${{ $cartItem->quantity * ($cartItem->subscription->sale_price ?? $cartItem->subscription->regular_price) }}</h5>
                                     </div>
                                 </td>
                                 <td class="table-wrapper">
