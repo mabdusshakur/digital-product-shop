@@ -3,13 +3,6 @@
         <section class="user-profile footer-padding">
             <div class="container">
                 <div class="user-profile-section">
-                    <div class="dashboard-heading ">
-                        <h5 class="dashboard-title">Change Password</h5>
-                        <div class="dashboard-switch">
-                            <span class="text">Switch Dashboard</span>
-                            <span onclick="switchDashboard()" class="switch-icon"></span>
-                        </div>
-                    </div>
                     <div class="user-dashboard">
                         <div class="nav nav-item nav-pills  me-3" id="v-pills-tab" role="tablist"
                             aria-orientation="vertical">
@@ -49,7 +42,7 @@
                                     </svg>
                                 </span>
                                 <span class="text">
-                                    Parsonal Info
+                                    Personal Info
                                 </span>
                             </button>
 
@@ -66,7 +59,7 @@
                                     </svg>
                                 </span>
                                 <span class="text">
-                                    Order
+                                    Orders
                                 </span>
                             </button>
     
@@ -88,7 +81,7 @@
                                     </svg>
                                 </span>
                                 <span class="text">
-                                    Wishlist
+                                    Wishlists
                                 </span>
                             </button>
     
@@ -271,15 +264,11 @@
                                                                 <p>Name:</p>
                                                                 <p>Email:</p>
                                                                 <p>Phone:</p>
-                                                                <p>City:</p>
-                                                                <p>Zip:</p>
                                                             </div>
                                                             <div class="info-details">
-                                                                <p>Sajjad</p>
-                                                                <p>demoemail@gmail.com</p>
-                                                                <p>023 434 54354</p>
-                                                                <p>Haydarabad, Rord 34</p>
-                                                                <p>3454</p>
+                                                                <p>name</p>
+                                                                <p>email.com</p>
+                                                                <p>00 00000 0000</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -299,60 +288,24 @@
                                                 <div class="review-form">
                                                     <div class=" account-inner-form">
                                                         <div class="review-form-name">
-                                                            <label for="firname" class="form-label">First Name*</label>
+                                                            <label for="firname" class="form-label">Name*</label>
                                                             <input type="text" id="firname" class="form-control"
-                                                                placeholder="First Name">
-                                                        </div>
-                                                        <div class="review-form-name">
-                                                            <label for="latname" class="form-label">Last Name*</label>
-                                                            <input type="text" id="latname" class="form-control"
-                                                                placeholder="Last Name">
+                                                                placeholder="Name">
                                                         </div>
                                                     </div>
                                                     <div class=" account-inner-form">
                                                         <div class="review-form-name">
-                                                            <label for="gmail" class="form-label">Email*</label>
-                                                            <input type="email" id="gmail" class="form-control"
+                                                            <label for="email" class="form-label">Email*</label>
+                                                            <input type="email" id="email" class="form-control"
                                                                 placeholder="user@gmail.com">
                                                         </div>
                                                         <div class="review-form-name">
-                                                            <label for="telephone" class="form-label">Phone*</label>
-                                                            <input type="tel" id="telephone" class="form-control"
-                                                                placeholder="+880388**0899">
-                                                        </div>
-                                                    </div>
-                                                    <div class="review-form-name">
-                                                        <label for="region" class="form-label">Country*</label>
-                                                        <select id="region" class="form-select">
-                                                            <option>Choose...</option>
-                                                            <option>Bangladesh</option>
-                                                            <option>United States</option>
-                                                            <option>United Kingdom</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="review-form-name address-form">
-                                                        <label for="addres" class="form-label">Address*</label>
-                                                        <input type="text" id="addres" class="form-control"
-                                                            placeholder="Enter your Address">
-                                                    </div>
-                                                    <div class=" account-inner-form city-inner-form">
-                                                        <div class="review-form-name">
-                                                            <label for="teritory" class="form-label">Town / City*</label>
-                                                            <select id="teritory" class="form-select">
-                                                                <option>Choose...</option>
-                                                                <option>Newyork</option>
-                                                                <option>Dhaka</option>
-                                                                <option selected>London</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="review-form-name">
-                                                            <label for="post" class="form-label">Postcode / ZIP*</label>
-                                                            <input type="number" id="post" class="form-control"
-                                                                placeholder="0000">
+                                                            <label for="phone" class="form-label">Phone*</label>
+                                                            <input type="tel" id="phone" class="form-control"
+                                                                placeholder="+0000000000">
                                                         </div>
                                                     </div>
                                                     <div class="submit-btn">
-                                                        <a href="#" class="shop-btn cancel-btn">Cancel</a>
                                                         <a href="#" class="shop-btn update-btn">Update Profile</a>
                                                     </div>
                                                 </div>
