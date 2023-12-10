@@ -2,13 +2,14 @@
 
 namespace App\Livewire\User;
 
+use App\Models\Order;
+use App\Models\OrderItem;
 use Livewire\Component;
 
 class ProfileComponent extends Component
 {
     public $user;
     public $name, $email, $phone_number;
-
     public function mount()
     {
         $this->user = auth()->user();

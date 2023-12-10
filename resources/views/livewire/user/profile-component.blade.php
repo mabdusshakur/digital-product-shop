@@ -371,7 +371,7 @@
                                                             alt="img">
                                                     </div>
                                                     <div class="wrapper-content">
-                                                        <h5 class="heading">{{$order->product->name}}</h5>
+                                                        <h5 class="heading">{{$order->}}</h5>
                                                     </div>
                                                 </div>
                                             </td>

@@ -9,4 +9,11 @@ class OrderItem extends Model
 {
     use HasFactory;
     protected $fillable = ['order_id','product_id','subscription_id','quantity','price'];
+
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
+    public function subscription(){
+        return $this->belongsTo(Subscription::class);
+    }
 }
