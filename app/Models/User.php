@@ -23,6 +23,7 @@ class User extends Authenticatable
         'role', // 'user' or 'admin
         'password',
         'phone_number',
+        'profile_image',
     ];
 
     /**
