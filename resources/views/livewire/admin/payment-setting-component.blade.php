@@ -76,7 +76,7 @@
                                                     data-bs-placement="bottom" title=""
                                                     data-bs-original-title="Edit info" aria-label="Edit"><i
                                                         class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" wire:click="deletePaymentMethod()"
+                                                <a href="javascript:;" wire:click="deletePaymentMethod({{$payment->id}})"
                                                     class="text-danger" data-bs-toggle="tooltip"
                                                     data-bs-placement="bottom" title=""
                                                     data-bs-original-title="Delete" aria-label="Delete"><i

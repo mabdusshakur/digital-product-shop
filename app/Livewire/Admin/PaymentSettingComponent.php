@@ -70,6 +70,15 @@ class PaymentSettingComponent extends Component
         $this->isUpdateMode = true;
     }
 
+    public function deletePaymentMethod($id)
+    {
+        if (PaymentSetting::find($id)->delete()) {
+            session()->flash('success', 'Payment method deleted successfully.');
+        } else {
+            session()->flash('error', 'Something went wrong.');
+        }
+    }
+    
     public function render()
     {
         $payments = PaymentSetting::all();
