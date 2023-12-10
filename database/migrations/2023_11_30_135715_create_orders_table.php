@@ -16,6 +16,9 @@ return new class extends Migration
             $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->float('total_price');
             $table->string('status')->default('pending');
+            $table->string('payment_method');
+            $table->string('payment_number');
+            $table->string('payment_transaction_id');
             $table->timestamps();
         });
     }
