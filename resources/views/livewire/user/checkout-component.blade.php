@@ -77,17 +77,32 @@
                                     <div class="subtotal payment-type">
                                         <h5 class="wrapper-heading">Payment Type</h5>
                                         <div class="payment-type-inner">
-                                            <div class="payment-type-item">
-                                                <input type="radio" id="card" name="payment">
-                                                <label for="card" class="form-label">Credit Card</label>
+                                            @foreach ($paymentMethods as $key => $paymentMethod)
+                                                <div class="payment-type-item">
+                                                    <input type="radio" id="{{ $key }}" name="payment"
+                                                        wire:model="payment_method" value="{{ $key }}">
+                                                    <label for="{{ $key }}"
+                                                        class="form-label">{{ $paymentMethod }}</label>
+                                                </div>
+                                            @endforeach
+                                            <div>
+                                                <label for="payment_number" class="form-label">Your Account
+                                                    {{ $payment_method }} Number*</label>
+                                                <input type="tel" id="payment_number"
+                                                    class="form-control @error('payment_number') is-invalid @enderror"
+                                                    placeholder="+000000000000" wire:model="payment_number">
+                                                @error('payment_number')
+                                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                                @enderror
                                             </div>
-                                            <div class="payment-type-item">
-                                                <input type="radio" id="paypal" name="payment">
-                                                <label for="paypal" class="form-label">Paypal</label>
-                                            </div>
-                                            <div class="payment-type-item">
-                                                <input type="radio" id="cash" name="payment">
-                                                <label for="cash" class="form-label">Cash on Delivery</label>
+                                            <div>
+                                                <label for="payment_transaction_id" class="form-label">Transaction ID*</label>
+                                                <input type="text" id="payment_transaction_id"
+                                                    class="form-control @error('payment_transaction_id') is-invalid @enderror"
+                                                    placeholder="F9UHDS645FFSD" wire:model="payment_transaction_id">
+                                                @error('payment_transaction_id')
+                                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
