@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin/dashboard/brands/update/{id}', App\Livewire\Admin\UpdateBrandsComponent::class)->name('admin.update-brands');
     Route::get('/admin/dashboard/settings', App\Livewire\Admin\SettingsComponent::class)->name('admin.settings');
     Route::get('/admin/dashboard/settings/about', App\Livewire\Admin\AboutSettingComponent::class)->name('admin.settings.about');
+    Route::get('/admin/dashboard/settings/payment', App\Livewire\Admin\PaymentSettingComponent::class)->name('admin.settings.payment');
     Route::get('/admin/dashboard/orders', App\Livewire\Admin\AllOrdersComponent::class);
     Route::get('/admin/dashboard/support-ticket', App\Livewire\Admin\SupportTicketComponent::class);
 });
