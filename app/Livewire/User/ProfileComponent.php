@@ -7,7 +7,7 @@ use Livewire\Component;
 class ProfileComponent extends Component
 {
     public $user;
-    public $name, $email, $phone_number;
+    public $name, $email, $phone_number, $profile_image;
 
     public function mount()
     {
@@ -36,6 +36,11 @@ class ProfileComponent extends Component
         $user->name = $this->name;
         $user->email = $this->email;
         $user->phone_number = $this->phone_number;
+        if ($this->profile_image) {
+            $imageName = time() . '.' . $this->profile_image->getClientOriginalExtension();
+            $imageLocation = $this->profile_image->storeAs('user/profile', $imageName, 'public');
+            $user->profile_image = $imageLocation;
+        }
         if ($user->save()) {
             session()->flash('success', 'Profile has been updated successfully!');
         } else {
