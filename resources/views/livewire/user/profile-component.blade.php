@@ -63,28 +63,6 @@
                             </span>
                         </button>
 
-                        <button class="nav-link" id="v-pills-wishlist-tab" data-bs-toggle="pill"
-                            data-bs-target="#v-pills-wishlist" type="button" role="tab"
-                            aria-controls="v-pills-wishlist" aria-selected="false">
-                            <span>
-                                <svg width="16" height="14" viewBox="0 0 16 14" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g clip-path="url(#clip0_113_3017)">
-                                        <path
-                                            d="M8.00893 1.94252C8.25673 1.67321 8.45526 1.43486 8.67664 1.22099C10.387 -0.427293 13.0628 -0.40281 14.7246 1.2714C16.3985 2.95785 16.4356 5.687 14.7674 7.39721C12.6907 9.52652 10.5848 11.6263 8.48882 13.7369C8.13819 14.0897 7.85825 14.0876 7.50619 13.7326C5.4188 11.6306 3.32426 9.53588 1.25187 7.41953C-0.424185 5.70788 -0.410617 2.98738 1.25258 1.293C2.92721 -0.413611 5.62304 -0.434494 7.35265 1.24836C7.56475 1.4543 7.76042 1.67825 8.00893 1.94252Z" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_113_3017">
-                                            <rect width="16" height="14" fill="white" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-                            </span>
-                            <span class="text">
-                                Wishlists
-                            </span>
-                        </button>
-
                         <button class="nav-link" id="v-pills-review-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-review" type="button" role="tab"
                             aria-controls="v-pills-review" aria-selected="false">
@@ -384,72 +362,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="v-pills-wishlist" role="tabpanel"
-                        aria-labelledby="v-pills-wishlist-tab" tabindex="0">
-
-                        <div class="wishlist">
-                            <div class="cart-content">
-                                <h5 class="cart-heading">SpaceRace</h5>
-                                <p>Order ID: <span class="inner-text">#4345</span></p>
-                            </div>
-                            <div class="cart-section wishlist-section">
-                                <table>
-                                    <tbody>
-                                        <tr class="table-row table-top-row">
-                                            <td class="table-wrapper wrapper-product">
-                                                <h5 class="table-heading">PRODUCT</h5>
-                                            </td>
-                                            <td class="table-wrapper">
-                                                <div class="table-wrapper-center">
-                                                    <h5 class="table-heading">PRICE</h5>
-                                                </div>
-                                            </td>
-                                            <td class="table-wrapper">
-                                                <div class="table-wrapper-center">
-                                                    <h5 class="table-heading">ACTION</h5>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="table-row ticket-row">
-                                            <td class="table-wrapper wrapper-product">
-                                                <div class="wrapper">
-                                                    <div class="wrapper-img">
-                                                        <img src="./assets/images/homepage-one/product-img/product-img-1.webp"
-                                                            alt="img">
-                                                    </div>
-                                                    <div class="wrapper-content">
-                                                        <h5 class="heading">Classic Design Skart</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="table-wrapper">
-                                                <div class="table-wrapper-center">
-                                                    <h5 class="heading">$20.00</h5>
-                                                </div>
-                                            </td>
-                                            <td class="table-wrapper">
-                                                <div class="table-wrapper-center">
-                                                    <span>
-                                                        <svg width="10" height="10" viewBox="0 0 10 10"
-                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path
-                                                                d="M9.7 0.3C9.3 -0.1 8.7 -0.1 8.3 0.3L5 3.6L1.7 0.3C1.3 -0.1 0.7 -0.1 0.3 0.3C-0.1 0.7 -0.1 1.3 0.3 1.7L3.6 5L0.3 8.3C-0.1 8.7 -0.1 9.3 0.3 9.7C0.7 10.1 1.3 10.1 1.7 9.7L5 6.4L8.3 9.7C8.7 10.1 9.3 10.1 9.7 9.7C10.1 9.3 10.1 8.7 9.7 8.3L6.4 5L9.7 1.7C10.1 1.3 10.1 0.7 9.7 0.3Z"
-                                                                fill="#AAAAAA"></path>
-                                                        </svg>
-                                                    </span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="wishlist-btn">
-                                <a href="#" class="clean-btn">Clean Wishlist</a>
-                                <a href="#" class="shop-btn">View Cards</a>
-                            </div>
                         </div>
                     </div>
 
