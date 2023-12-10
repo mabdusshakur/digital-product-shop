@@ -8,7 +8,7 @@
                 </div>
                 <div class="card-body">
                     <div class="border p-3 rounded">
-                        <form wire:submit.prevent="save_settings" class="row g-3">
+                        <form wire:submit.prevent="SavePayment" class="row g-3">
                             <div class="col-12">
                                 <label class="form-label">Account Number</label>
                                 <input type="tel" class="form-control @error('number') is-invalid @enderror"
@@ -54,45 +54,37 @@
                             </thead>
                             <tbody>
 
-                                <tr>
-                                    <td class="productlist">
-                                        <a class="d-flex align-items-center gap-2" href="#">
-                                            <div>
-                                                <h6 class="mb-0 product-title">Name</h6>
+                                @foreach ($payments as $payment)
+                                    <tr>
+                                        <td class="productlist">
+                                            <h6 class="mb-0 product-title">{{$payment->name}}</h6>
+                                        </td>
+                                        <td class="productlist">
+                                            <h6 class="mb-0 product-title">{{$payment->number}}</h6>
+                                        </td>
+                                        <td class="productlist">
+                                            <h6 class="mb-0 product-title">{{$payment->note}}</h6>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-3 fs-6">
+                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
+                                                    data-bs-placement="bottom" title=""
+                                                    data-bs-original-title="View detail" aria-label="Views"><i
+                                                        class="bi bi-eye-fill"></i></a>
+                                                <a href="javascript:;" wire:click="editePaymentMethod()"
+                                                    class="text-warning" data-bs-toggle="tooltip"
+                                                    data-bs-placement="bottom" title=""
+                                                    data-bs-original-title="Edit info" aria-label="Edit"><i
+                                                        class="bi bi-pencil-fill"></i></a>
+                                                <a href="javascript:;" wire:click="deletePaymentMethod()"
+                                                    class="text-danger" data-bs-toggle="tooltip"
+                                                    data-bs-placement="bottom" title=""
+                                                    data-bs-original-title="Delete" aria-label="Delete"><i
+                                                        class="bi bi-trash-fill"></i></a>
                                             </div>
-                                        </a>
-                                    </td>
-                                    <td class="productlist">
-                                        <a class="d-flex align-items-center gap-2" href="#">
-                                            <div>
-                                                <h6 class="mb-0 product-title">Number</h6>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td class="productlist">
-                                        <a class="d-flex align-items-center gap-2" href="#">
-                                            <div>
-                                                <h6 class="mb-0 product-title">Note</h6>
-                                            </div>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center gap-3 fs-6">
-                                            <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip"
-                                                data-bs-placement="bottom" title=""
-                                                data-bs-original-title="View detail" aria-label="Views"><i
-                                                    class="bi bi-eye-fill"></i></a>
-                                            <a href="javascript:;" wire:click="editePaymentMethod()"
-                                                class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="" data-bs-original-title="Edit info" aria-label="Edit"><i
-                                                    class="bi bi-pencil-fill"></i></a>
-                                            <a href="javascript:;" wire:click="deletePaymentMethod()"
-                                                class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                                                title="" data-bs-original-title="Delete" aria-label="Delete"><i
-                                                    class="bi bi-trash-fill"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                @endforeach
 
                             </tbody>
                         </table>
