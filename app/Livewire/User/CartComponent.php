@@ -16,6 +16,12 @@ class CartComponent extends Component
         }
         session()->flash('success', 'Cart has been cleared successfully!');
     }
+    public function removeItemFromCart($id)
+    {
+        $cartItem = Cart::find($id);
+        $cartItem->delete();
+        session()->flash('success', 'Item has been removed from cart successfully!');
+    }
     public function render()
     {
         $cartItems = Cart::where('user_id', Auth::user()->id)->get();
