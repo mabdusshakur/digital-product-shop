@@ -206,7 +206,7 @@
                                                 <div class="wrapper-content">
                                                     <p class="paragraph">New Orders</p>
                                                     <h3 class="heading">
-                                                        {{ $user->orders()->whereIn('status', ['processing', 'pending'])->count() }}
+                                                        {{ $user->orders()->whereIn('status', ['processing', 'pending', 'ordered'])->count() }}
                                                     </h3>
                                                 </div>
                                             </div>
@@ -344,52 +344,40 @@
                                 <tbody>
                                     <tr class="table-row table-top-row">
                                         <td class="table-wrapper wrapper-product">
-                                            <h5 class="table-heading">PRODUCT</h5>
-                                        </td>
-                                        <td class="table-wrapper">
-                                            <div class="table-wrapper-center">
-                                                <h5 class="table-heading">PRICE</h5>
-                                            </div>
-                                        </td>
-                                        <td class="table-wrapper">
-                                            <div class="table-wrapper-center">
-                                                <h5 class="table-heading">QUANTITY</h5>
-                                            </div>
+                                            <h5 class="table-heading">ORDER_ID : PRODUCT NAME : QUANTITY : UNIT PRICE</h5>
                                         </td>
                                         <td class="table-wrapper wrapper-total">
                                             <div class="table-wrapper-center">
                                                 <h5 class="table-heading">TOTAL</h5>
                                             </div>
                                         </td>
+                                        <td class="table-wrapper wrapper-total">
+                                            <div class="table-wrapper-center">
+                                                <h5 class="table-heading">STATUS</h5>
+                                            </div>
+                                        </td>
                                     </tr>
+
                                     @foreach ($user->orders as $order)
                                         <tr class="table-row ticket-row">
-                                            <td class="table-wrapper wrapper-product">
-                                                <div class="wrapper">
-                                                    <div class="wrapper-img">
-                                                        <img src="./assets/images/homepage-one/product-img/product-img-1.webp"
-                                                            alt="img">
-                                                    </div>
-                                                    <div class="wrapper-content">
-                                                        <h5 class="heading">{{$order->}}</h5>
-                                                    </div>
-                                                </div>
-                                            </td>
                                             <td class="table-wrapper">
                                                 <div class="table-wrapper-center">
-                                                    <h5 class="heading">$20.00</h5>
+                                                    <h5 class="heading">{{$order->id}}</h5>
                                                 </div>
-                                            </td>
-                                            <td class="table-wrapper">
-                                                <div class="table-wrapper-center">
-                                                    <div class="quantity">
-                                                        <span class="number">1</span>
+                                                @foreach ($order->orderItems as $orderItem)
+                                                    <div class="table-wrapper-center">
+                                                        <h6 class="heading">{{$orderItem->product->name}} - {{$orderItem->subscription->name}} x{{$orderItem->quantity}} : {{$orderItem->price}}</h6>
                                                     </div>
+                                                @endforeach
+                                            </td>
+                                            <td class="table-wrapper wrapper-total">
+                                                <div class="table-wrapper-center">
+                                                    <h5 class="heading">${{$order->total_price}}</h5>
                                                 </div>
                                             </td>
                                             <td class="table-wrapper wrapper-total">
                                                 <div class="table-wrapper-center">
-                                                    <h5 class="heading">$40.00</h5>
+                                                    <h5 class="heading">{{$order->status}}</h5>
                                                 </div>
                                             </td>
                                         </tr>
