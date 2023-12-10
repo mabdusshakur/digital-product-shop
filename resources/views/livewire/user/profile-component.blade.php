@@ -182,8 +182,8 @@
                                 aria-labelledby="v-pills-home-tab" tabindex="0">
                                 <div class="user-profile">
                                     <div class="user-title">
-                                        <p class="paragraph">Hello, Sajjad</p>
-                                        <h5 class="heading">Welcome to your Profile </h5>
+                                        <p class="paragraph">Hello, {{$user->name}}</p>
+                                        <h5 class="heading">Welcome to your Profile</h5>
                                     </div>
                                     <div class="profile-section">
                                         <div class="row g-5">
@@ -266,9 +266,9 @@
                                                                 <p>Phone:</p>
                                                             </div>
                                                             <div class="info-details">
-                                                                <p>name</p>
-                                                                <p>email.com</p>
-                                                                <p>00 00000 0000</p>
+                                                                <p>{{$user->name}}</p>
+                                                                <p>{{$user->email}}</p>
+                                                                <p>{{$user->phone_number}}</p>
                                                             </div>
                                                         </div>
                                                     </div>
