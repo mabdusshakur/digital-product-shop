@@ -1,6 +1,7 @@
 <div>
     <section class="checkout product footer-padding">
         <div class="container">
+            @include('livewire.user.partials._alerts')
             <div class="checkout-section">
                 <div class="row gy-5">
                     <div class="col-lg-6">
@@ -10,21 +11,21 @@
                                 <div class="review-form">
                                     <div class=" account-inner-form">
                                         <div class="review-form-name">
-                                            <label for="fname" class="form-label">Name*</label>
-                                            <input type="text" id="fname" class="form-control"
-                                                placeholder="First Name">
+                                            <label for="name" class="form-label">Name*</label>
+                                            <input type="text" id="name" class="form-control" placeholder="Name"
+                                                wire:model="name">
                                         </div>
                                     </div>
                                     <div class=" account-inner-form">
                                         <div class="review-form-name">
                                             <label for="email" class="form-label">Email*</label>
                                             <input type="email" id="email" class="form-control"
-                                                placeholder="user@gmail.com">
+                                                placeholder="user@gmail.com" wire:model="email">
                                         </div>
                                         <div class="review-form-name">
                                             <label for="phone" class="form-label">Phone*</label>
                                             <input type="tel" id="phone" class="form-control"
-                                                placeholder="+880388**0899">
+                                                placeholder="+000000000000" wire:model="phone_number">
                                         </div>
                                     </div>
                                 </div>
@@ -44,22 +45,24 @@
                                     <div class="subtotal product-total">
                                         <ul class="product-list">
 
-                                            <li>
-                                                <div class="product-info">
-                                                    <h5 class="wrapper-heading">Apple Watch X1</h5>
-                                                    <p class="paragraph">64GB, Black, 44mm, Chain Belt</p>
-                                                </div>
-                                                <div class="price">
-                                                    <h5 class="wrapper-heading">$38</h5>
-                                                </div>
-                                            </li>
+                                            @foreach ($cartItems as $item)
+                                                <li>
+                                                    <div class="product-info">
+                                                        <h5 class="wrapper-heading">{{$item->product->name}} X{{$item->quantity}}</h5>
+                                                        <p class="paragraph">{{Str::limit($item->product->description, 30)}}</p>
+                                                    </div>
+                                                    <div class="price">
+                                                        <h5 class="wrapper-heading">${{$item->subscription->sale_price ?? $item->subscription->regular_price}}</h5>
+                                                    </div>
+                                                </li>
+                                            @endforeach
 
                                         </ul>
                                     </div>
                                     <hr>
                                     <div class="subtotal total">
                                         <h5 class="wrapper-heading">TOTAL</h5>
-                                        <h5 class="wrapper-heading price">$365</h5>
+                                        <h5 class="wrapper-heading price">${{$total_price}}</h5>
                                     </div>
                                     <div class="subtotal payment-type">
                                         <h5 class="wrapper-heading">Payment Type</h5>
@@ -78,7 +81,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#" class="shop-btn">Place Order Now</a>
+                                    <a href="javascript:;" wire:click="placeOrder" class="shop-btn">Place Order Now</a>
                                 </div>
                             </div>
                         </div>
