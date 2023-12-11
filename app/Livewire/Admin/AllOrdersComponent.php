@@ -13,10 +13,6 @@ class AllOrdersComponent extends Component
     public $delivery_details;
     public $mail_title;
 
-    public function mount()
-    {
-        
-    }
     public function viewOrderDetails($id)
     {
         $order = Order::find($id);
