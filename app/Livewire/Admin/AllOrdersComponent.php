@@ -2,13 +2,16 @@
 
 namespace App\Livewire\Admin;
 
+use App\Mail\DeliverProductMail;
 use App\Models\Order;
 use Livewire\Component;
+use Illuminate\Support\Facades\Mail;
 
 class AllOrdersComponent extends Component
 {
     public $order_id, $buyer_name, $buyer_email, $buyer_phone, $status, $orderItems = [], $total_price, $payment_method, $payment_number, $payment_transaction_id;
     public $delivery_details;
+    public $mail_title;
 
     public function mount()
     {
@@ -46,7 +49,25 @@ class AllOrdersComponent extends Component
 
     public function deliver()
     {
-        dd($this->delivery_details);
+        $mail_data = [
+            'user_name' => $this->buyer_name,
+            'product' => $this->delivery_details,
+            'title' => $this->mail_title,
+            'order_id'=> $this->order_id
+        ];
+        if(Mail::to($this->buyer_email)->send(new DeliverProductMail($mail_data)))
+        {
+            Order::find($this->order_id)
+            ->update([
+                'status' => 'delivered'
+            ]);
+            session()->flash('success', 'Product delivered successfully.');
+        }
+        else
+        {
+            session()->flash('error', 'Something went wrong.');
+        }
+        
     }
     public function render()
     {
