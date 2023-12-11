@@ -75,7 +75,9 @@
                                 </td>
                                 <td>
                                     <div class="d-flex align-items-center gap-3 fs-6">
-                                        <a href="javascript:;" class="text-primary" data-bs-toggle="modal" data-bs-target="#orderDetailsModal">
+                                        <a href="javascript:;" wire:click="viewOrderDetails({{ $order->id }})"
+                                            class="text-primary" data-bs-toggle="modal"
+                                            data-bs-target="#orderDetailsModal">
                                             <i class="bi bi-eye-fill"></i>
                                         </a>
                                     </div>
@@ -98,20 +100,80 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsModalLabel" aria-hidden="true">
+    <div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="orderDetailsModalLabel">Order ID</h5>
+                    <h5 class="modal-title" id="orderDetailsModalLabel">Order ID : {{ $order_id }}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                <form wire:submit.prevent="save_order_details" class="row g-3">
+                    <div class="modal-body">
+
+                        <div class="col-md-12">
+                            Buyer Name : <span class="text-primary">{{ $buyer_name }}</span>
+                            <hr>
+                            Buyer Email : <span class="text-primary">{{ $buyer_email }}</span>
+                            <hr>
+                            Buyer Phone : <span class="text-primary">{{ $buyer_phone }}</span>
+                            <hr>
+                            Payment Method : <span class="text-danger">{{ $payment_method }}</span>
+                            <hr>
+                            Payment Number : <span class="text-danger">{{ $payment_number }}</span>
+                            <hr>
+                            Transaction ID : <span class="text-danger">{{ $payment_transaction_id }}</span>
+                            <hr>
+                        </div>
+
+                        <div class="col-md-12">
+                            <h5 class="text-center">Order Details</h5>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>Product Name</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Quantity</p>
+                                </div>
+                            </div>
+                            <hr>
+                            @foreach ($orderItems as $orderItem)
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="text-info">{{ $orderItem->product->name }} -
+                                            {{ $orderItem->subscription->name }}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>x{{ $orderItem->quantity }}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                            @endforeach
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="delivery_mail" class="form-label">Order Status</label>
+                            <textarea id="delivery_mail" cols="55" rows="10"
+                                placeholder="Netflix Account 1 : example@gmail.com ,password : 000000,info : Please Dont share the credentials with anyone. and its a 1 display account."></textarea>
+                            <button type="button" class="btn btn-primary mt-1 mb-2">Send Product to Mail</button>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="order_status" class="form-label">Order Status</label>
+                            <select class="form-select" wire:model="status">
+                                <option value="ordered">Ordered</option>
+                                <option value="processing">Processing</option>
+                                <option value="delivered">Delivered</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
