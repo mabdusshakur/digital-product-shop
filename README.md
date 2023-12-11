@@ -1,12 +1,15 @@
 # Digital Product Shop
 
-This is a simple digital product selling website built with Laravel and Livewire.
+This is a simple digital product selling website built with Laravel and Livewire, designed specifically for local businesses.
 
 ## Features
 
 - Browse and search for digital products
+- Create products with multiple subscriptions
 - Add products to the cart
+- Add products to the wishlist
 - Checkout using a manual payment gateway
+- Deliver products through email
 
 ## Installation
 
@@ -31,21 +34,22 @@ This is a simple digital product selling website built with Laravel and Livewire
 
 4. Configure the database connection in the `.env` file.
 
-5. Run the database migrations:
+5. Configure SMTP mail service in the `.env` file.
+
+6. Run the database migrations:
 
    ```bash
    php artisan migrate
    ```
 
-6. Start the development server:
+7. Start the development server:
 
    ```bash
    php artisan serve
    ```
 
-7. Visit `http://localhost:8000` in your browser to access the website.
+8. Visit `http://localhost:8000` in your browser to access the website.
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
-
+Contributors are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
