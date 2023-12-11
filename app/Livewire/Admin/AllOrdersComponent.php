@@ -11,7 +11,7 @@ class AllOrdersComponent extends Component
 
     public function mount()
     {
-        $this->orders = Order::orderBy('created_at', 'DESC');
+        $this->orders = Order::orderBy('created_at', 'DESC')->get();
     }
     
     public function render()
