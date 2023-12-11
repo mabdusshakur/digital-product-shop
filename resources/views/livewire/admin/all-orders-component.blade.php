@@ -23,7 +23,6 @@
             </div>
         </div>
         <div class="card-body">
-
             <div class="table-responsive">
                 <table class="table align-middle table-striped">
                     <thead class="table-light">
@@ -33,7 +32,9 @@
                             <th>Total Amount</th>
                             <th>TrX ID</th>
                             <th>Payment Method</th>
+                            <th>Payment Number</th>
                             <th>Ordered On</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -41,29 +42,42 @@
                         @foreach ($orders as $order)
                             <tr>
                                 <td class="productlist">
-                                    <h6 class="mb-0 product-title">{{ $order->id}}</h6>
+                                    <h6 class="mb-0 product-title">{{ $order->id }}</h6>
                                 </td>
                                 <td>
-                                    <span>{{$order->user->name}}</span>
+                                    <span>{{ $order->user->name }}</span>
                                 </td>
                                 <td>
-                                    <span>{{$order->total_price}}</span>
+                                    <span>{{ $order->total_price }}</span>
                                 </td>
                                 <td>
-                                    <span>{{$order->payment_transaction_id}}</span>
+                                    <span>{{ $order->payment_transaction_id }}</span>
                                 </td>
                                 <td>
-                                    <span>{{$order->payment_method}}</span>
+                                    <span>{{ $order->payment_method }}</span>
                                 </td>
                                 <td>
-                                    <span>{{$order->payment_number}}</span>
+                                    <span>{{ $order->payment_number }}</span>
                                 </td>
                                 <td>
-                                    <span>{{$order->created_at}}</span>
+                                    <span>{{ $order->created_at->formatLocalized('%B %d, %Y, %H:%M:%S') }}</span>
+                                </td>
+                                <td>
+                                    @if ($order->status == 'ordered')
+                                        <span class="badge rounded-pill bg-info">{{ $order->status }}</span>
+                                    @elseif($order->status == 'processing')
+                                        <span class="badge rounded-pill bg-warning">{{ $order->status }}</span>
+                                    @elseif($order->status == 'delivered')
+                                        <span class="badge rounded-pill bg-success">{{ $order->status }}</span>
+                                    @elseif($order->status == 'cancelled')
+                                        <span class="badge rounded-pill bg-danger">{{ $order->status }}</span>
+                                    @endif
                                 </td>
                                 <td>
                                     <div class="d-flex align-items-center gap-3 fs-6">
-                                        <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="View detail" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
+                                        <a href="javascript:;" class="text-primary" data-bs-toggle="modal" data-bs-target="#orderDetailsModal">
+                                            <i class="bi bi-eye-fill"></i>
+                                        </a>
                                     </div>
                                 </td>
                             </tr>
@@ -71,7 +85,6 @@
                     </tbody>
                 </table>
             </div>
-
             <nav class="float-end mt-4" aria-label="Page navigation">
                 <ul class="pagination">
                     <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
@@ -81,7 +94,27 @@
                     <li class="page-item"><a class="page-link" href="#">Next</a></li>
                 </ul>
             </nav>
-
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderDetailsModalLabel">Order ID</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
