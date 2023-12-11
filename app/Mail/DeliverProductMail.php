@@ -27,7 +27,7 @@ class DeliverProductMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Deliver Product Mail',
+            subject: $this->mail_data['title'],
         );
     }
 
