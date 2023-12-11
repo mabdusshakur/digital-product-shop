@@ -66,7 +66,7 @@
                     <div class="menu-title">Orders</div>
                 </a>
                 <ul>
-                    <li> <a href=""><i class="bi bi-circle"></i>All Orders</a></li>
+                    <li> <a href="{{route('admin.orders')}}"><i class="bi bi-circle"></i>All Orders</a></li>
                 </ul>
             </li>
 
