@@ -8,6 +8,7 @@ use Livewire\Component;
 class AllOrdersComponent extends Component
 {
     public $order_id, $buyer_name, $buyer_email, $buyer_phone, $status, $orderItems = [], $total_price, $payment_method, $payment_number, $payment_transaction_id;
+    public $delivery_details;
 
     public function mount()
     {
@@ -41,6 +42,11 @@ class AllOrdersComponent extends Component
             ]);
             session()->flash('success', 'Order status updated successfully.');
         }
+    }
+
+    public function deliver()
+    {
+        dd($this->delivery_details);
     }
     public function render()
     {
