@@ -76,8 +76,7 @@
                                 <td>
                                     <div class="d-flex align-items-center gap-3 fs-6">
                                         <a href="javascript:;" wire:click="viewOrderDetails({{ $order->id }})"
-                                            class="text-primary" data-bs-toggle="modal"
-                                            data-bs-target="#orderDetailsModal">
+                                            class="text-primary">
                                             <i class="bi bi-eye-fill"></i>
                                         </a>
                                     </div>
