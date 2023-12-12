@@ -54,12 +54,12 @@ class SettingsComponent extends Component
             $setting->iframe_map_link = $this->iframe_map_link;
             $setting->delivery_policy = $this->delivery_policy;
             $setting->return_policy = $this->return_policy;
-            if($setting->save()){
+            if ($setting->save()) {
                 session()->flash('success', 'Settings has been updated successfully!');
             } else {
                 session()->flash('error', 'Something went wrong!');
             }
-        } 
+        }
 
         // create if setting does not exist
         else {
@@ -71,7 +71,7 @@ class SettingsComponent extends Component
             $setting->iframe_map_link = $this->iframe_map_link;
             $setting->delivery_policy = $this->delivery_policy;
             $setting->return_policy = $this->return_policy;
-            if($setting->save()){
+            if ($setting->save()) {
                 session()->flash('success', 'Settings has been created successfully!');
             } else {
                 session()->flash('error', 'Something went wrong!');
