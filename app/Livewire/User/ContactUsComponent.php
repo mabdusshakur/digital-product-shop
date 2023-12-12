@@ -5,6 +5,8 @@ namespace App\Livewire\User;
 use App\Models\Contact;
 use App\Models\Setting;
 use Livewire\Component;
+use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactUsComponent extends Component
 {
@@ -22,7 +24,7 @@ class ContactUsComponent extends Component
             'subject' => 'required',
             'message' => 'required',
         ]);
-        
+
         if (!$validatedData) {
             foreach ($validatedData as $key => $value) {
                 if ($value) {
@@ -39,7 +41,16 @@ class ContactUsComponent extends Component
         $contact->email = $this->sender_email;
         $contact->subject = $this->subject;
         $contact->message = $this->message;
-        if ($contact->save()) {
+        $contact->save();
+
+        $mall_data = [
+            'subject' => $this->subject,
+            'email' => $this->sender_email,
+            'name' => $this->sender_name,
+            'message' => $this->message,
+        ];
+
+        if (Mail::to($this->setting->email)->send(new ContactMail($mall_data))) {
             session()->flash('success', 'Your message has been sent successfully!');
         } else {
             session()->flash('error', 'Something went wrong!');
