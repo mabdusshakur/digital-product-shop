@@ -18,6 +18,10 @@ class AllOrdersComponent extends Component
         $order = Order::find($id);
         if($order)
         {
+            return redirect()->route('admin.orders.details', ['id'=>$id]);
+        }
+        if($order)
+        {
             $this->order_id = $order->id;
             $this->buyer_name = $order->user->name;
             $this->buyer_email = $order->user->email;
