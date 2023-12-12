@@ -2,7 +2,7 @@
     <section class="about">
         <div class="container">
             <div class="about-section">
-                <div class="row align-items-center gy-5">
+                <div class="row">
                     <div class="col-lg-6">
                         <div class="about-content" data-aos="fade-up">
                             <h3 class="about-title">Delivery Policy</h3>
