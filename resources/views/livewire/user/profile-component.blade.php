@@ -128,7 +128,7 @@
                         </button>
 
                         <div class="nav-link">
-                            <a href="{{route('logout')}}">
+                            <a href="{{ route('logout') }}">
                                 <span>
                                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -207,7 +207,7 @@
                                                 <div class="wrapper-content">
                                                     <p class="paragraph">Delivery Completed</p>
                                                     <h3 class="heading">
-                                                        {{ $user->orders()->whereIn('status', ['completed'])->count() }}
+                                                        {{ $user->orders()->whereIn('status', ['completed', 'delivered'])->count() }}
                                                     </h3>
                                                 </div>
                                             </div>
@@ -322,7 +322,8 @@
                                 <tbody>
                                     <tr class="table-row table-top-row">
                                         <td class="table-wrapper wrapper-product">
-                                            <h5 class="table-heading">ORDER_ID : PRODUCT NAME : QUANTITY : UNIT PRICE</h5>
+                                            <h5 class="table-heading">ORDER_ID : PRODUCT NAME : QUANTITY : UNIT PRICE
+                                            </h5>
                                         </td>
                                         <td class="table-wrapper wrapper-total">
                                             <div class="table-wrapper-center">
@@ -340,22 +341,24 @@
                                         <tr class="table-row ticket-row">
                                             <td class="table-wrapper">
                                                 <div class="table-wrapper-center">
-                                                    <h5 class="heading">{{$order->id}}</h5>
+                                                    <h5 class="heading">{{ $order->id }}</h5>
                                                 </div>
                                                 @foreach ($order->orderItems as $orderItem)
                                                     <div class="table-wrapper-center">
-                                                        <h6 class="heading">{{$orderItem->product->name}} - {{$orderItem->subscription->name}} x{{$orderItem->quantity}} : {{$orderItem->price}}</h6>
+                                                        <h6 class="heading">{{ $orderItem->product->name }} -
+                                                            {{ $orderItem->subscription->name }}
+                                                            x{{ $orderItem->quantity }} : {{ $orderItem->price }}</h6>
                                                     </div>
                                                 @endforeach
                                             </td>
                                             <td class="table-wrapper wrapper-total">
                                                 <div class="table-wrapper-center">
-                                                    <h5 class="heading">${{$order->total_price}}</h5>
+                                                    <h5 class="heading">${{ $order->total_price }}</h5>
                                                 </div>
                                             </td>
                                             <td class="table-wrapper wrapper-total">
                                                 <div class="table-wrapper-center">
-                                                    <h5 class="heading">{{$order->status}}</h5>
+                                                    <h5 class="heading">{{ $order->status }}</h5>
                                                 </div>
                                             </td>
                                         </tr>
