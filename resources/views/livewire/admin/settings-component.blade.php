@@ -51,8 +51,9 @@
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="col-md-12">
-                                <textarea id="delivery_policy" class="form-control @error('delivery_policy') is-invalid @enderror" wire:model="delivery_policy"></textarea>
+                            <div class="col-md-12" wire:ignore>
+                                <textarea id="delivery_policy" class="form-control @error('delivery_policy') is-invalid @enderror"
+                                    wire:model="delivery_policy"></textarea>
                                 @error('delivery_policy')
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
@@ -73,7 +74,12 @@
         $('#delivery_policy').summernote({
             placeholder: 'Add your Delivery Policy here',
             tabsize: 2,
-            height: 300
+            height: 300,
+            callbacks: {
+                onChange: function(contents, $editable) {
+                    @this.set('delivery_policy', contents);
+                }
+            }
         });
     </script>
 @endscript
