@@ -99,7 +99,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    {{-- <!-- Modal -->
     <div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
@@ -179,6 +179,6 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </div>
