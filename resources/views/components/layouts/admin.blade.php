@@ -76,7 +76,7 @@
     <!--app-->
     <script src="{{ asset('resources/admin/assets/js/app.js') }}"></script>
     <script src="{{ asset('resources/admin/assets/js/index.js') }}"></script>
-
+   
     @livewireScripts
 
 </body>
