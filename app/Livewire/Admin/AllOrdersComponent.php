@@ -8,9 +8,8 @@ use Livewire\Component;
 class AllOrdersComponent extends Component
 {
     public function viewOrderDetails($id)
-    {
-        $order = Order::find($id);
-        if($order)
+    { 
+        if($id)
         {
             return redirect()->route('admin.orders.details', ['id'=>$id]);
         }
