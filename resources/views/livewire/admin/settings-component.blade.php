@@ -65,6 +65,13 @@
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
                             </div>
+                            <div class="col-md-12" wire:ignore>
+                                <textarea id="privacy_policy" class="form-control @error('privacy_policy') is-invalid @enderror"
+                                    wire:model="privacy_policy">{!! $privacy_policy !!}</textarea>
+                                @error('privacy_policy')
+                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                @enderror
+                            </div>
                             <div class="col-12">
                                 <button class="btn btn-primary px-4">Save Setting</button>
                             </div>
@@ -96,6 +103,17 @@
             callbacks: {
                 onChange: function(contents, $editable) {
                     @this.set('return_policy', contents);
+                }
+            }
+        });
+
+        $('#privacy_policy').summernote({
+            placeholder: 'Add your Privacy Policy here',
+            tabsize: 2,
+            height: 300,
+            callbacks: {
+                onChange: function(contents, $editable) {
+                    @this.set('privacy_policy', contents);
                 }
             }
         });
