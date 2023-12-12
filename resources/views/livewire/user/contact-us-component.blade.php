@@ -144,7 +144,7 @@
                                         @enderror
                                     </div>
                                     <div class="login-btn">
-                                        <button type="submit" class="shop-btn">Send Now</button>
+                                        <button type="submit" wire:loading.attr="disabled" class="shop-btn">Send Now</button>
                                     </div>
                                 </form>
                             </div>
