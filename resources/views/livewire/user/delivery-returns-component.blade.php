@@ -7,7 +7,7 @@
                         <div class="about-content" data-aos="fade-up">
                             <h3 class="about-title">Delivery Policy</h3>
                             <p class="about-info">
-                                {{-- {!! $delivery_policy !!} --}}
+                                {!! $delivery_policy !!}
                             </p>
                         </div>
                     </div>
@@ -15,7 +15,7 @@
                         <div class="about-content" data-aos="fade-up">
                             <h3 class="about-title">Return Policy</h3>
                             <p class="about-info">
-                                {{-- {!! $delivery_policy !!} --}}
+                                {!! $return_policy !!}
                             </p>
                         </div>
                     </div>
