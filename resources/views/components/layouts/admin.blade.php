@@ -27,6 +27,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+        
+
     @livewireStyles
 
     <title>Admin Template</title>
@@ -76,7 +80,8 @@
     <!--app-->
     <script src="{{ asset('resources/admin/assets/js/app.js') }}"></script>
     <script src="{{ asset('resources/admin/assets/js/index.js') }}"></script>
-   
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    
     @livewireScripts
 
 </body>
