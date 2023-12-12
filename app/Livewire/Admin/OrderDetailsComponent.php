@@ -38,7 +38,7 @@ class OrderDetailsComponent extends Component
             $order->update([
                 'status' => $this->status
             ]);
-            session()->flash('success', 'Order status updated successfully.');
+            return redirect()->route('admin.orders')->with('success', 'Order status updated successfully.');
         }
     }
 
@@ -56,11 +56,11 @@ class OrderDetailsComponent extends Component
             ->update([
                 'status' => 'delivered'
             ]);
-            session()->flash('success', 'Product delivered successfully.');
+            return redirect()->route('admin.orders')->with('success', 'Product delivered successfully.');
         }
         else
         {
-            session()->flash('error', 'Something went wrong.');
+            return redirect()->route('admin.orders')->with('error', 'Something went wrong.');
         }
         
     }
