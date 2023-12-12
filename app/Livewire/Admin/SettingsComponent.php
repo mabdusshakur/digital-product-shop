@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class SettingsComponent extends Component
 {
-    public $phone_number, $address, $web_name, $email, $iframe_map_link, $delivery_policy, $refund_policy;
+    public $phone_number, $address, $web_name, $email, $iframe_map_link, $delivery_policy, $return_policy;
     public function mount()
     {
         $setting = Setting::get()->first();
@@ -18,7 +18,7 @@ class SettingsComponent extends Component
             $this->email = $setting->email;
             $this->iframe_map_link = $setting->iframe_map_link;
             $this->delivery_policy = $setting->delivery_policy;
-            $this->refund_policy = $setting->refund_policy;
+            $this->return_policy = $setting->return_policy;
         }
     }
     public function save_settings()
@@ -30,7 +30,7 @@ class SettingsComponent extends Component
             'email' => 'required|email',
             'iframe_map_link' => 'required|string',
             'delivery_policy' => 'nullable|string',
-            'refund_policy' => 'nullable|string',
+            'return_policy' => 'nullable|string',
         ]);
 
         if (!$validatedData) {
@@ -53,7 +53,7 @@ class SettingsComponent extends Component
             $setting->email = $this->email;
             $setting->iframe_map_link = $this->iframe_map_link;
             $setting->delivery_policy = $this->delivery_policy;
-            $setting->refund_policy = $this->refund_policy;
+            $setting->return_policy = $this->return_policy;
             if($setting->save()){
                 session()->flash('success', 'Settings has been updated successfully!');
             } else {
@@ -70,7 +70,7 @@ class SettingsComponent extends Component
             $setting->email = $this->email;
             $setting->iframe_map_link = $this->iframe_map_link;
             $setting->delivery_policy = $this->delivery_policy;
-            $setting->refund_policy = $this->refund_policy;
+            $setting->return_policy = $this->return_policy;
             if($setting->save()){
                 session()->flash('success', 'Settings has been created successfully!');
             } else {

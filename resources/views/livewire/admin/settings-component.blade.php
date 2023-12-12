@@ -59,9 +59,9 @@
                                 @enderror
                             </div>
                             <div class="col-md-12" wire:ignore>
-                                <textarea id="refund_policy" class="form-control @error('refund_policy') is-invalid @enderror"
-                                    wire:model="refund_policy"></textarea>
-                                @error('refund_policy')
+                                <textarea id="return_policy" class="form-control @error('return_policy') is-invalid @enderror"
+                                    wire:model="return_policy"></textarea>
+                                @error('return_policy')
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
                             </div>
@@ -89,13 +89,13 @@
             }
         });
 
-        $('#refund_policy').summernote({
-            placeholder: 'Add your Refund Policy here',
+        $('#return_policy').summernote({
+            placeholder: 'Add your Return Policy here',
             tabsize: 2,
             height: 300,
             callbacks: {
                 onChange: function(contents, $editable) {
-                    @this.set('refund_policy', contents);
+                    @this.set('return_policy', contents);
                 }
             }
         });
