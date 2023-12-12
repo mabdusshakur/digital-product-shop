@@ -53,14 +53,14 @@
                             </div>
                             <div class="col-md-12" wire:ignore>
                                 <textarea id="delivery_policy" class="form-control @error('delivery_policy') is-invalid @enderror"
-                                    wire:model="delivery_policy"></textarea>
+                                    wire:model="delivery_policy">{!! $delivery_policy !!}</textarea>
                                 @error('delivery_policy')
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="col-md-12" wire:ignore>
                                 <textarea id="return_policy" class="form-control @error('return_policy') is-invalid @enderror"
-                                    wire:model="return_policy"></textarea>
+                                    wire:model="return_policy">{!! $return_policy !!}</textarea>
                                 @error('return_policy')
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
