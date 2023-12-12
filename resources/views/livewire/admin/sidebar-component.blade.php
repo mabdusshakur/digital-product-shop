@@ -2,10 +2,7 @@
     <aside class="sidebar-wrapper" data-simplebar="true">
         <div class="sidebar-header">
             <div>
-                <img src="{{ asset('resources/admin/assets/images/logo-icon.png') }}" class="logo-icon" alt="logo icon">
-            </div>
-            <div>
-                <h4 class="logo-text">Snacked</h4>
+                <h4 class="logo-text">{{ env('APP_NAME') }}</h4>
             </div>
             <div class="toggle-icon ms-auto"> <i class="bi bi-list"></i>
             </div>
