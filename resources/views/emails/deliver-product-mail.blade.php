@@ -672,7 +672,7 @@
                                   "
                                 >
                                   
-                                  <p> {{$mail_data['product']}} </p>
+                                  <p> {!! $mail_data['product'] !!} </p>
 
                                 </div>
                               </td>
