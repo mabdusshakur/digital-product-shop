@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('favicon')->nullable();
             $table->string('email')->nullable();
             $table->longText('iframe_map_link')->nullable();
+            $table->longText('delivery_policy')->nullable();
+            $table->longText('return_policy')->nullable();
+            $table->longText('privacy_policy')->nullable();
             $table->timestamps();
         });
     }
