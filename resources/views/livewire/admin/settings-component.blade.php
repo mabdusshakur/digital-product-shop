@@ -58,6 +58,13 @@
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
                             </div>
+                            <div class="col-md-12" wire:ignore>
+                                <textarea id="refund_policy" class="form-control @error('refund_policy') is-invalid @enderror"
+                                    wire:model="refund_policy"></textarea>
+                                @error('refund_policy')
+                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                @enderror
+                            </div>
                             <div class="col-12">
                                 <button class="btn btn-primary px-4">Save Setting</button>
                             </div>
@@ -78,6 +85,17 @@
             callbacks: {
                 onChange: function(contents, $editable) {
                     @this.set('delivery_policy', contents);
+                }
+            }
+        });
+
+        $('#refund_policy').summernote({
+            placeholder: 'Add your Refund Policy here',
+            tabsize: 2,
+            height: 300,
+            callbacks: {
+                onChange: function(contents, $editable) {
+                    @this.set('refund_policy', contents);
                 }
             }
         });
