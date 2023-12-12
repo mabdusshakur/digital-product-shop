@@ -157,7 +157,8 @@
                             <label for="delivery_mail" class="form-label">Delivery Details</label>
                             <textarea id="delivery_mail" cols="55" rows="10" wire:model="delivery_details"
                                 placeholder="Netflix Account 1 : example@gmail.com ,password : 000000,info : Please Dont share the credentials with anyone. and its a 1 display account."></textarea>
-                            <button type="button" wire:click="deliver" class="btn btn-primary mt-1 mb-2">Send Product to Mail</button>
+                            <button type="button" wire:click="deliver" class="btn btn-primary mt-1 mb-2">Send Product
+                                to Mail</button>
                         </div>
 
                         <div class="col-md-6">
@@ -178,6 +179,5 @@
             </div>
         </div>
     </div>
-
 
 </div>
