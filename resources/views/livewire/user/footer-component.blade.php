@@ -115,7 +115,7 @@
                             </h4>
                             <div class="footer-link useful-link">
                                 <ul>
-                                    <li><a href="cart.html">Delivery & Returns</a></li>
+                                    <li><a href="{{route('user.delivery-returns')}}">Delivery & Returns</a></li>
                                     <li><a href="privacy.html">Privacy Policy</a></li>
                                 </ul>
                             </div>

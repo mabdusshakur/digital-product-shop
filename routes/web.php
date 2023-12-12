@@ -11,6 +11,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/product-details/{id}/{slug?}/{category_id?}', App\Livewire\User\ProductDetailsComponent::class)->name('user.product-details');
     Route::get('/products', App\Livewire\User\ProductsComponent::class)->name('user.products');
     Route::get('/checkout', App\Livewire\User\CheckoutComponent::class)->name('user.checkout');
+    Route::get('/delivery-returns', App\Livewire\User\DeliveryReturnsComponent::class)->name('user.delivery-returns');
     
     Route::get('/logout', function () {
         Auth::logout();
