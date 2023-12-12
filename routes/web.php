@@ -12,6 +12,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/products', App\Livewire\User\ProductsComponent::class)->name('user.products');
     Route::get('/checkout', App\Livewire\User\CheckoutComponent::class)->name('user.checkout');
     Route::get('/delivery-returns', App\Livewire\User\DeliveryReturnsComponent::class)->name('user.delivery-returns');
+    Route::get('/privacy-policy', App\Livewire\User\PrivacyPolicyComponent::class)->name('user.privacy-policy');
     
     Route::get('/logout', function () {
         Auth::logout();

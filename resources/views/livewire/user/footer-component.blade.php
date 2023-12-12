@@ -116,7 +116,7 @@
                             <div class="footer-link useful-link">
                                 <ul>
                                     <li><a href="{{route('user.delivery-returns')}}">Delivery & Returns</a></li>
-                                    <li><a href="privacy.html">Privacy Policy</a></li>
+                                    <li><a href="{{route('user.privacy-policy')}}">Privacy Policy</a></li>
                                 </ul>
                             </div>
                         </div>
