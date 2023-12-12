@@ -22,7 +22,7 @@
               <li class="nav-item dropdown dropdown-user-setting">
                 <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                   <div class="user-setting d-flex align-items-center">
-                    <img src="" class="user-img" alt="">
+                    <img src="{{Storage::url(Auth::user()->profile_image)}}" class="user-img" alt="">
                   </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -31,8 +31,8 @@
                        <div class="d-flex align-items-center">
                           <img src="" alt="" class="rounded-circle" width="54" height="54">
                           <div class="ms-3">
-                            <h6 class="mb-0 dropdown-user-name">Jhon Deo</h6>
-                            <small class="mb-0 dropdown-user-designation text-secondary">HR Manager</small>
+                            <h6 class="mb-0 dropdown-user-name">{{Auth::user()->name}}</h6>
+                            <small class="mb-0 dropdown-user-designation text-secondary">{{Auth::user()->role}}</small>
                           </div>
                        </div>
                      </a>
