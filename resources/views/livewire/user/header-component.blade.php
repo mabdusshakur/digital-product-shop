@@ -55,22 +55,23 @@
                                     </div>
                                     <div class="wrapper-main">
                                         <div class="search-section">
-                                            <input type="text" placeholder="Search Products....">
-                                            <a href="#" class="shop-btn">Search</a>
+                                            <input type="text" wire:model="search" placeholder="Search Products....">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="d-flex justify-content-center ">
                                     <ul>
-                                        <li>
-                                            <a href="#">
-                                                <div class="d-flex align-items-center">
-                                                    <img src="{{ asset('resources/admin/assets/images/logo-icon.png') }}" alt="logo" width="40px" height="40px">
-                                                    <p class="m-4">Product Name</p>
-                                                </div>
-                                            </a>
-                                        </li>
+                                        @foreach ($searchResults as $searchResult)
+                                            <li>
+                                                <a href="#">
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="{{ Storage::url($searchResult->image[0]->image) }}" alt="logo" width="40px" height="40px" class="rounded">
+                                                        <p class="m-4">{{$searchResult->name}}e</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
