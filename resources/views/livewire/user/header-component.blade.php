@@ -5,17 +5,17 @@
                 <div class="header-top">
                     <div class="header-profile">
                         @auth
-                        <a href=""><span>Account</span></a>
-                        <a href=""><span>Support</span></a>
-                        <a href="{{route('logout')}}"><span>Logout</span></a>
+                            <a href=""><span>Account</span></a>
+                            <a href=""><span>Support</span></a>
+                            <a href="{{ route('logout') }}"><span>Logout</span></a>
                         @else
-                        <a href="{{ route('login') }}"><span>Login</span></a>
+                            <a href="{{ route('login') }}"><span>Login</span></a>
                         @endauth
                     </div>
                     <div class="header-contact d-none d-lg-block">
                         <a href="#">
                             <span>Need help? Call us:</span>
-                            <span class="contact-number">{{$phone_number}}</span>
+                            <span class="contact-number">{{ $phone_number }}</span>
                         </a>
                     </div>
                 </div>
@@ -43,9 +43,6 @@
                                 </span>
                             </button>
                             <div class="modal-wrapper search">
-                                <div onclick="modalAction('.search')" class="anywhere-away"></div>
-
-                                <!-- change this -->
                                 <div class="modal-main">
                                     <div class="wrapper-close-btn" onclick="modalAction('.search')">
                                         <span>
@@ -64,12 +61,22 @@
                                     </div>
                                 </div>
 
-                                <!-- change this -->
-
+                                <div class="d-flex justify-content-center ">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <div class="d-flex align-items-center">
+                                                    <img src="{{ asset('resources/admin/assets/images/logo-icon.png') }}" alt="logo" width="40px" height="40px">
+                                                    <p class="m-4">Product Name</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="header-favourite">
-                            <a href="{{route('user.wishlist')}}" class="cart-item">
+                            <a href="{{ route('user.wishlist') }}" class="cart-item">
                                 <span>
                                     <svg width="35" height="27" viewBox="0 0 35 27" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +94,7 @@
                             </a>
                         </div>
                         <div class="header-cart">
-                            <a href="{{route('user.cart')}}" class="cart-item">
+                            <a href="{{ route('user.cart') }}" class="cart-item">
                                 <span>
                                     <svg width="35" height="28" viewBox="0 0 35 28" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -113,10 +120,10 @@
                             @livewire('user.mini-cart-component')
                         </div>
                         <div class="header-user">
-                            <a href="{{route('user.profile')}}">
+                            <a href="{{ route('user.profile') }}">
                                 <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                                        class="fill-current">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                        height="24" class="fill-current">
                                         <path fill="none" d="M0 0h24v24H0z"></path>
                                         <path
                                             d="M20 22H4v-2a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v2zm-8-9a6 6 0 1 1 0-12 6 6 0 0 1 0 12z">
@@ -132,10 +139,11 @@
 
         <nav class="mobile-menu d-block d-lg-none">
             <div class="mobile-menu-header d-flex justify-content-between align-items-center">
-                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-                    aria-controls="offcanvasWithBothOptions">
+                <button class="btn" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
                     <span>
-                        <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="14" height="9" viewBox="0 0 14 9" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
                             <rect width="14" height="1" fill="#1D1D1D" />
                             <rect y="8" width="14" height="1" fill="#1D1D1D" />
                             <rect y="4" width="10" height="1" fill="#1D1D1D" />
@@ -147,7 +155,8 @@
                 </a>
                 <a href="cart.html" class="header-cart cart-item">
                     <span>
-                        <svg width="35" height="28" viewBox="0 0 35 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="35" height="28" viewBox="0 0 35 28" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M16.4444 21.897C14.8444 21.897 13.2441 21.8999 11.6441 21.8963C9.79233 21.892 8.65086 21.0273 8.12595 19.2489C7.04294 15.5794 5.95756 11.9107 4.87166 8.24203C4.6362 7.4468 4.37783 7.25412 3.55241 7.25175C2.7786 7.24964 2.00507 7.25754 1.23127 7.24911C0.512247 7.24148 0.0157813 6.79109 0.000242059 6.15064C-0.0160873 5.48281 0.475637 5.01689 1.23232 5.00873C2.11121 4.99952 2.99089 4.99214 3.86951 5.01268C5.36154 5.04769 6.52014 5.93215 6.96393 7.35415C7.14171 7.92378 7.34055 8.49026 7.46382 9.07201C7.54968 9.47713 7.77881 9.49661 8.10566 9.49582C11.8335 9.48897 15.5611 9.49134 19.2889 9.49134C21.0825 9.49134 22.8761 9.48108 24.6694 9.49503C26.0848 9.50608 27.0907 10.4906 27.0156 11.7778C27.0006 12.0363 26.925 12.2958 26.8473 12.5457C26.1317 14.8411 25.4124 17.1351 24.6879 19.4279C24.1851 21.0186 23.0223 21.8826 21.3504 21.8944C19.7151 21.906 18.0797 21.897 16.4444 21.897Z"
                                 fill="#6E6D79" />
@@ -167,7 +176,8 @@
                 </a>
             </div>
 
-            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1"
+                id="offcanvasWithBothOptions">
 
                 <div class="offcanvas-body">
                     <div class="header-top">
@@ -239,17 +249,17 @@
                     <div class="header-nav-menu">
                         <ul class="menu-list">
                             <li>
-                                <a href="{{route('user.home')}}">
+                                <a href="{{ route('user.home') }}">
                                     <span class="list-text">Home</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('about-us')}}">
+                                <a href="{{ route('about-us') }}">
                                     <span class="list-text">About</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{route('contact-us')}}">
+                                <a href="{{ route('contact-us') }}">
                                     <span class="list-text">Contact</span>
                                 </a>
                             </li>
