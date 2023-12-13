@@ -8,15 +8,16 @@ use Livewire\Component;
 
 class HeaderComponent extends Component
 {
-    public $search = '';
+    public $search;
     public $phone_number;
     public function mount()
     {
         $this->phone_number = Optional(Setting::find(1))->phone_number;
     }
+
     public function render()
     {
-        if ($this->search !== '') {
+        if (strlen($this->search) > 2) {
             $searchResults = Product::where('name', 'like', '%' . $this->search . '%')
                 ->orWhere('description', 'like', '%' . $this->search . '%')
                 ->get();

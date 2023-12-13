@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="wrapper-main">
                                         <div class="search-section">
-                                            <input type="text" wire:model="search" placeholder="Search Products....">
+                                            <input type="text" wire:model.live="search" placeholder="Search Products....">
                                         </div>
                                     </div>
                                 </div>
