@@ -10,7 +10,7 @@ class AboutUsComponent extends Component
     public $about;
     public function mount()
     {
-        $this->about = About::find(1);
+        $this->about = About::first();
     }
     public function render()
     {
