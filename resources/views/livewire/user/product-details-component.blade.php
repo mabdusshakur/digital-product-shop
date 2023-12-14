@@ -117,18 +117,22 @@
                                 </p>
                             </div>
                             <hr>
-                            <div>
-                                <h5>Give A Review!</h5>
-                                <textarea class="form-control" placeholder="Your Review Here!" wire:model="review"></textarea>
-                                <select class="form-select mb-2 mt-2" wire:model="rating">
-                                    <option value="1">1 Star</option>
-                                    <option value="2">2 Star</option>
-                                    <option value="3">3 Star</option>
-                                    <option value="4">4 Star</option>
-                                    <option value="5">5 Star</option>
-                                </select>
-                                <button wire:click="addReview" class="btn btn-success">Post Review</button>
-                            </div>
+                            @if (Auth::check() && Auth::user()->orders()->whereHas('orderItems', function ($query) use ($product) {
+                                $query->where('product_id', $product->id);
+                            })->exists())
+                                <div>
+                                    <h5>Give A Review!</h5>
+                                    <textarea class="form-control" placeholder="Your Review Here!" wire:model="review"></textarea>
+                                    <select class="form-select mb-2 mt-2" wire:model="rating">
+                                        <option value="1">1 Star</option>
+                                        <option value="2">2 Star</option>
+                                        <option value="3">3 Star</option>
+                                        <option value="4">4 Star</option>
+                                        <option value="5">5 Star</option>
+                                    </select>
+                                    <button wire:click="addReview" class="btn btn-success">Post Review</button>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
