@@ -117,21 +117,25 @@
                                 </p>
                             </div>
                             <hr>
-                            @if (Auth::check() && Auth::user()->orders()->whereHas('orderItems', function ($query) use ($product) {
-                                $query->where('product_id', $product->id);
-                            })->exists())
-                                <div>
-                                    <h5>Give A Review!</h5>
-                                    <textarea class="form-control" placeholder="Your Review Here!" wire:model="review"></textarea>
-                                    <select class="form-select mb-2 mt-2" wire:model="rating">
-                                        <option value="1">1 Star</option>
-                                        <option value="2">2 Star</option>
-                                        <option value="3">3 Star</option>
-                                        <option value="4">4 Star</option>
-                                        <option value="5">5 Star</option>
-                                    </select>
-                                    <button wire:click="addReview" class="btn btn-success">Post Review</button>
-                                </div>
+                            @if (Auth::check() &&
+                                    Auth::user()->orders()->whereHas('orderItems', function ($query) use ($product) {
+                                            $query->where('product_id', $product->id);
+                                        })->exists())
+
+                                @if (!Auth::user()->reviews()->where('product_id', $product->id)->exists())
+                                    <div>
+                                        <h5>Give A Review!</h5>
+                                        <textarea class="form-control" placeholder="Your Review Here!" wire:model="review"></textarea>
+                                        <select class="form-select mb-2 mt-2" wire:model="rating">
+                                            <option value="1">1 Star</option>
+                                            <option value="2">2 Star</option>
+                                            <option value="3">3 Star</option>
+                                            <option value="4">4 Star</option>
+                                            <option value="5">5 Star</option>
+                                        </select>
+                                        <button wire:click="addReview" class="btn btn-success">Post Review</button>
+                                    </div>
+                                @endif
                             @endif
                         </div>
                     </div>
@@ -150,8 +154,8 @@
                         <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
                             data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
                             aria-selected="true">Description</button>
-                        <button class="nav-link" id="nav-review-tab" data-bs-toggle="tab"
-                            data-bs-target="#nav-review" type="button" role="tab" aria-controls="nav-review"
+                        <button class="nav-link" id="nav-review-tab" data-bs-toggle="tab" data-bs-target="#nav-review"
+                            type="button" role="tab" aria-controls="nav-review"
                             aria-selected="false">Reviews</button>
                     </div>
                 </nav>
