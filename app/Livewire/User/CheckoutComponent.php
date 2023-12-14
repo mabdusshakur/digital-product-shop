@@ -73,6 +73,7 @@ class CheckoutComponent extends Component
                     'price' => $item->subscription->sale_price ?? $item->subscription->regular_price,
                 ]);
                 $item->product->stock -= $item->quantity;
+                $item->product->increment('sold_count', $item->quantity);
                 $item->product->save();
             }
         }
