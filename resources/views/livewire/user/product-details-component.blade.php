@@ -71,7 +71,8 @@
                             </div>
                             <div class="product-size">
                                 <P class="size-title">Package</P>
-                                <select class="form-select form-select-lg mb-3" aria-label="Default select example" wire:model="subscription_id">
+                                <select class="form-select form-select-lg mb-3" aria-label="Default select example"
+                                    wire:model="subscription_id">
                                     <option selected>Select Your Package</option>
                                     @foreach ($product->subscription as $subscription)
                                         <option value="{{ $subscription->id }}">
@@ -86,15 +87,17 @@
                                 </select>
                             </div>
                             <div class="product-quantity">
-                                @if (Auth::user()->wishlist()->whereProductId($this->product->id)->exists())
-                                    <button class="btn btn-white" disabled>
-                                        <i class="fa-solid fa-heart fa-2xl" style="color: red"></i>
-                                    </button>
-                                @else
-                                    <button class="btn btn-white" wire:click="addToWishList">
-                                        <i class="fa-regular fa-heart fa-2xl"></i>
-                                    </button>
-                                @endif
+                                @auth
+                                    @if (Auth::user()->wishlist()->whereProductId($this->product->id)->exists())
+                                        <button class="btn btn-white" disabled>
+                                            <i class="fa-solid fa-heart fa-2xl" style="color: red"></i>
+                                        </button>
+                                    @else
+                                        <button class="btn btn-white" wire:click="addToWishList">
+                                            <i class="fa-regular fa-heart fa-2xl"></i>
+                                        </button>
+                                    @endif
+                                @endauth
 
                                 <a href="javascript:;" class="shop-btn" wire:click="addToCart">
                                     <span>
