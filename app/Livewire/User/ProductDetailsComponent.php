@@ -16,7 +16,9 @@ class ProductDetailsComponent extends Component
     {
         $this->product = Product::find($id);
         $this->category = Category::find($category_id);
-
+        if($this->product){
+            $this->product->increment('view_count',1);
+        }
     }
 
     public function addToWishList()
