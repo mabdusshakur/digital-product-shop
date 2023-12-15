@@ -42,7 +42,7 @@
                                 @enderror
                                 <div class="row mt-2">
                                     <div class="col-md-4">
-                                        <img src="{{ Storage::url($logo) }}" width="50rem" class="img-thumbnail">
+                                        <img src="{{ Storage::url($old_logo) }}" width="50rem" class="img-thumbnail">
                                     </div>
                                 </div>
                             </div>
