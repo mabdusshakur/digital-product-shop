@@ -124,8 +124,13 @@
                         </svg>
                     </span>
                 </button>
-                <a href="index.html" class="mobile-header-logo">
-                    <img src="./assets/images/logos/logo.webp" alt="logo">
+                <a href="{{route('user.home')}}" class="mobile-header-logo">
+                    @if ($setting->logo == null)
+                        {{ $setting->web_name }}
+                    @else
+                        <img src="{{ Storage::url($setting->logo) }}" alt="{{ $setting->web_name }}"
+                            width="55rem">
+                    @endif
                 </a>
                 <a href="cart.html" class="header-cart cart-item">
                     <span>
