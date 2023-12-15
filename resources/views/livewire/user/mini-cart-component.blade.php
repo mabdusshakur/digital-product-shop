@@ -38,7 +38,7 @@
             </div>
             <div class="cart-btn">
                 <a href="{{route('user.cart')}}" class="shop-btn view-btn">View Cart</a>
-                <a href="checkout.html" class="shop-btn checkout-btn">Checkout Now</a>
+                <a href="{{ route('user.checkout') }}" class="shop-btn checkout-btn">Checkout Now</a>
             </div>
         </div>
     </div>
