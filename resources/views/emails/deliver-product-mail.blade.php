@@ -433,7 +433,7 @@
                                       <img
                                         align="center"
                                         border="0"
-                                        src="https://i.ibb.co/X8jq1x3/image-7.jpg"
+                                        src="https://i.ibb.co/BVnVb5v/product-check.png"
                                         alt="Hero Image"
                                         title="Hero Image"
                                         style="
