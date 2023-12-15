@@ -9,6 +9,10 @@ class SearchComponent extends Component
 {
     public $search;
 
+    public function productDetails($id, $slug, $category_id)
+    {
+        return redirect()->route('user.product-details', ['id' => $id, 'slug' => $slug, 'category_id' => $category_id]);
+    }
     public function render()
     {
         if (strlen($this->search) > 2) {
