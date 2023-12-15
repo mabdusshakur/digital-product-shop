@@ -17,6 +17,7 @@ class SettingsComponent extends Component
             $this->phone_number = $setting->phone_number;
             $this->address = $setting->address;
             $this->web_name = $setting->web_name;
+            $this->logo = $setting->logo;
             $this->email = $setting->email;
             $this->iframe_map_link = $setting->iframe_map_link;
             $this->delivery_policy = $setting->delivery_policy;

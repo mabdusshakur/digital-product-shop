@@ -35,10 +35,16 @@
                             </div>
                             <div class="col-12">
                                 <label class="form-label">Logo</label>
-                                <input type="file" class="form-control @error('logo') is-invalid @enderror" wire:model="logo">
+                                <input type="file" class="form-control @error('logo') is-invalid @enderror"
+                                    wire:model="logo">
                                 @error('logo')
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
+                                <div class="row mt-2">
+                                    <div class="col-md-4">
+                                        <img src="{{ Storage::url($logo) }}" width="50rem" class="img-thumbnail">
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-12">
                                 <label class="form-label">Email</label>
