@@ -7,12 +7,10 @@ use Livewire\Component;
 
 class HeaderComponent extends Component
 {
-    public $phone_number;
-    public $web_logo;
+    public $setting;
     public function mount()
     {
-        $this->phone_number = Optional(Setting::find(1))->phone_number;
-        $this->web_logo = Optional(Setting::find(1))->logo;
+        $this->setting = Setting::get()->first();
     }
 
     public function render()

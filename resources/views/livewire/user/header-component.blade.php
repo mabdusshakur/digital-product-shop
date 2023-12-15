@@ -13,7 +13,7 @@
                     <div class="header-contact d-none d-lg-block">
                         <a href="#">
                             <span>Need help? Call us:</span>
-                            <span class="contact-number">{{ $phone_number }}</span>
+                            <span class="contact-number">{{ $setting->phone_number }}</span>
                         </a>
                     </div>
                 </div>
@@ -24,11 +24,16 @@
                 <div class="header-center">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="{{Storage::url($web_logo)}}" alt="logo" width="55rem">
+                            @if ($setting->logo == null)
+                                {{ $setting->web_name }}
+                            @else
+                                <img src="{{ Storage::url($setting->logo) }}" alt="{{ $setting->web_name }}"
+                                    width="55rem">
+                            @endif
                         </a>
                     </div>
                     <div class="header-cart-items">
-                        
+
                         <div class="header-search">
                             <button class="header-search-btn" onclick="modalAction('.search')">
                                 <span>
