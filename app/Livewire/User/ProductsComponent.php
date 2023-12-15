@@ -9,9 +9,14 @@ use App\Models\Wishlist;
 class ProductsComponent extends Component
 {
     public $products;
+    public $category_id;
 
-    public function mount(){
+    public function mount($id = null){
         $this->products = Product::all();
+        if($id != null){
+            $this->products = Product::where('category_id', $id)->get();
+            $this->category_id = $id;
+        }
     }
     public function productDetails($id, $slug, $category_id)
     {
