@@ -11,7 +11,7 @@
                         @endauth
                     </div>
                     <div class="header-contact d-none d-lg-block">
-                        <a href="#">
+                        <a href="{{route('contact-us')}}">
                             <span>Need help? Call us:</span>
                             <span class="contact-number">{{ $setting->phone_number }}</span>
                         </a>
@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="header-center">
                     <div class="logo">
-                        <a href="index.html">
+                        <a href="{{route('user.home')}}">
                             @if ($setting->logo == null)
                                 {{ $setting->web_name }}
                             @else
