@@ -5,27 +5,6 @@
                 <div class="col-lg-12">
                     <div class="product-sidebar-section" data-aos="fade-up">
                         <div class="row g-5">
-                            <div class="col-lg-12">
-                                <div class="product-sorting-section">
-                                    <div class="result">
-                                        <p>Showing <span>1–16 of 66 results</span></p>
-                                    </div>
-                                    <div class="product-sorting">
-                                        <span class="product-sort">Sort by:</span>
-                                        <div class="product-list">
-                                            <span class="default">Default</span>
-                                            <span>
-                                                <svg width="10" height="6" viewBox="0 0 10 6" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M1 1L5 5L9 1" stroke="#9A9A9A" />
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
                             @foreach ($products as $product)
                                 <div class="col-lg-4 col-sm-6">
                                     <div class="product-wrapper" data-aos="fade-up">
