@@ -66,17 +66,6 @@
                     <li> <a href="{{route('admin.orders')}}"><i class="bi bi-circle"></i>All Orders</a></li>
                 </ul>
             </li>
-
-            <li>
-                <a href="javascript:;" class="has-arrow">
-                    <div class="parent-icon"><i class="fa-solid fa-headset"></i>
-                    </div>
-                    <div class="menu-title">Support</div>
-                </a>
-                <ul>
-                    <li> <a href=""><i class="bi bi-circle"></i>Ticket's</a></li>
-                </ul>
-            </li>
         </ul>
         <!--end navigation-->
     </aside>
