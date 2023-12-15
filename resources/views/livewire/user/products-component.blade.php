@@ -26,6 +26,7 @@
                             </div>
 
 
+                            @foreach ($products as $product)
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-wrapper" data-aos="fade-up">
                                     <div class="product-img">
@@ -138,6 +139,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
 
 
                         </div>
