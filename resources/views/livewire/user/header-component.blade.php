@@ -11,7 +11,7 @@
                         @endauth
                     </div>
                     <div class="header-contact d-none d-lg-block">
-                        <a href="{{route('contact-us')}}">
+                        <a href="{{ route('contact-us') }}">
                             <span>Need help? Call us:</span>
                             <span class="contact-number">{{ $setting->phone_number }}</span>
                         </a>
@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="header-center">
                     <div class="logo">
-                        <a href="{{route('user.home')}}">
+                        <a href="{{ route('user.home') }}">
                             @if ($setting->logo == null)
                                 {{ $setting->web_name }}
                             @else
@@ -124,15 +124,14 @@
                         </svg>
                     </span>
                 </button>
-                <a href="{{route('user.home')}}" class="mobile-header-logo">
+                <a href="{{ route('user.home') }}" class="mobile-header-logo">
                     @if ($setting->logo == null)
                         {{ $setting->web_name }}
                     @else
-                        <img src="{{ Storage::url($setting->logo) }}" alt="{{ $setting->web_name }}"
-                            width="55rem">
+                        <img src="{{ Storage::url($setting->logo) }}" alt="{{ $setting->web_name }}" width="55rem">
                     @endif
                 </a>
-                <a href="{{route('user.cart')}}" class="header-cart cart-item">
+                <a href="{{ route('user.cart') }}" class="header-cart cart-item">
                     <span>
                         <svg width="35" height="28" viewBox="0 0 35 28" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -150,14 +149,13 @@
                 </a>
             </div>
 
-            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1"
-                id="offcanvasWithBothOptions">
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions">
 
                 <div class="offcanvas-body">
                     <div class="header-top">
                         <div class="header-cart ">
                             <div class="header-favourite">
-                                <a href="{{route('user.wishlist')}}" class="cart-item">
+                                <a href="{{ route('user.wishlist') }}" class="cart-item">
                                     <span>
                                         <svg width="35" height="27" viewBox="0 0 35 27" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -175,17 +173,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="header-input">
-                        <input type="text" placeholder="Search....">
-                        <span>
-                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M13.9708 16.4151C12.5227 17.4021 10.9758 17.9723 9.27353 18.0062C5.58462 18.0802 2.75802 16.483 1.05056 13.1945C-1.76315 7.77253 1.33485 1.37571 7.25086 0.167548C12.2281 -0.848249 17.2053 2.87895 17.7198 7.98579C17.9182 9.95558 17.5566 11.7939 16.5852 13.5061C16.4512 13.742 16.483 13.8725 16.6651 14.0553C18.2412 15.6386 19.8112 17.2272 21.3735 18.8244C22.1826 19.6513 22.2058 20.7559 21.456 21.4932C20.7697 22.1678 19.7047 22.1747 18.9764 21.4793C18.3623 20.8917 17.7774 20.2737 17.1796 19.6688C16.118 18.5929 15.0564 17.5153 13.9708 16.4151ZM2.89545 9.0364C2.91692 12.4172 5.59664 15.1164 8.91967 15.1042C12.2384 15.092 14.9138 12.3493 14.8889 8.98505C14.864 5.63213 12.1826 2.92508 8.89047 2.92857C5.58204 2.93118 2.87397 5.68958 2.89545 9.0364Z"
-                                    fill="black"></path>
-                            </svg>
-                        </span>
-                    </div>
+                    @livewire('user.mobile-menu-search-component')
                 </div>
             </div>
         </nav>
