@@ -1,4 +1,5 @@
 <div>
+    @include('livewire.user.partials._alerts')
     <form wire:submit.prevent="updatePassword">
         <div class="currentpass form-item">
             <label for="current_password" class="form-label ">Current
