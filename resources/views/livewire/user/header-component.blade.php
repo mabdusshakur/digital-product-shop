@@ -5,8 +5,6 @@
                 <div class="header-top">
                     <div class="header-profile">
                         @auth
-                            <a href=""><span>Account</span></a>
-                            <a href=""><span>Support</span></a>
                             <a href="{{ route('logout') }}"><span>Logout</span></a>
                         @else
                             <a href="{{ route('login') }}"><span>Login</span></a>
