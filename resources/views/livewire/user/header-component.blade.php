@@ -24,8 +24,7 @@
                 <div class="header-center">
                     <div class="logo">
                         <a href="index.html">
-                            <!-- <img src="./assets/images/logos/logo.webp" alt="logo"> -->
-                            Logo
+                            <img src="{{Storage::url($web_logo)}}" alt="logo" width="55rem">
                         </a>
                     </div>
                     <div class="header-cart-items">
