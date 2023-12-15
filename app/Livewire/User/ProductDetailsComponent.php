@@ -14,10 +14,12 @@ class ProductDetailsComponent extends Component
     public $product, $category;
     public $subscription_id, $quantity = 1;
     public $review, $rating;
+    public $reviews;
     public function mount($id, $slug = null, $category_id = null)
     {
         $this->product = Product::find($id);
         $this->category = Category::find($category_id);
+        $this->reviews = Review::where('product_id', $id)->get();
         if($this->product){
             $this->product->increment('view_count',1);
         }
