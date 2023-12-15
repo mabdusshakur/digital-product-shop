@@ -4,10 +4,12 @@ namespace App\Livewire\Admin;
 
 use App\Models\Setting;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class SettingsComponent extends Component
 {
-    public $phone_number, $address, $web_name, $email, $iframe_map_link, $delivery_policy, $return_policy, $privacy_policy;
+    use WithFileUploads;
+    public $phone_number, $address, $web_name, $logo, $email, $iframe_map_link, $delivery_policy, $return_policy, $privacy_policy;
     public function mount()
     {
         $setting = Setting::get()->first();
@@ -28,6 +30,7 @@ class SettingsComponent extends Component
             'phone_number' => 'required|numeric',
             'address' => 'required|string',
             'web_name' => 'required|string',
+            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'email' => 'required|email',
             'iframe_map_link' => 'required|string',
             'delivery_policy' => 'nullable|string',
@@ -53,6 +56,11 @@ class SettingsComponent extends Component
             $setting->address = $this->address;
             $setting->web_name = $this->web_name;
             $setting->email = $this->email;
+            if ($this->logo) {
+                $logoName = time() . '.' . $this->logo->getClientOriginalExtension();
+                $logoLocation = $this->logo->storeAs('website', $logoName, 'public');
+                $setting->logo = $logoLocation;
+            }
             $setting->iframe_map_link = $this->iframe_map_link;
             $setting->delivery_policy = $this->delivery_policy;
             $setting->return_policy = $this->return_policy;
@@ -70,6 +78,11 @@ class SettingsComponent extends Component
             $setting->phone_number = $this->phone_number;
             $setting->address = $this->address;
             $setting->web_name = $this->web_name;
+            if ($this->logo) {
+                $logoName = time() . '.' . $this->logo->getClientOriginalExtension();
+                $logoLocation = $this->logo->storeAs('website', $logoName, 'public');
+                $setting->logo = $logoLocation;
+            }
             $setting->email = $this->email;
             $setting->iframe_map_link = $this->iframe_map_link;
             $setting->delivery_policy = $this->delivery_policy;

@@ -34,6 +34,13 @@
                                 @enderror
                             </div>
                             <div class="col-12">
+                                <label class="form-label">Logo</label>
+                                <input type="file" class="form-control @error('logo') is-invalid @enderror" wire:model="logo">
+                                @error('logo')
+                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
                                 <label class="form-label">Email</label>
                                 <input type="email" class="form-control @error('email') is-invalid @enderror"
                                     placeholder="example@email.com" wire:model="email">
