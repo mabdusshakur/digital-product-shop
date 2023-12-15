@@ -44,7 +44,7 @@
                                         @endif
                                     @endfor
                                 </span>
-                                <span class="text">6 Reviews</span>
+                                <span class="text">{{$product->reviews->count()}} Reviews</span>
                             </div>
                             <p class="content-paragraph">{{ Str::limit($product->description, 60) }}</p>
                             <hr>
