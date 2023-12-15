@@ -10,7 +10,7 @@ use Storage;
 class SettingsComponent extends Component
 {
     use WithFileUploads;
-    public $phone_number, $address, $web_name, $logo, $email, $iframe_map_link, $delivery_policy, $return_policy, $privacy_policy;
+    public $phone_number, $address, $web_name, $logo,$favicon, $email, $iframe_map_link, $delivery_policy, $return_policy, $privacy_policy;
     public function mount()
     {
         $setting = Setting::get()->first();
@@ -19,6 +19,7 @@ class SettingsComponent extends Component
             $this->address = $setting->address;
             $this->web_name = $setting->web_name;
             $this->logo = $setting->logo;
+            $this->favicon = $setting->favicon;
             $this->email = $setting->email;
             $this->iframe_map_link = $setting->iframe_map_link;
             $this->delivery_policy = $setting->delivery_policy;
@@ -33,6 +34,7 @@ class SettingsComponent extends Component
             'address' => 'required|string',
             'web_name' => 'required|string',
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'favicon' => 'nullable|image|mimes:png|max:1028',
             'email' => 'required|email',
             'iframe_map_link' => 'required|string',
             'delivery_policy' => 'nullable|string',
@@ -65,6 +67,12 @@ class SettingsComponent extends Component
                 $logoLocation = $this->logo->storeAs('website', $logoName, 'public');
                 $setting->logo = $logoLocation;
             }
+            if ($this->favicon) {
+                if($setting->favicon)
+                    unlink('storage/' . $setting->favicon);
+                $faviconLocation = $this->favicon->storeAs('website', 'favicon.png', 'public');
+                $setting->favicon = $faviconLocation;
+            }
             $setting->iframe_map_link = $this->iframe_map_link;
             $setting->delivery_policy = $this->delivery_policy;
             $setting->return_policy = $this->return_policy;
@@ -86,6 +94,10 @@ class SettingsComponent extends Component
                 $logoName = time() . '.' . $this->logo->getClientOriginalExtension();
                 $logoLocation = $this->logo->storeAs('website', $logoName, 'public');
                 $setting->logo = $logoLocation;
+            }
+            if ($this->favicon) {
+                $faviconLocation = $this->favicon->storeAs('website', 'favicon.png', 'public');
+                $setting->favicon = $faviconLocation;
             }
             $setting->email = $this->email;
             $setting->iframe_map_link = $this->iframe_map_link;

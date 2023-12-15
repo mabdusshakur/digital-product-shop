@@ -47,6 +47,19 @@
                                 </div>
                             </div>
                             <div class="col-12">
+                                <label class="form-label">Favicon</label>
+                                <input type="file" class="form-control @error('favicon') is-invalid @enderror"
+                                    wire:model="favicon">
+                                @error('favicon')
+                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                @enderror
+                                <div class="row mt-2">
+                                    <div class="col-md-4">
+                                        <img src="{{ Storage::url($favicon) }}" height="25px" width="25px" class="img-thumbnail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
                                 <label class="form-label">Email</label>
                                 <input type="email" class="form-control @error('email') is-invalid @enderror"
                                     placeholder="example@email.com" wire:model="email">
