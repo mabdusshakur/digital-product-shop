@@ -5,6 +5,7 @@ namespace App\Livewire\Admin;
 use App\Models\Setting;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Storage;
 
 class SettingsComponent extends Component
 {
@@ -58,6 +59,8 @@ class SettingsComponent extends Component
             $setting->web_name = $this->web_name;
             $setting->email = $this->email;
             if ($this->logo) {
+                if($setting->logo)
+                    unlink('storage/' . $setting->logo);
                 $logoName = time() . '.' . $this->logo->getClientOriginalExtension();
                 $logoLocation = $this->logo->storeAs('website', $logoName, 'public');
                 $setting->logo = $logoLocation;
