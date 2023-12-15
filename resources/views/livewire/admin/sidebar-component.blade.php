@@ -2,7 +2,7 @@
     <aside class="sidebar-wrapper" data-simplebar="true">
         <div class="sidebar-header">
             <div>
-                <h4 class="logo-text">{{ env('APP_NAME') }}</h4>
+                <h4 class="logo-text">{{ config('app.name') }}</h4>
             </div>
             <div class="toggle-icon ms-auto"> <i class="bi bi-list"></i>
             </div>
