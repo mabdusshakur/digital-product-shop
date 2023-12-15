@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="{{ asset('resources/user/assets/images/homepage-one/icon.png') }}">
+    <link rel="icon" href="{{Storage::url('website/favicon.png')}}">
     <title>Shopus: Your One-Stop Destination for Fashion and Style</title>
 
 
