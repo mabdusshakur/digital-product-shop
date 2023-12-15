@@ -10,7 +10,7 @@
                         <img src="{{ Storage::url($category->image) }}" alt="dress">
                     </div>
                     <div class="wrapper-info">
-                        <a href="product-sidebar.html" class="wrapper-details">{{ $category->name }}</a>
+                        <a href="javascript:;" wire:click="goToProductsByCategory({{$category->id}})" class="wrapper-details">{{ $category->name }}</a>
                     </div>
                 </div>
             @endforeach

@@ -34,6 +34,9 @@ class HomeComponent extends Component
            return redirect()->route('user.wishlist')->with('success', 'Item added in wishlist successfully.');
         }
     }
+    public function goToProductsByCategory($id) {
+        return redirect()->route('user.products', ['id' => $id]);
+    }
     public function render()
     {
         return view('livewire.user.home-component');
