@@ -50,7 +50,7 @@
                     <label for="delivery_mail_title" class="form-label">Delivery Mail Title</label>
                     <input type="text" class="form-control" id="delivery_mail_title" wire:model="mail_title" placeholder="Mail Title">
                 </div>
-                <div class="col-md-12 mt-2">
+                <div class="col-md-12 mt-2" wire:ignore>
                     <label for="delivery_mail" class="form-label">Delivery Details</label>
                     <textarea id="delivery_mail" wire:model="delivery_details"></textarea>
                     <button type="button" wire:click="deliver" class="btn btn-primary mt-1 mb-2">Send Product
