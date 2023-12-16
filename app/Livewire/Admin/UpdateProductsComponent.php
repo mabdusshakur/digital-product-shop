@@ -82,7 +82,7 @@ class UpdateProductsComponent extends Component
         $this->validate([
             'subscription_name' => 'required',
             'regular_price' => 'required|numeric',
-            'sale_price' => 'required|numeric',
+            'sale_price' => 'nullable|numeric',
         ]);
         $subscription = new Subscription();
         $subscription->name = $this->subscription_name;
