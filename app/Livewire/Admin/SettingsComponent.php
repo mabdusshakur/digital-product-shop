@@ -10,7 +10,7 @@ use Storage;
 class SettingsComponent extends Component
 {
     use WithFileUploads;
-    public $phone_number, $address, $web_name, $logo, $old_logo, $favicon, $email, $iframe_map_link, $delivery_policy, $return_policy, $privacy_policy;
+    public $phone_number, $address, $web_name, $logo, $old_logo, $favicon, $old_favicon, $email, $iframe_map_link, $delivery_policy, $return_policy, $privacy_policy;
     public function mount()
     {
         $setting = Setting::get()->first();
@@ -19,7 +19,7 @@ class SettingsComponent extends Component
             $this->address = $setting->address;
             $this->web_name = $setting->web_name;
             $this->old_logo = $setting->logo;
-            $this->favicon = $setting->favicon;
+            $this->old_favicon = $setting->favicon;
             $this->email = $setting->email;
             $this->iframe_map_link = $setting->iframe_map_link;
             $this->delivery_policy = $setting->delivery_policy;
