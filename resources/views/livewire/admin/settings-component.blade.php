@@ -55,7 +55,7 @@
                                 @enderror
                                 <div class="row mt-2">
                                     <div class="col-md-4">
-                                        <img src="{{ Storage::url($favicon) }}" height="25px" width="25px" class="img-thumbnail">
+                                        <img src="{{ Storage::url($favicon) }}" height="32px" width="32px" class="img-thumbnail">
                                     </div>
                                 </div>
                             </div>
