@@ -49,7 +49,8 @@
                             <form class="row g-3" wire:submit.prevent="updatePassword">
                                 <div class="col-12">
                                     <label class="form-label">Current Password</label>
-                                    <input type="password" class="form-control @error('current_password') is-invalid @enderror"
+                                    <input type="password"
+                                        class="form-control @error('current_password') is-invalid @enderror"
                                         placeholder="Current Password" wire:model="current_password">
                                     @error('current_password')
                                         <span class="invalid-feedback"> {{ $message }}</span>
@@ -57,7 +58,8 @@
                                 </div>
                                 <div class="col-6">
                                     <label class="form-label">New Password</label>
-                                    <input type="password" class="form-control @error('new_password') is-invalid @enderror"
+                                    <input type="password"
+                                        class="form-control @error('new_password') is-invalid @enderror"
                                         placeholder="New Password" wire:model="new_password">
                                     @error('new_password')
                                         <span class="invalid-feedback"> {{ $message }}</span>
@@ -87,8 +89,8 @@
                 <div class="card-body">
                     <form wire:submit.prevent="updateProfileImage">
                         <div class="profile-avatar text-center">
-                            <img src="assets/images/avatars/avatar-1.png" class="rounded-circle shadow" width="120"
-                                height="120" alt="">
+                            <img src="{{ Storage::url($old_profile_image) }}" class="rounded-circle shadow"
+                                width="120" height="120" alt="">
                         </div>
                         <hr>
                         <div class="text-center mt-4 mb-2 col-md-12">

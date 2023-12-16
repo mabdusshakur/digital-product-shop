@@ -11,12 +11,14 @@ class ProfileComponent extends Component
     public $name, $email, $phone_number;
     public $current_password, $new_password, $confirm_password;
     public $profile_image;
+    public $old_profile_image;
     public function mount()
     {
         $user = auth()->user();
         $this->name = $user->name;
         $this->email = $user->email;
         $this->phone_number = $user->phone_number;
+        $this->old_profile_image = $user->profile_image;
     }
     public function updateInformation()
     {
