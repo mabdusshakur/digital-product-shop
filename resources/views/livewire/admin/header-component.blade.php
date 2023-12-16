@@ -24,8 +24,7 @@
                                             height="54">
                                         <div class="ms-3">
                                             <h6 class="mb-0 dropdown-user-name">{{ Auth::user()->name }}</h6>
-                                            <small
-                                                class="mb-0 dropdown-user-designation text-secondary">{{ Auth::user()->role }}</small>
+                                            <small class="mb-0 dropdown-user-designation text-secondary">{{ Auth::user()->role }}</small>
                                         </div>
                                     </div>
                                 </a>
@@ -34,7 +33,7 @@
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <a class="dropdown-item" href="pages-user-profile.html">
+                                <a class="dropdown-item" href="{{route('admin.profile')}}">
                                     <div class="d-flex align-items-center">
                                         <div class=""><i class="bi bi-person-fill"></i></div>
                                         <div class="ms-3"><span>Profile</span></div>
