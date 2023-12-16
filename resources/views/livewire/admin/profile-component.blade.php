@@ -1,5 +1,6 @@
 <div>
     <div class="row">
+        @include('livewire.admin.partials._alerts')
         <div class="col-12 col-lg-8">
             <div class="card shadow-sm border-0">
                 <div class="card-body">
