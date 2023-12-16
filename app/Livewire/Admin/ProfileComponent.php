@@ -3,9 +3,11 @@
 namespace App\Livewire\Admin;
 
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class ProfileComponent extends Component
 {
+    use WithFileUploads;
     public $name, $email, $phone_number;
     public $current_password, $new_password, $confirm_password;
     public $profile_image;
@@ -68,7 +70,34 @@ class ProfileComponent extends Component
     }
     public function updateProfileImage()
     {
+        $validatedData = $this->validate([
+            'profile_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        if (!$validatedData) {
+            foreach ($validatedData as $key => $value) {
+                if ($value) {
+                    $errors[$key] = $value;
+                }
+            }
+            foreach ($errors as $key => $value) {
+                $this->addError($key, $value);
+            }
+        }
 
+        $user = auth()->user();
+        if ($user->profile_image) {
+            unlink('storage/' . $user->profile_image);
+        }
+        $imageName = time() . '.' . $this->profile_image->getClientOriginalExtension();
+        $imageLocation = $this->profile_image->storeAs('profile-photos', $imageName, 'public');
+        if($user->update([
+            'profile_image' => $imageLocation
+        ])){
+            session()->flash('success', 'Profile photo updated successfully.');
+        }
+        else{
+            session()->flash('error', 'Something went wrong.');
+        }
     }
     public function render()
     {
