@@ -48,17 +48,17 @@
                             <form class="row g-3" wire:submit.prevent="updatePassword">
                                 <div class="col-12">
                                     <label class="form-label">Current Password</label>
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror"
-                                        placeholder="Current Password" wire:model="password">
-                                    @error('password')
+                                    <input type="password" class="form-control @error('current_password') is-invalid @enderror"
+                                        placeholder="Current Password" wire:model="current_password">
+                                    @error('current_password')
                                         <span class="invalid-feedback"> {{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="col-6">
                                     <label class="form-label">New Password</label>
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror"
-                                        placeholder="New Password" wire:model="password">
-                                    @error('password')
+                                    <input type="password" class="form-control @error('new_password') is-invalid @enderror"
+                                        placeholder="New Password" wire:model="new_password">
+                                    @error('new_password')
                                         <span class="invalid-feedback"> {{ $message }}</span>
                                     @enderror
                                 </div>
