@@ -172,7 +172,7 @@
                                             <div class="wrapper-info">
                                                 <div class="aurthor-img">
                                                     <img src="{{ Storage::url($review->user->profile_image) }}"
-                                                        alt="User Photo">
+                                                        alt="User Photo" width="50rem" height="60rem">
                                                 </div>
                                                 <div class="author-details">
                                                     <h5>{{ $review->user->name }}</h5>
