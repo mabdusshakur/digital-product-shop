@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    
+    @livewire('user.head-component')
 </head>
 
 <body>
