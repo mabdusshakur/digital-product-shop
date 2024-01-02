@@ -14,10 +14,12 @@ class MetaComponent extends Component
      */
     public function __construct($title, $description, $keywords, $author)
     {
-        $this->title = $title;
-        $this->description = $description;
-        $this->keywords = $keywords;
-        $this->author = $author;
+        $metaSettings = \App\Models\MetaSetting::first();
+
+        $this->title = $title ?: $metaSettings->meta_title;
+        $this->description = $description ?: $metaSettings->meta_description;
+        $this->keywords = $keywords ?: $metaSettings->meta_keywords;
+        $this->author = $author ?: $metaSettings->meta_author;
     }
 
     /**
