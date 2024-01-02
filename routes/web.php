@@ -1,6 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
+Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index'])->name('sitemap');
+
 Route::get('/', App\Livewire\User\HomeComponent::class)->name('user.home');
 
 Route::get('/delivery-returns', App\Livewire\User\DeliveryReturnsComponent::class)->name('user.delivery-returns');
