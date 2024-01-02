@@ -12,6 +12,18 @@
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
+    <url>
+        <loc>{{ url('/about-us') }}</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>{{ url('/contact-us') }}</loc>
+        <lastmod>{{ now()->toAtomString() }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
     @foreach ($products as $product)
         <url>
             <loc>{{ url('/product-details') }}/{{ $product->id}}/{{ $product->slug }}/{{ $product->category_id }}</loc>
