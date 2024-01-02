@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{Storage::url('website/favicon.png')}}">
-    <x-meta-component />
+    <x-meta-component title="Digital Product Shop: Buy Any Digital Products" description="Digital Product Shop - Buy any digital products, subscriptions for OTT platforms, game currency, and more." keywords="Digital Product Shop, Subscriptions, Game Currency, VPN, Ecommerce" author="Digital Product Shop"/>
     <!--------------- swiper-css ---------------->
     <link rel="stylesheet" href="{{ asset('resources/user/css/swiper10-bundle.min.css') }}">
 
