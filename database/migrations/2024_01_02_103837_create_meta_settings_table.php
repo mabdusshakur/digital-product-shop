@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('meta_settings', function (Blueprint $table) {
             $table->id();
+            $table->longText('meta_title')->nullable();
+            $table->longText('meta_description')->nullable();
+            $table->longText('meta_keywords')->nullable();
+            $table->string('meta_author')->nullable();
             $table->timestamps();
         });
     }
