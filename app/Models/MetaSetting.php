@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class MetaSetting extends Model
 {
     use HasFactory;
+    protected $fillable = ['meta_title', 'meta_description', 'meta_keywords', 'meta_author'];
 }
