@@ -6,4 +6,12 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+    @foreach ($products as $product)
+        <url>
+            <loc>{{ url('/product-details') }}/{{ $product->id}}/{{ $product->slug }}/{{ $product->category_id }}</loc>
+            <lastmod>{{ $product->created_at->tz('UTC')->toAtomString() }}</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.80</priority>
+        </url>
+    @endforeach
 </urlset>
