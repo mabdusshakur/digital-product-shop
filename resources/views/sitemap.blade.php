@@ -17,7 +17,7 @@
             <loc>{{ url('/product-details') }}/{{ $product->id}}/{{ $product->slug }}/{{ $product->category_id }}</loc>
             <lastmod>{{ $product->created_at->tz('UTC')->toAtomString() }}</lastmod>
             <changefreq>daily</changefreq>
-            <priority>0.80</priority>
+            <priority>0.8</priority>
         </url>
     @endforeach
 </urlset>
