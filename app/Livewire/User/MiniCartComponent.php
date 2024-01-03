@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Auth;
 class MiniCartComponent extends Component
 {
     public $subtotal;
+
+    public function removeItemFromCart($id)
+    {
+        $cartItem = Cart::find($id);
+        $cartItem->delete();
+        session()->flash('success', 'Item has been removed from cart successfully!');
+    }
+    
     public function render()
     {
         if (Auth::check()) {
