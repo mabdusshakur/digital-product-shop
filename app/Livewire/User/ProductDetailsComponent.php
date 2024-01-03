@@ -2,12 +2,10 @@
 
 namespace App\Livewire\User;
 
-use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Review;
 use Livewire\Component;
 use App\Models\Category;
-use App\Models\Wishlist;
 
 class ProductDetailsComponent extends Component
 {
@@ -24,7 +22,7 @@ class ProductDetailsComponent extends Component
             $this->product->increment('view_count',1);
         }
     }
-    
+
     public function addReview()
     {
         if (!auth()->check()) {
