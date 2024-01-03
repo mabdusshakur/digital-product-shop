@@ -1,1 +1,1 @@
-{{$customScriptElement}}
+{!! $customScriptElement !!}

@@ -1,1 +1,1 @@
-{{$customHeadElement}}
+{!! $customHeadElement !!}
