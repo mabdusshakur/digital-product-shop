@@ -55,13 +55,17 @@
                                 <td class="table-wrapper">
                                     <div class="table-wrapper-center">
                                         <div class="quantity">
-                                            <span class="minus">
-                                                -
-                                            </span>
+                                            <a href="javascript:;" class="border px-3 rounded" wire:click="decreaseQuantity({{$cartItem->id}})">
+                                                <span class="minus">
+                                                    -
+                                                </span>
+                                            </a>
                                             <span class="number">{{ $cartItem->quantity }}</span>
-                                            <span class="plus">
-                                                +
-                                            </span>
+                                            <a href="javascript:;" class="border px-3 rounded" wire:click="increaseQuantity({{$cartItem->id}})">
+                                                <span class="plus">
+                                                    +
+                                                </span>
+                                            </a>
                                         </div>
                                     </div>
                                 </td>
