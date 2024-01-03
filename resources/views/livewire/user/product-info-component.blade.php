@@ -1,4 +1,5 @@
 <div>
+    @include('livewire.user.partials._alerts')
     <div class="product-size">
         <P class="size-title">Package</P>
         <select class="form-select form-select-lg mb-3" aria-label="Default select example"
