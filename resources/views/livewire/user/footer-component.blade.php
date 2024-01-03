@@ -1,7 +1,7 @@
 <div>
     <section class="product footer">
         <div class="container">
-            <div class="footer-service-section">
+            {{-- <div class="footer-service-section">
                 <div class="row gy-4">
                     <div class="col-lg-3  col-sm-6">
                         <div class="service-wrapper free-shipping">
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="footer-section">
                 <div class="row gy-5">
                     <div class="col-lg-3 col-sm-6">
