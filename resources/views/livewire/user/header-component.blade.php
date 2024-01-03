@@ -13,7 +13,7 @@
                     <div class="header-contact d-none d-lg-block">
                         <a href="{{ route('contact-us') }}">
                             <span>Need help? Call us:</span>
-                            <span class="contact-number">{{ $setting->phone_number }}</span>
+                            <span class="contact-number">{{ $setting->phone_number  ?? '' }}</span>
                         </a>
                     </div>
                 </div>
@@ -24,11 +24,10 @@
                 <div class="header-center">
                     <div class="logo">
                         <a href="{{ route('user.home') }}">
-                            @if ($setting->logo == null)
+                            @if ($setting && $setting->logo == null)
                                 {{ $setting->web_name }}
-                            @else
-                                <img src="{{ Storage::url($setting->logo) }}" alt="{{ $setting->web_name }}"
-                                    width="55rem">
+                            @elseif($setting)
+                                <img src="{{ Storage::url($setting->logo) }}" alt="{{ $setting->web_name ?? '' }}" width="55rem">
                             @endif
                         </a>
                     </div>
@@ -125,9 +124,9 @@
                     </span>
                 </button>
                 <a href="{{ route('user.home') }}" class="mobile-header-logo">
-                    @if ($setting->logo == null)
+                    @if ($setting && $setting->logo == null)
                         {{ $setting->web_name }}
-                    @else
+                    @elseif($setting)
                         <img src="{{ Storage::url($setting->logo) }}" alt="{{ $setting->web_name }}" width="55rem">
                     @endif
                 </a>

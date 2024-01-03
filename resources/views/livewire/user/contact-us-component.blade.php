@@ -34,7 +34,7 @@
                                                 </div>
                                                 <div class="wrapper-content">
                                                     <h5 class="wrapper-heading">Phone</h5>
-                                                    <p class="paragraph">{{ $setting->phone_number }}</p>
+                                                    <p class="paragraph">{{ $setting->phone_number ?? '' }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -64,7 +64,7 @@
                                                 </div>
                                                 <div class="wrapper-content">
                                                     <h5 class="wrapper-heading">Email</h5>
-                                                    <p class="paragraph">{{ $setting->email }}</p>
+                                                    <p class="paragraph">{{ $setting->email ?? '' }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -86,11 +86,11 @@
                                                     </div>
                                                     <div class="address-content">
                                                         <h5 class="wrapper-heading">Address</h5>
-                                                        <p class="paragraph">{{ $setting->address }}</p>
+                                                        <p class="paragraph">{{ $setting->address  ?? ''}}</p>
                                                     </div>
                                                 </div>
                                                 <div class="contact-map">
-                                                    <iframe src="{{ $setting->iframe_map_link }}" width="524"
+                                                    <iframe src="{{ $setting->iframe_map_link ?? '' }}" width="524"
                                                         height="206" allowfullscreen="" loading="lazy"
                                                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                                                 </div>
