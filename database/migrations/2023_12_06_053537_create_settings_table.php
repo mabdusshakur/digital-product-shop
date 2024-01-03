@@ -25,6 +25,7 @@ return new class extends Migration
             $table->longText('privacy_policy')->nullable();
             $table->longText('custom_script_element')->nullable();
             $table->longText('custom_head_element')->nullable();
+            $table->string('currency_unicode')->nullable();
             $table->timestamps();
         });
     }
