@@ -78,6 +78,16 @@
                                 @enderror
                             </div>
                             <div class="col-12">
+                                <label class="form-label">Currency Logo</label>
+                                <input type="text"
+                                    class="form-control @error('currency_unicode') is-invalid @enderror"
+                                    placeholder="$"
+                                    wire:model="currency_unicode">
+                                @error('iframe_map_link')
+                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
                                 <textarea id="custom_head_element" class="form-control @error('custom_head_element') is-invalid @enderror" placeholder="<meta name=author content=> ... full html tag"  wire:model="custom_head_element">{!! $custom_head_element !!}</textarea>
                                 @error('custom_head_element')
                                     <span class="invalid-feedback"> {{ $message }}</span>

@@ -10,7 +10,7 @@ use Storage;
 class SettingsComponent extends Component
 {
     use WithFileUploads;
-    public $phone_number, $address, $web_name, $logo, $old_logo, $favicon, $old_favicon, $email, $iframe_map_link, $delivery_policy, $return_policy, $privacy_policy, $custom_script_element, $custom_head_element;
+    public $phone_number, $address, $web_name, $logo, $old_logo, $favicon, $old_favicon, $email, $iframe_map_link, $delivery_policy, $return_policy, $privacy_policy, $custom_script_element, $custom_head_element, $currency_unicode;
     public function mount()
     {
         $setting = Setting::get()->first();
@@ -27,6 +27,7 @@ class SettingsComponent extends Component
             $this->privacy_policy = $setting->privacy_policy;
             $this->custom_script_element = $setting->custom_script_element;
             $this->custom_head_element = $setting->custom_head_element;
+            $this->currency_unicode = $setting->currency_unicode;
         }
     }
     public function save_settings()
@@ -44,6 +45,7 @@ class SettingsComponent extends Component
             'privacy_policy' => 'nullable|string',
             'custom_script_element' => 'nullable|string',
             'custom_head_element' => 'nullable|string',
+            'currency_unicode' => 'required|string',
         ]);
 
         if (!$validatedData) {
@@ -83,6 +85,7 @@ class SettingsComponent extends Component
             $setting->privacy_policy = $this->privacy_policy;
             $setting->custom_script_element = $this->custom_script_element;
             $setting->custom_head_element = $this->custom_head_element;
+            $setting->currency_unicode = $this->currency_unicode;
             if ($setting->save()) {
                 session()->flash('success', 'Settings has been updated successfully!');
             } else {
@@ -112,6 +115,7 @@ class SettingsComponent extends Component
             $setting->privacy_policy = $this->privacy_policy;
             $setting->custom_script_element = $this->custom_script_element;
             $setting->custom_head_element = $this->custom_head_element;
+            $setting->currency_unicode = $this->currency_unicode;
             if ($setting->save()) {
                 session()->flash('success', 'Settings has been created successfully!');
             } else {
