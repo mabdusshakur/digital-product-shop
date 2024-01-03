@@ -49,7 +49,7 @@
                                             @foreach ($cartItems as $item)
                                                 <li>
                                                     <div class="product-info">
-                                                        <h5 class="wrapper-heading">{{ $item->product->name }}
+                                                        <h5 class="wrapper-heading">{{ $item->product->name }} - {{ $item->subscription->name }}
                                                             X{{ $item->quantity }}</h5>
                                                         <p class="paragraph">
                                                             {{ Str::limit($item->product->description, 30) }}</p>
