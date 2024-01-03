@@ -23,6 +23,8 @@ return new class extends Migration
             $table->longText('delivery_policy')->nullable();
             $table->longText('return_policy')->nullable();
             $table->longText('privacy_policy')->nullable();
+            $table->longText('custom_script_element')->nullable();
+            $table->longText('custom_head_element')->nullable();
             $table->timestamps();
         });
     }
