@@ -34,6 +34,10 @@ class CheckoutComponent extends Component
 
     public function placeOrder()
     {
+        if($this->cartItems->count() == 0) {
+            session()->flash('error', 'Your cart is empty.');
+            return;
+        }
         $validatedData = $this->validate([
             'name' => 'required',
             'email' => 'required|email',
@@ -79,6 +83,8 @@ class CheckoutComponent extends Component
         }
 
         Cart::where('user_id', $this->user->id)->delete();
+        $this->cartItems = [];
+        $this->total_price = 0;
         session()->flash('success', 'Order has been placed successfully.');
     }
     public function render()
