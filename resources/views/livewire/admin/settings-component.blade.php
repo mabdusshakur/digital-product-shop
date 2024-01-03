@@ -77,6 +77,18 @@
                                     <span class="invalid-feedback"> {{ $message }}</span>
                                 @enderror
                             </div>
+                            <div class="col-12">
+                                <textarea id="custom_head_element" class="form-control @error('custom_head_element') is-invalid @enderror" placeholder="<meta name=author content=> ... full html tag"  wire:model="custom_head_element">{!! $custom_head_element !!}</textarea>
+                                @error('custom_head_element')
+                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-12">
+                                <textarea id="custom_script_element" class="form-control @error('custom_script_element') is-invalid @enderror" placeholder="<script></script>... full script element"  wire:model="custom_script_element">{!! $custom_script_element !!}</textarea>
+                                @error('custom_script_element')
+                                    <span class="invalid-feedback"> {{ $message }}</span>
+                                @enderror
+                            </div>
                             <div class="col-md-12" wire:ignore>
                                 <textarea id="delivery_policy" class="form-control @error('delivery_policy') is-invalid @enderror"
                                     wire:model="delivery_policy">{!! $delivery_policy !!}</textarea>

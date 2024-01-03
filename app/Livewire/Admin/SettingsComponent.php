@@ -10,7 +10,7 @@ use Storage;
 class SettingsComponent extends Component
 {
     use WithFileUploads;
-    public $phone_number, $address, $web_name, $logo, $old_logo, $favicon, $old_favicon, $email, $iframe_map_link, $delivery_policy, $return_policy, $privacy_policy;
+    public $phone_number, $address, $web_name, $logo, $old_logo, $favicon, $old_favicon, $email, $iframe_map_link, $delivery_policy, $return_policy, $privacy_policy, $custom_script_element, $custom_head_element;
     public function mount()
     {
         $setting = Setting::get()->first();
@@ -25,6 +25,8 @@ class SettingsComponent extends Component
             $this->delivery_policy = $setting->delivery_policy;
             $this->return_policy = $setting->return_policy;
             $this->privacy_policy = $setting->privacy_policy;
+            $this->custom_script_element = $setting->custom_script_element;
+            $this->custom_head_element = $setting->custom_head_element;
         }
     }
     public function save_settings()
@@ -40,6 +42,8 @@ class SettingsComponent extends Component
             'delivery_policy' => 'nullable|string',
             'return_policy' => 'nullable|string',
             'privacy_policy' => 'nullable|string',
+            'custom_script_element' => 'nullable|string',
+            'custom_head_element' => 'nullable|string',
         ]);
 
         if (!$validatedData) {
@@ -77,6 +81,8 @@ class SettingsComponent extends Component
             $setting->delivery_policy = $this->delivery_policy;
             $setting->return_policy = $this->return_policy;
             $setting->privacy_policy = $this->privacy_policy;
+            $setting->custom_script_element = $this->custom_script_element;
+            $setting->custom_head_element = $this->custom_head_element;
             if ($setting->save()) {
                 session()->flash('success', 'Settings has been updated successfully!');
             } else {
@@ -104,6 +110,8 @@ class SettingsComponent extends Component
             $setting->delivery_policy = $this->delivery_policy;
             $setting->return_policy = $this->return_policy;
             $setting->privacy_policy = $this->privacy_policy;
+            $setting->custom_script_element = $this->custom_script_element;
+            $setting->custom_head_element = $this->custom_head_element;
             if ($setting->save()) {
                 session()->flash('success', 'Settings has been created successfully!');
             } else {
