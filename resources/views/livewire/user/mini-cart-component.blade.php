@@ -14,7 +14,7 @@
                             <h5 class="wrapper-title">{{ $cartItem->product->name }} -
                                 {{ $cartItem->subscription->name }}</h5>
                             <div class="price">
-                                <p class="new-price">$
+                                <p class="new-price">{{$currency_symbol}}
                                     {{ ($cartItem->subscription->sale_price ?? $cartItem->subscription->regular_price) * $cartItem->quantity }}
                                 </p>
                             </div>
@@ -38,7 +38,7 @@
             <div class="wrapper-line"></div>
             <div class="wrapper-subtotal">
                 <h5 class="wrapper-title">Subtotal</h5>
-                <h5 class="wrapper-title">${{ $subtotal }}</h5>
+                <h5 class="wrapper-title">{{$currency_symbol}}{{ $subtotal }}</h5>
             </div>
             <div class="cart-btn">
                 <a href="{{ route('user.cart') }}" class="shop-btn view-btn">View Cart</a>
