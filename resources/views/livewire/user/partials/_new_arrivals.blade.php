@@ -45,10 +45,10 @@
                                                 $lowestSalePrice = $product->subscription->min('sale_price');
                                             @endphp
                                             @if ($product->subscription[0]->sale_price == null)
-                                                <span class="new-price">${{ $lowestRegularPrice }}</span>
+                                                <span class="new-price">{{$currency_symbol}}{{ $lowestRegularPrice }}</span>
                                             @else
-                                                <span class="price-cut">${{ $lowestRegularPrice }}</span>
-                                                <span class="new-price">${{ $lowestSalePrice }}</span>
+                                                <span class="price-cut">{{$currency_symbol}}{{ $lowestRegularPrice }}</span>
+                                                <span class="new-price">{{$currency_symbol}}{{ $lowestSalePrice }}</span>
                                             @endif
                                         @endif
                                     </div>
