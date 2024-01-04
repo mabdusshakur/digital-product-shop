@@ -3,6 +3,7 @@
 namespace App\Livewire\User;
 
 use App\Models\Product;
+use App\Models\Setting;
 use Livewire\Component;
 use App\Models\Wishlist;
 
@@ -10,6 +11,7 @@ class ProductsComponent extends Component
 {
     public $products;
     public $category_id;
+    public $currency_symbol;
 
     public function mount($id = null){
         $this->products = Product::all();
@@ -17,6 +19,7 @@ class ProductsComponent extends Component
             $this->products = Product::where('category_id', $id)->get();
             $this->category_id = $id;
         }
+        $this->currency_symbol = optional(Setting::first())->currency_unicode;
     }
     public function productDetails($id, $slug, $category_id)
     {
