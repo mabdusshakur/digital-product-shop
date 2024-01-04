@@ -3,14 +3,16 @@
 namespace App\Livewire\User;
 
 use App\Models\Order;
+use App\Models\Setting;
+use Livewire\Component;
 use App\Models\OrderItem;
 use Illuminate\Support\Facades\Auth;
-use Livewire\Component;
 
 class ProfileComponent extends Component
 {
     public $user;
     public $name, $email, $phone_number;
+    public $currency_symbol;
 
     public function mount()
     {
@@ -18,6 +20,7 @@ class ProfileComponent extends Component
         $this->name = $this->user->name;
         $this->email = $this->user->email;
         $this->phone_number = $this->user->phone_number;
+        $this->currency_symbol = optional(Setting::first())->currency_unicode;
     }
     public function update_profile()
     {

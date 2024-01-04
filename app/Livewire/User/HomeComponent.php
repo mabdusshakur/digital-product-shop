@@ -4,6 +4,7 @@ namespace App\Livewire\User;
 
 use App\Models\Brand;
 use App\Models\Product;
+use App\Models\Setting;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Wishlist;
@@ -11,11 +12,13 @@ use App\Models\Wishlist;
 class HomeComponent extends Component
 {
     public $categories, $products, $brands;
+    public $currency_symbol;
     public function mount()
     {
         $this->categories = Category::all();
         $this->products = Product::all();
         $this->brands = Brand::all();
+        $this->currency_symbol = optional(Setting::first())->currency_unicode;
     }
     public function productDetails($id, $slug, $category_id)
     {
