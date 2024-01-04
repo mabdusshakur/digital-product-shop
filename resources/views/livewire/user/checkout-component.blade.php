@@ -56,12 +56,12 @@
                                                     </div>
                                                     <div class="price">
                                                         <h5 class="wrapper-heading">
-                                                            ${{ $item->subscription->sale_price ?? $item->subscription->regular_price }}
+                                                            {{$currency_symbol}}{{ $item->subscription->sale_price ?? $item->subscription->regular_price }}
                                                         </h5>
                                                     </div>
                                                     <div class="price">
                                                         <h5 class="wrapper-heading">
-                                                            ${{ ($item->subscription->sale_price ?? $item->subscription->regular_price) * $item->quantity }}
+                                                            {{$currency_symbol}}{{ ($item->subscription->sale_price ?? $item->subscription->regular_price) * $item->quantity }}
                                                         </h5>
                                                     </div>
                                                 </li>
@@ -72,7 +72,7 @@
                                     <hr>
                                     <div class="subtotal total">
                                         <h5 class="wrapper-heading">TOTAL</h5>
-                                        <h5 class="wrapper-heading price">${{ $total_price }}</h5>
+                                        <h5 class="wrapper-heading price">{{$currency_symbol}}{{ $total_price }}</h5>
                                     </div>
                                     <div class="subtotal payment-type">
                                         <h5 class="wrapper-heading">Payment Type</h5>

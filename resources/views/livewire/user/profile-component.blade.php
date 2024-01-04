@@ -307,7 +307,7 @@
                                             </td>
                                             <td class="table-wrapper wrapper-total">
                                                 <div class="table-wrapper-center">
-                                                    <h5 class="heading">${{ $order->total_price }}</h5>
+                                                    <h5 class="heading">{{$currency_symbol}}{{ $order->total_price }}</h5>
                                                 </div>
                                             </td>
                                             <td class="table-wrapper wrapper-total">
