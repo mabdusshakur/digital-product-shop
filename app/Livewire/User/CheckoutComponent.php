@@ -4,6 +4,7 @@ namespace App\Livewire\User;
 
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Setting;
 use Livewire\Component;
 use App\Models\OrderItem;
 use App\Models\PaymentSetting;
@@ -18,6 +19,7 @@ class CheckoutComponent extends Component
     public $payment_method, $payment_number, $payment_transaction_id;
 
     public $paymentMethods;
+    public $currency_symbol;
 
     public function mount()
     {
@@ -30,6 +32,7 @@ class CheckoutComponent extends Component
             return ($item->subscription->sale_price ?? $item->subscription->regular_price) * $item->quantity;
         });
         $this->paymentMethods = PaymentSetting::all();
+        $this->currency_symbol = optional(Setting::first())->currency_unicode;
     }
 
     public function placeOrder()

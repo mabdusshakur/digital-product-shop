@@ -3,11 +3,17 @@
 namespace App\Livewire\User;
 
 use App\Models\Cart;
+use App\Models\Setting;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
 class CartComponent extends Component
 {
+    public $currency_symbol;
+    public function mount()
+    {
+        $this->currency_symbol = optional(Setting::first())->currency_unicode;
+    }
     public function clearCart()
     {
         $cartItems = Cart::where('user_id', Auth::user()->id)->get();

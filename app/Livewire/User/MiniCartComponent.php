@@ -3,12 +3,18 @@
 namespace App\Livewire\User;
 
 use App\Models\Cart;
+use App\Models\Setting;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 
 class MiniCartComponent extends Component
 {
     public $subtotal;
+    public $currency_symbol;
+    public function mount()
+    {
+        $this->currency_symbol = optional(Setting::first())->currency_unicode;
+    }
 
     public function removeItemFromCart($id)
     {
