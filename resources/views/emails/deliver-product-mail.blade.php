@@ -264,7 +264,7 @@
                                       align="center"
                                     >
                                       <a
-                                        href="https://unlayer.com"
+                                        href="{{ env('APP_URL')}}"
                                         target="_blank"
                                       >
                                         {{env('APP_NAME')}}
