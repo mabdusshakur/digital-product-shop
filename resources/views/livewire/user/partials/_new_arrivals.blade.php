@@ -5,7 +5,7 @@
         </div>
         <div class="arrival-section">
             <div class="row g-5">
-                @foreach ($products->sortByDesc('created_at')->take(5) as $product)
+                @foreach ($products->sortByDesc('created_at')->take(16) as $product)
                     <div class="col-lg-3 col-sm-6">
                         <div class="product-wrapper" data-aos="fade-up">
                             <div class="product-img">
