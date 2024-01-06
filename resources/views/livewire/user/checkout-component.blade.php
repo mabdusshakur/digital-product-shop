@@ -114,7 +114,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="javascript:;" wire:click="placeOrder" class="shop-btn">Place Order Now</a>
+                                    <a href="javascript:;" wire:click="placeOrder" class="shop-btn" wire:loading.attr="disabled">Place Order Now</a>
                                 </div>
                             </div>
                         </div>
