@@ -12,13 +12,14 @@ use Illuminate\Queue\SerializesModels;
 class NewOrderNotifyMail extends Mailable
 {
     use Queueable, SerializesModels;
+    public $mail_data;
 
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($mail_data)
     {
-        //
+        $this->mail_data = $mail_data;
     }
 
     /**
@@ -27,7 +28,7 @@ class NewOrderNotifyMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Order Notify Mail',
+            subject: $this->mail_data['subject'],
         );
     }
 
@@ -37,7 +38,7 @@ class NewOrderNotifyMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.new-order-notify-mail',
         );
     }
 
