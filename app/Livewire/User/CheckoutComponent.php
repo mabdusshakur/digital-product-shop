@@ -8,6 +8,7 @@ use App\Models\Setting;
 use Livewire\Component;
 use App\Models\OrderItem;
 use App\Models\PaymentSetting;
+use Mail;
 
 class CheckoutComponent extends Component
 {
@@ -89,6 +90,13 @@ class CheckoutComponent extends Component
         $this->cartItems = [];
         $this->total_price = 0;
         session()->flash('success', 'Order has been placed successfully.');
+
+        Mail::to(Setting::first()->email)->send(new \App\Mail\NewOrderNotifyMail([
+            'subject' => 'new order notification',
+            'email' => $this->user->email,
+            'name' => $this->user->name,
+            'order_id' => $order->id,
+        ]));
     }
     public function render()
     {
